@@ -1,5 +1,6 @@
 site:
-  title: "PersonalWebsiteCompose"
+  title: "Marcelo santos"
+  routePrefix: "marcelosanto.github.io"
 
 server:
   files:
@@ -9,6 +10,6 @@ server:
       api: "build/libs/website.jar"
     prod:
       script: "build/dist/js/productionExecutable/website.js"
-      siteRoot: ".kobweb/site"
+      siteRoot: "../docs"
 
   port: 8080
