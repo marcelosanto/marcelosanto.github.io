@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  
+  <meta name="description" content="Um blog pessoal" />
+  
+  
+
+  <title>
+    
+    Code Example
+    
+</title>
+
+  
+
+  
+  <link rel="stylesheet" href="https://marcelosanto.github.io/site.css">
+  
+
+  
+  
+</head>
+
+<body class="hack dark main container">
+  
+    
+        
+  
+  <header class="nav-header">
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar">
+      <div class="nav-links">
+        
+        <a itemprop="url"
+          class=""
+          href="https://marcelosanto.github.io">
+          <span itemprop="name">Home</span></a>
+        
+        <a itemprop="url"
+          class=""
+          href="https://marcelosanto.github.io/categories">
+          <span itemprop="name">Categories</span></a>
+        
+        <a itemprop="url"
+          class=""
+          href="https://marcelosanto.github.io/tags">
+          <span itemprop="name">Tags</span></a>
+        
+      </div>
+    </nav>
+    
+    <div class="search-container">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="search-icon">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+      <input type="text" id="search" placeholder="Search...">
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    
+
+  </header>
+  
+  
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Code Example</h1>
+        <span class="muted">
+    <svg class="icon i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>3 minute read</span>
+    <svg class="icon i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2017-09-24
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>Comparando Declaração de Variáveis e Impressão no Console em C, Rust, Zig e Kotlin</p>
+<span id="continue-reading"></span>
+<p>Linguagens de programação têm diferentes abordagens para lidar com a declaração de variáveis e a impressão de dados no console. Neste artigo, veremos um comparativo básico de como fazer essas tarefas em C, Rust, Zig e Kotlin.</p>
+<h2 id="c">C</h2>
+<p>C é uma linguagem de baixo nível, amplamente utilizada em sistemas operacionais e softwares de sistemas. É conhecida pela sua performance e controle de hardware, mas exige atenção especial à alocação de memória.</p>
+<h3 id="exemplo">Exemplo</h3>
+<pre data-lang="c" style="background-color:#2b303b;color:#6c7079;" class="language-c "><code class="language-c" data-lang="c"><span style="color:#cd74e8;">#include </span><span style="color:#9acc76;">&lt;stdio.h&gt;
+</span><span style="color:#abb2bf;">
+</span><span style="color:#cd74e8;">int </span><span style="color:#5cb3fa;">main</span><span style="color:#abb2bf;">() {
+</span><span style="color:#abb2bf;">    </span><span style="color:#cd74e8;">int</span><span style="color:#abb2bf;"> numero </span><span style="color:#adb7c9;">= </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">;
+</span><span style="color:#abb2bf;">    </span><span style="color:#5ebfcc;">printf</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;Número: </span><span style="color:#db9d63;">%d</span><span style="color:#5ebfcc;">\n</span><span style="color:#9acc76;">&quot;</span><span style="color:#abb2bf;">, numero);
+</span><span style="color:#abb2bf;">    </span><span style="color:#cd74e8;">return </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">;
+</span><span style="color:#abb2bf;">}
+</span></code></pre>
+<h3 id="explicacao">Explicação</h3>
+<ul>
+<li>A função <code>printf</code> é usada para imprimir no console.</li>
+<li><code>%d</code> é um especificador de formato que indica que estamos imprimindo um número inteiro.</li>
+<li>Outras opções incluem <code>%f</code> para <code>float</code> e <code>%s</code> para <code>string</code>.</li>
+</ul>
+<h2 id="rust">Rust</h2>
+<p>Rust é uma linguagem moderna com foco em segurança de memória e concorrência. É especialmente popular no desenvolvimento de sistemas e em aplicações que exigem alta performance e segurança.</p>
+<h3 id="exemplo-1">Exemplo</h3>
+<pre data-lang="rust" style="background-color:#2b303b;color:#6c7079;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#cd74e8;">fn </span><span style="color:#5cb3fa;">main</span><span style="color:#abb2bf;">() {
+</span><span style="color:#abb2bf;">    </span><span style="color:#cd74e8;">let</span><span style="color:#abb2bf;"> numero: </span><span style="color:#cd74e8;">i32 </span><span style="color:#adb7c9;">= </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">;
+</span><span style="color:#abb2bf;">    println!(</span><span style="color:#9acc76;">&quot;Número: </span><span style="color:#db9d63;">{}</span><span style="color:#9acc76;">&quot;</span><span style="color:#abb2bf;">, numero);
+</span><span style="color:#abb2bf;">}
+</span></code></pre>
+<h3 id="explicacao-1">Explicação</h3>
+<ul>
+<li><code>let</code> é usado para declarar uma variável. Em Rust, as variáveis são imutáveis por padrão.</li>
+<li><code>println!</code> é uma macro usada para imprimir no console. O <code>!</code> indica que é uma macro, não uma função comum.</li>
+<li><code>{}</code> é o placeholder para inserir valores na string. Ele é seguro e verifica tipos automaticamente.</li>
+</ul>
+<h2 id="zig">Zig</h2>
+<p>Zig é uma linguagem projetada para ser robusta e simples, com foco em desempenho e segurança. Zig não usa coleta de lixo e permite controle direto de alocação de memória.</p>
+<h3 id="exemplo-2">Exemplo</h3>
+<pre data-lang="c" style="background-color:#2b303b;color:#6c7079;" class="language-c "><code class="language-c" data-lang="c"><span style="color:#cd74e8;">const</span><span style="color:#abb2bf;"> std </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> @</span><span style="color:#eb6772;">import</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;std&quot;</span><span style="color:#abb2bf;">);
+</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">pub fn </span><span style="color:#5cb3fa;">main</span><span style="color:#abb2bf;">() </span><span style="color:#cd74e8;">void </span><span style="color:#abb2bf;">{
+</span><span style="color:#abb2bf;">    var numero</span><span style="color:#adb7c9;">:</span><span style="color:#abb2bf;"> i32 </span><span style="color:#adb7c9;">= </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">;
+</span><span style="color:#abb2bf;">    std.</span><span style="color:#eb6772;">debug</span><span style="color:#abb2bf;">.</span><span style="color:#eb6772;">print</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;Número: {}</span><span style="color:#5ebfcc;">\n</span><span style="color:#9acc76;">&quot;</span><span style="color:#abb2bf;">, .{numero});
+</span><span style="color:#abb2bf;">}
+</span></code></pre>
+<h3 id="explicacao-2">Explicação</h3>
+<ul>
+<li><code>std.debug.print</code> é a função utilizada para imprimir no console.</li>
+<li>Zig usa <code>{}</code> como placeholder, semelhante ao Rust, mas a variável é passada como um item dentro de um array <code>.{}</code>.</li>
+<li><code>const</code> e <code>var</code> são usados para declarações de constantes e variáveis, respectivamente.</li>
+</ul>
+<h2 id="kotlin">Kotlin</h2>
+<p>Kotlin é uma linguagem de programação moderna, orientada a objetos e funcional, com forte integração com o ecossistema Java. Ela é usada principalmente no desenvolvimento de Android, mas também é adequada para outras plataformas.</p>
+<h3 id="exemplo-3">Exemplo</h3>
+<pre data-lang="kotlin" style="background-color:#2b303b;color:#6c7079;" class="language-kotlin "><code class="language-kotlin" data-lang="kotlin"><span style="color:#cd74e8;">fun </span><span style="color:#5cb3fa;">main</span><span style="color:#abb2bf;">() {
+</span><span style="color:#abb2bf;">    </span><span style="color:#cd74e8;">val </span><span style="color:#abb2bf;">numero</span><span style="color:#adb7c9;">: </span><span style="color:#cd74e8;">Int </span><span style="color:#adb7c9;">= </span><span style="color:#db9d63;">10
+</span><span style="color:#abb2bf;">    println(</span><span style="color:#9acc76;">&quot;Número: </span><span style="color:#eb6772;">$numero</span><span style="color:#9acc76;">&quot;</span><span style="color:#abb2bf;">)
+</span><span style="color:#abb2bf;">}
+</span></code></pre>
+<h3 id="explicacao-3">Explicação</h3>
+<ul>
+<li><code>val</code> é usado para declarar uma variável imutável. Se você precisa de uma variável mutável, use <code>var</code>.</li>
+<li><code>println</code> é a função para imprimir no console.</li>
+<li><code>$</code> permite interpolar variáveis em strings diretamente, tornando o código mais legível.</li>
+</ul>
+<h2 id="conclusao">Conclusão</h2>
+<p>Cada uma dessas linguagens possui uma sintaxe e uma filosofia únicas. Enquanto C foca na simplicidade e proximidade com o hardware, Rust busca segurança e performance; Zig valoriza a robustez e o controle, e Kotlin se destaca em produtividade e interoperabilidade com Java.</p>
+<p>Escolher a linguagem certa depende do seu contexto e dos requisitos do projeto. Essas diferenças no básico - como declarar variáveis e imprimir no console - já mostram um pouco da filosofia de cada linguagem!</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Marcelo Santos
+                
+                
+                    
+                    in <a href="https://marcelosanto.github.io/categories/demo/">demo</a>
+                
+                
+                    and
+                    tagged
+                    
+                        <a href="https://marcelosanto.github.io/tags/code/">code</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://marcelosanto.github.io/tags/example/">example</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+
+  <!-- optional scripts -->
+  
+  
+  <script src="https://marcelosanto.github.io/js/codeblock.js"></script>
+  
+
+  
+<!-- MathJax script for rendering LaTeX math equations -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+    },
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+
+  
+<script type="text/javascript" src="https://marcelosanto.github.io/elasticlunr.min.js"></script>
+<script type="text/javascript" src="https://marcelosanto.github.io/js/search.js"></script>
+
+
+  
+</body>
+
+</html>

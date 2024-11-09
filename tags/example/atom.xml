@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Marcelo Santos - example</title>
+    <subtitle>Um blog pessoal</subtitle>
+    <link href="https://marcelosanto.github.io/tags/example/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://marcelosanto.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2017-09-24T00:00:00+00:00</updated>
+    <id>https://marcelosanto.github.io/tags/example/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Code Example</title>
+        <published>2017-09-24T00:00:00+00:00</published>
+        <updated>2017-09-24T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://marcelosanto.github.io/code-example/" type="text/html"/>
+        <id>https://marcelosanto.github.io/code-example/</id>
+        
+        <summary type="html">&lt;p&gt;Comparando Declaração de Variáveis e Impressão no Console em C, Rust, Zig e Kotlin&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>
