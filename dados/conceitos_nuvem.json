@@ -1,5 +1,185 @@
 [
   {
+    "id": 186,
+    "text": "Uma equipe de desenvolvimento está implantando uma nova aplicação na AWS e quer garantir que as alterações na infraestrutura sejam feitas de forma consistente e previsível, com a capacidade de reverter para estados anteriores se necessário. Qual princípio do pilar de Excelência Operacional do AWS Well-Architected Framework é MAIS relevante para este objetivo?",
+    "options": [
+      "Antecipar falhas.",
+      "Realizar operações como código.",
+      "Parar de gastar dinheiro em tarefas manuais indiferenciadas.",
+      "Analisar e atribuir custos."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "O princípio de 'Realizar operações como código' do pilar de Excelência Operacional envolve a automação de suas operações, definindo toda a sua carga de trabalho (aplicações, infraestrutura, etc.) como código. Isso permite implantações consistentes, rastreamento de alterações e a capacidade de reverter para versões anteriores, alinhando-se com a necessidade da equipe. 'Antecipar falhas' é da Confiabilidade. 'Parar de gastar dinheiro em tarefas manuais' está relacionado à automação, mas 'operações como código' é mais específico. 'Analisar custos' é da Otimização de Custos.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 187,
+    "text": "Uma empresa deseja melhorar a forma como monitora suas aplicações na AWS para entender melhor seu estado e responder proativamente a eventos operacionais. Eles querem coletar métricas e logs e configurar alertas. Qual prática recomendada do pilar de Excelência Operacional devem seguir?",
+    "options": [
+      "Proteger dados em trânsito e em repouso.",
+      "Usar múltiplas Zonas de Disponibilidade.",
+      "Implementar monitoramento e observabilidade para obter insights sobre as operações.",
+      "Adotar um modelo de consumo."
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "O pilar de Excelência Operacional enfatiza a importância do monitoramento de sistemas para entender a saúde da carga de trabalho e obter insights operacionais. Implementar monitoramento e observabilidade, incluindo a coleta de métricas, logs e o uso de dashboards e alertas, é uma prática fundamental para alcançar a excelência operacional. 'Proteger dados' é Segurança. 'Múltiplas Zonas' é Confiabilidade. 'Modelo de consumo' é Otimização de Custos.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 188,
+    "text": "Uma startup está construindo uma aplicação que lidará com informações de pagamento de clientes. É crucial proteger esses dados contra acesso não autorizado e garantir a integridade e confidencialidade. Qual pilar do AWS Well-Architected Framework se concentra DIRETAMENTE nesses aspectos de proteção de dados e sistemas?",
+    "options": [
+      "Excelência Operacional",
+      "Segurança",
+      "Confiabilidade",
+      "Otimização de Custos"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "O pilar de Segurança do AWS Well-Architected Framework foca na proteção de informações, sistemas e ativos, ao mesmo tempo em que entrega valor de negócios por meio de avaliação de risco e estratégias de mitigação. Isso inclui princípios como implementar um forte alicerce de identidade, habilitar a rastreabilidade, aplicar segurança em todas as camadas e proteger dados em trânsito e em repouso.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 189,
+    "text": "Uma empresa quer garantir que apenas pessoal autorizado possa acessar seus recursos na AWS e que as ações realizadas nesses recursos sejam rastreáveis. Qual dos seguintes princípios de design do pilar de Segurança eles devem aplicar?",
+    "options": [
+      "Escalar horizontalmente para aumentar a disponibilidade agregada do sistema.",
+      "Implementar um forte alicerce de identidade e habilitar a rastreabilidade.",
+      "Analisar e atribuir custos.",
+      "Testar procedimentos de recuperação."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "O pilar de Segurança inclui o princípio de 'Implementar um forte alicerce de identidade', que significa aplicar o princípio do menor privilégio e impor a separação de tarefas com autorização apropriada para cada interação com seus recursos AWS. 'Habilitar a rastreabilidade' envolve monitorar, alertar e auditar ações e alterações em seu ambiente em tempo real. Escalar horizontalmente é Confiabilidade/Desempenho. Analisar custos é Otimização de Custos. Testar recuperação é Confiabilidade.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 190,
+    "text": "Uma aplicação de e-commerce precisa estar operacional 24/7. A empresa quer projetar a arquitetura para que ela possa suportar a falha de um componente individual ou mesmo de uma Zona de Disponibilidade inteira sem afetar a disponibilidade geral da aplicação. Qual pilar do AWS Well-Architected Framework orienta essas decisões de design?",
+    "options": [
+      "Eficiência de Desempenho",
+      "Otimização de Custos",
+      "Confiabilidade",
+      "Sustentabilidade"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "O pilar de Confiabilidade abrange a capacidade de uma carga de trabalho executar sua função pretendida corretamente e consistentemente quando esperado. Isso inclui a capacidade de operar e testar a carga de trabalho durante todo o seu ciclo de vida, e projetar para alta disponibilidade e recuperação de desastres, como o uso de múltiplas Zonas de Disponibilidade.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 191,
+    "text": "Para melhorar a confiabilidade de sua aplicação, uma equipe está considerando a implementação de backups automáticos de seus bancos de dados e o teste regular dos procedimentos de restauração. Qual princípio do pilar de Confiabilidade está sendo aplicado aqui?",
+    "options": [
+      "Gerenciar mudanças na automação.",
+      "Testar procedimentos de recuperação.",
+      "Otimizar para o custo mais baixo.",
+      "Usar serviços gerenciados para reduzir o risco."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "O pilar de Confiabilidade inclui o princípio de 'Testar procedimentos de recuperação'. Testar regularmente como você recuperaria seus sistemas de uma falha é crucial para validar seus procedimentos de recuperação e garantir que você possa atender aos seus objetivos de tempo de recuperação (RTO) e ponto de recuperação (RPO).",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 192,
+    "text": "Uma aplicação de processamento de dados está demorando muito para concluir suas tarefas à medida que o volume de dados aumenta. A empresa precisa que a aplicação escale de forma eficiente e utilize os recursos de computação de maneira otimizada para manter um bom desempenho. Qual pilar do AWS Well-Architected Framework aborda a seleção dos tipos de recursos e tamanhos corretos e o monitoramento do desempenho?",
+    "options": [
+      "Segurança",
+      "Excelência Operacional",
+      "Eficiência de Desempenho",
+      "Sustentabilidade"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "O pilar de Eficiência de Desempenho foca no uso eficiente dos recursos de computação para atender aos requisitos do sistema e manter essa eficiência à medida que a demanda muda e as tecnologias evoluem. Isso inclui selecionar os tipos e tamanhos de recursos corretos, monitorar o desempenho e tomar decisões informadas para manter a eficiência.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 193,
+    "text": "Uma empresa está notando que sua aplicação web está lenta durante os horários de pico. Para melhorar a experiência do usuário, eles estão considerando o uso de uma Content Delivery Network (CDN) e o armazenamento em cache de dados mais perto dos usuários. A aplicação desses conceitos se alinha a qual pilar do AWS Well-Architected Framework?",
+    "options": [
+      "Otimização de Custos",
+      "Confiabilidade",
+      "Eficiência de Desempenho",
+      "Segurança"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "O pilar de Eficiência de Desempenho inclui a consideração de como usar os recursos de forma eficiente. Usar uma CDN (como Amazon CloudFront) e estratégias de cache são técnicas comuns para melhorar o desempenho, reduzindo a latência e a carga nos servidores de origem, o que se alinha com os princípios de eficiência de desempenho.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 194,
+    "text": "Uma organização está revisando seus gastos na AWS e descobriu que está pagando por instâncias EC2 superprovisionadas que não estão totalmente utilizadas. Eles querem ajustar o tamanho dessas instâncias para corresponder à carga de trabalho real e reduzir custos desnecessários. Qual pilar do AWS Well-Architected Framework enfatiza a importância de eliminar gastos desnecessários?",
+    "options": [
+      "Excelência Operacional",
+      "Segurança",
+      "Confiabilidade",
+      "Otimização de Custos"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "O pilar de Otimização de Custos se concentra em evitar ou eliminar custos não necessários ou recursos subótimos. Isso inclui o dimensionamento correto (right-sizing) das instâncias para corresponder à demanda da carga de trabalho, eliminando o desperdício e pagando apenas pelo que você usa.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 195,
+    "text": "Uma empresa está considerando diferentes modelos de precificação para suas instâncias Amazon EC2. Eles têm cargas de trabalho com uso previsível e constante e querem se comprometer com o uso a longo prazo para obter descontos significativos. A escolha de Instâncias Reservadas ou Savings Plans alinha-se com qual princípio do pilar de Otimização de Custos?",
+    "options": [
+      "Adotar um modelo de consumo.",
+      "Medir a eficiência geral.",
+      "Gastar dinheiro em tarefas manuais indiferenciadas.",
+      "Analisar e atribuir despesas."
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "O pilar de Otimização de Custos inclui o princípio de 'Adotar um modelo de consumo', que significa pagar apenas pelos recursos de computação que você consome e aumentar ou diminuir o uso dependendo dos requisitos de negócios. No entanto, parte da otimização é também 'Otimizar ao longo do tempo', que inclui o uso de modelos de precificação como Instâncias Reservadas ou Savings Plans para cargas de trabalho estáveis, trocando compromissos por custos mais baixos. 'Adotar um modelo de consumo' é o mais amplo aqui, pois esses planos ainda refletem o pagamento pelo que se usa, mas de forma otimizada.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 196,
+    "text": "Uma empresa está focada em reduzir o impacto ambiental de suas operações de TI. Ao migrar para a AWS, eles estão interessados em como a nuvem pode ajudá-los a minimizar o consumo de energia e as emissões de carbono associadas à sua infraestrutura. Qual pilar do AWS Well-Architected Framework aborda esses aspectos?",
+    "options": [
+      "Otimização de Custos",
+      "Eficiência de Desempenho",
+      "Sustentabilidade",
+      "Excelência Operacional"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "O pilar de Sustentabilidade do AWS Well-Architected Framework se concentra em minimizar os impactos ambientais da execução de cargas de trabalho na nuvem. Isso inclui entender o impacto, maximizar a utilização para minimizar os recursos necessários e usar serviços gerenciados que otimizam o uso de recursos.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 197,
+    "text": "Para apoiar seus objetivos de sustentabilidade, uma empresa deseja escolher Regiões AWS que são alimentadas por fontes de energia renovável e otimizar suas cargas de trabalho para usar menos recursos computacionais, reduzindo assim o consumo de energia. Essas ações se alinham a qual pilar do AWS Well-Architected Framework?",
+    "options": [
+      "Confiabilidade",
+      "Segurança",
+      "Sustentabilidade",
+      "Otimização de Custos"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "O pilar de Sustentabilidade incentiva a seleção de Regiões AWS com base em metas de sustentabilidade (como o uso de energia renovável) e a otimização de cargas de trabalho para reduzir o consumo de recursos e, consequentemente, o consumo de energia. Maximizar a eficiência dos recursos é um componente chave.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
     "id": 1,
     "text": "Qual é o principal benefício da computação em nuvem da AWS?",
     "options": [
@@ -8,7 +188,9 @@
       "Controle total do hardware",
       "Manutenção local"
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "A escalabilidade sob demanda (elasticidade) é um benefício fundamental da nuvem AWS, permitindo ajustar recursos (aumentar ou diminuir) conforme a necessidade e a demanda. Isso difere dos custos fixos de datacenters locais, onde o provisionamento excessivo é comum. A AWS gerencia o hardware e a manutenção da infraestrutura da nuvem, o que está alinhado com o Modelo de Responsabilidade Compartilhada.",
     "category": "Conceitos da Nuvem"
   },
@@ -21,15 +203,26 @@
       "Sem investimento inicial",
       "Manutenção local"
     ],
-    "correctAnswers": [1, 2],
+    "correctAnswers": [
+      1,
+      2
+    ],
     "explanation": "O modelo pay-as-you-go (pague conforme o uso) oferece flexibilidade para escalar recursos para cima ou para baixo e elimina a necessidade de grandes investimentos iniciais em hardware (CapEx), transformando-os em despesas operacionais variáveis (OpEx). Custos fixos e manutenção local são características de ambientes on-premises.",
     "category": "Conceitos da Nuvem"
   },
   {
     "id": 32,
     "text": "Quais serviços ajudam na migração? (Escolha dois.)",
-    "options": ["AWS Snowball", "AWS Migration Hub", "Amazon S3", "AWS Lambda"],
-    "correctAnswers": [0, 1],
+    "options": [
+      "AWS Snowball",
+      "AWS Migration Hub",
+      "Amazon S3",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ],
     "explanation": "A família AWS Snow (que inclui Snowball) oferece dispositivos para transferir grandes quantidades de dados para dentro e fora da AWS. AWS Migration Hub fornece um local único para rastrear o progresso das migrações de aplicações em várias soluções AWS e de parceiros. Amazon S3 é armazenamento de objetos e AWS Lambda é computação sem servidor.",
     "category": "Conceitos da Nuvem"
   },
@@ -42,7 +235,9 @@
       "Ferramenta de custo",
       "Firewall"
     ],
-    "correctAnswers": [0],
+    "correctAnswers": [
+      0
+    ],
     "explanation": "O AWS Well-Architected Framework ajuda os arquitetos de nuvem a construir infraestruturas seguras, de alto desempenho, resilientes e eficientes para suas aplicações e cargas de trabalho. Ele fornece um conjunto de melhores práticas e princípios de design em seis pilares. Um serviço de monitoramento é o CloudWatch, uma ferramenta de custo é o Cost Explorer, e um firewall pode ser AWS WAF ou Security Groups.",
     "category": "Conceitos da Nuvem"
   },
@@ -55,15 +250,26 @@
       "Escalabilidade máxima",
       "Manutenção local"
     ],
-    "correctAnswers": [0, 1],
+    "correctAnswers": [
+      0,
+      1
+    ],
     "explanation": "O AWS Well-Architected Framework é baseado em seis pilares: Excelência Operacional, Segurança, Confiabilidade, Eficiência de Desempenho, Otimização de Custos e Sustentabilidade. Portanto, Segurança e Otimização de Custos são dois desses pilares. 'Escalabilidade máxima' se encaixaria em Eficiência de Desempenho ou Confiabilidade, mas não é um pilar em si. 'Manutenção local' não é um conceito da nuvem AWS.",
     "category": "Conceitos da Nuvem"
   },
   {
     "id": 48,
     "text": "Quais serviços ajudam na escalabilidade? (Escolha dois.)",
-    "options": ["AWS Auto Scaling", "Amazon EC2", "AWS Lambda", "Amazon S3"],
-    "correctAnswers": [0, 2],
+    "options": [
+      "AWS Auto Scaling",
+      "Amazon EC2",
+      "AWS Lambda",
+      "Amazon S3"
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ],
     "explanation": "AWS Auto Scaling monitora suas aplicações e ajusta automaticamente a capacidade para manter um desempenho estável e previsível. AWS Lambda escala automaticamente sua aplicação executando código em resposta a cada gatilho. Amazon EC2 fornece instâncias que podem ser escaladas, mas o Auto Scaling é o serviço que automatiza isso. Amazon S3 é inerentemente escalável para armazenamento.",
     "category": "Conceitos da Nuvem"
   },
@@ -76,7 +282,10 @@
       "Amazon S3",
       "AWS Budgets"
     ],
-    "correctAnswers": [0, 1],
+    "correctAnswers": [
+      0,
+      1
+    ],
     "explanation": "Amazon CloudFront (CDN) melhora o desempenho entregando conteúdo de locais de borda próximos aos usuários, reduzindo a latência. AWS Auto Scaling ajuda a manter o desempenho da aplicação ajustando automaticamente a capacidade para atender à demanda. Amazon S3 é armazenamento. AWS Budgets é para gerenciamento de custos.",
     "category": "Conceitos da Nuvem"
   },
@@ -89,7 +298,9 @@
       "Custos de capital (CapEx) em vez de custos operacionais (OpEx)",
       "Controle total sobre o hardware físico"
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "A elasticidade e a escalabilidade sob demanda permitem que a startup ajuste os recursos computacionais conforme a variação do tráfego, pagando apenas pelo que usa. Isso evita o provisionamento excessivo e os custos associados. O alcance global é um benefício, mas a elasticidade aborda diretamente o problema do tráfego variável. A nuvem AWS foca em OpEx em vez de CapEx. O controle do hardware físico não é um benefício da nuvem gerenciada pela AWS.",
     "category": "Conceitos da Nuvem"
   },
@@ -102,7 +313,9 @@
       "AWS Well-Architected Framework",
       "Amazon CloudWatch"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "O AWS Well-Architected Framework fornece um conjunto de melhores práticas e princípios de design para ajudar a construir infraestruturas seguras, de alto desempenho, resilientes e eficientes. O AWS Trusted Advisor oferece recomendações baseadas nesses pilares, mas o Framework é o guia conceitual. O AWS Cost Explorer ajuda a visualizar custos. O Amazon CloudWatch é para monitoramento.",
     "category": "Conceitos da Nuvem"
   },
@@ -115,7 +328,9 @@
       "Aplicações podem permanecer operacionais mesmo se uma AZ falhar.",
       "Melhora a soberania dos dados, isolando-os em uma única AZ."
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "As Zonas de Disponibilidade são locais fisicamente separados dentro de uma Região AWS, projetadas para serem isoladas de falhas em outras AZs. Ao implantar uma aplicação em várias AZs, ela pode permanecer operacional mesmo se uma única AZ se tornar indisponível. A proteção contra falhas em nível de Região exigiria o uso de várias Regiões.",
     "category": "Conceitos da Nuvem"
   },
@@ -128,7 +343,9 @@
       "Segurança gerenciada pela AWS",
       "Elasticidade e escalabilidade"
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "A infraestrutura global da AWS, com Regiões e Zonas de Disponibilidade em todo o mundo, permite que as empresas implantem aplicações e serviços próximos aos seus usuários em diferentes localizações geográficas rapidamente. Isso facilita a expansão global. O pagamento conforme o uso, a segurança e a elasticidade são benefícios, mas a infraestrutura global aborda a expansão geográfica.",
     "category": "Conceitos da Nuvem"
   },
@@ -141,7 +358,9 @@
       "Eficiência de Desempenho",
       "Excelência Operacional"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "O pilar de Eficiência de Desempenho do AWS Well-Architected Framework foca na utilização eficiente dos recursos de computação para atender aos requisitos e manter essa eficiência. A otimização de custos é outro pilar.",
     "category": "Conceitos da Nuvem"
   },
@@ -154,7 +373,9 @@
       "AWS Cloud Adoption Framework (AWS CAF)",
       "AWS Pricing Calculator"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "O AWS Cloud Adoption Framework (AWS CAF) fornece orientação para ajudar as organizações a construir um plano para a adoção da nuvem, organizado em seis perspectivas, incluindo Negócios, Pessoas e Governança. O Well-Architected Framework foca no design de arquiteturas. O Shared Responsibility Model define responsabilidades de segurança. A Pricing Calculator estima custos.",
     "category": "Conceitos da Nuvem"
   },
@@ -167,7 +388,9 @@
       "Custos variáveis e pagamento conforme o uso (OpEx)",
       "Licenciamento Bring-Your-Own-License (BYOL)"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "A nuvem AWS permite que as empresas troquem despesas de capital (CapEx) por despesas variáveis (OpEx), pagando apenas pelos recursos de TI que consomem. Isso proporciona flexibilidade para escalar. A economia de escala é um benefício que a AWS repassa.",
     "category": "Conceitos da Nuvem"
   },
@@ -180,7 +403,9 @@
       "Agilidade, elasticidade e alcance global",
       "Responsabilidade total da AWS pela segurança da aplicação"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "A agilidade permite que a empresa responda rapidamente às mudanças. A elasticidade permite escalar recursos para cima ou para baixo conforme a demanda imprevisível do serviço de streaming. O alcance global da infraestrutura AWS (Regiões e Locais da Borda com serviços como CloudFront) é vital para uma boa experiência do usuário em diferentes geografias. Custos na nuvem são variáveis (OpEx). O cliente tem controle sobre a nuvem, não o hardware físico. A segurança da aplicação é uma responsabilidade compartilhada.",
     "category": "Conceitos da Nuvem"
   },
@@ -193,7 +418,9 @@
       "Segurança",
       "Confiabilidade"
     ],
-    "correctAnswers": [3],
+    "correctAnswers": [
+      3
+    ],
     "explanation": "O pilar de Confiabilidade do AWS Well-Architected Framework foca na capacidade de um sistema se recuperar de falhas de infraestrutura ou serviço, adquirir dinamicamente recursos de computação para atender à demanda e mitigar interrupções como configurações incorretas ou problemas de rede transitórios. Isso inclui estratégias de backup e recuperação de desastres.",
     "category": "Conceitos da Nuvem"
   },
@@ -206,7 +433,9 @@
       "Transferência via AWS Management Console para buckets S3",
       "AWS Database Migration Service (DMS)"
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "AWS Snowmobile é um serviço de transferência de dados em exabytes usado para mover volumes extremamente grandes de dados (múltiplos petabytes) para a AWS. Para essa escala de dados arquivados, o Snowmobile é mais eficiente e econômico do que transferências online, mesmo com Direct Connect. DMS é para migração de bancos de dados.",
     "category": "Conceitos da Nuvem"
   },
@@ -219,7 +448,9 @@
       "Substituir despesas de capital iniciais (CapEx) por despesas operacionais variáveis (OpEx)",
       "Custos de hardware e software totalmente previsíveis e fixos anualmente"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "Uma vantagem econômica chave da Nuvem AWS é a capacidade de substituir grandes despesas de capital (CapEx) iniciais, como a compra de servidores e infraestrutura de data center, por despesas operacionais (OpEx) variáveis, onde você paga apenas pelos recursos que consome. Isso elimina a necessidade de provisionamento excessivo para picos de carga.",
     "category": "Conceitos da Nuvem"
   },
@@ -232,7 +463,9 @@
       "Aumentar o tamanho das instâncias EC2 na Região primária.",
       "Implementar políticas de IAM rigorosas para acesso global."
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "Para fornecer baixa latência a usuários globais, a implantação da aplicação em múltiplas Regiões AWS, geograficamente distribuídas e próximas aos usuários finais, é a estratégia mais eficaz. Cada Região é uma área geográfica separada. Zonas de Disponibilidade fornecem alta disponibilidade dentro de uma Região, mas não resolvem a latência global.",
     "category": "Conceitos da Nuvem"
   },
@@ -245,7 +478,9 @@
       "Custos de aquisição de hardware, manutenção, energia e espaço físico do data center.",
       "Custos de treinamento de pessoal em novas tecnologias."
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "Ao migrar para a Nuvem AWS, as empresas podem reduzir significativamente ou eliminar os custos associados à aquisição e manutenção de hardware físico, custos de energia, refrigeração e o espaço físico do data center, que são componentes do TCO de um ambiente on-premises. Custos de licenciamento de software aplicativo e desenvolvimento podem ou não mudar drasticamente, e treinamento ainda é necessário.",
     "category": "Conceitos da Nuvem"
   },
@@ -258,7 +493,9 @@
       "Otimização de Custos",
       "Eficiência de Desempenho"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "O pilar de Otimização de Custos do AWS Well-Architected Framework foca em evitar ou eliminar custos não necessários ou recursos subótimos, pagando o preço mais baixo possível enquanto ainda atende aos requisitos funcionais e de desempenho. Isso inclui o dimensionamento correto dos recursos.",
     "category": "Conceitos da Nuvem"
   },
@@ -271,7 +508,9 @@
       "Nuvem Híbrida",
       "Nuvem Privada hospedada pela AWS"
     ],
-    "correctAnswers": [2],
+    "correctAnswers": [
+      2
+    ],
     "explanation": "Uma implantação de nuvem híbrida conecta infraestrutura on-premises (ou nuvens privadas) com infraestrutura de nuvem pública, como a AWS. As organizações podem executar aplicações em ambos os ambientes, gerenciando-os como um ambiente integrado ou interconectado.",
     "category": "Conceitos da Nuvem"
   },
@@ -284,7 +523,9 @@
       "Perspectiva de Banco de Dados",
       "Perspectiva de Armazenamento"
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "O AWS Cloud Adoption Framework (AWS CAF) organiza sua orientação em seis áreas de foco, chamadas Perspectivas: Negócios, Pessoas, Governança, Plataforma, Segurança e Operações. A perspectiva de Pessoas aborda papéis, habilidades e prontidão organizacional.",
     "category": "Conceitos da Nuvem"
   },
@@ -297,7 +538,9 @@
       "A garantia de que os dados serão automaticamente replicados em pelo menos três Zonas de Disponibilidade.",
       "A redução de custos obtida através de compromissos de longo prazo com Instâncias Reservadas."
     ],
-    "correctAnswers": [1],
+    "correctAnswers": [
+      1
+    ],
     "explanation": "A elasticidade na nuvem refere-se à capacidade de adquirir recursos conforme você precisa deles e liberá-los quando não precisar mais. Na AWS, isso muitas vezes se traduz na capacidade de escalar automaticamente para cima (aumentar capacidade) ou para baixo (diminuir capacidade) em resposta à demanda.",
     "category": "Conceitos da Nuvem"
   }
