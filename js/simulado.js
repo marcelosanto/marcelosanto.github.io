@@ -48,23 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 if (!Array.isArray(data)) {
-                    throw new Error("O arquivo JSON n�o cont�m um array de perguntas.");
+                    throw new Error("O arquivo JSON Não cont�m um array de perguntas.");
                 }
 
-                let perguntasProcessadas = [...data]; // Clona para manipula��o
+                let perguntasProcessadas = [...data]; // Clona para manipulação
 
                 // Randomizar se solicitado
                 if (randomizarParam === 'true') {
                     perguntasProcessadas = embaralharArray(perguntasProcessadas);
                 }
 
-                // Selecionar o n�mero de perguntas se especificado e v�lido
+                // Selecionar o n�mero de perguntas se especificado e válido
                 if (numPerguntasParam) {
                     const numDesejado = parseInt(numPerguntasParam);
                     if (numDesejado > 0 && numDesejado < perguntasProcessadas.length) {
                         perguntasProcessadas = perguntasProcessadas.slice(0, numDesejado);
                     }
-                    // Se numDesejado <= 0 ou >= total, usa todas (j� cortadas ou n�o pela randomiza��o)
+                    // Se numDesejado <= 0 ou >= total, usa todas (j� cortadas ou Não pela randomização)
                 }
 
                 perguntas = perguntasProcessadas; // Define o array final de perguntas
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (index < 0 || index >= perguntas.length) {
-            console.error("�ndice de pergunta inv�lido:", index);
+            console.error("�ndice de pergunta inválido:", index);
             return;
         }
 
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Fun��o para salvar a resposta atual
     function salvarRespostaAtual() {
-        // Garante que n�o tentaremos salvar se n�o houver perguntas ou o �ndice for inv�lido
+        // Garante que Não tentaremos salvar se Não houver perguntas ou o �ndice for inválido
         if (perguntas.length === 0 || perguntaAtualIndex < 0 || perguntaAtualIndex >= perguntas.length) {
             return;
         }
@@ -262,17 +262,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4>Pergunta ${index + 1}: ${pergunta.text}</h4>
                 <p>Sua resposta: ${formatarRespostaUsuario(respostaDoUsuario, pergunta.options)}</p>
                 <p>Resposta correta: ${formatarRespostasCorretas(pergunta.correctAnswers, pergunta.options)}</p>
-                ${acertou ? '<p class="resposta-correta">Voc� acertou!</p>' : '<p class="resposta-incorreta">Voc� errou.</p>'}
-                <div class="explicacao"><strong>Explica��o:</strong> ${pergunta.explanation || "N�o dispon�vel."}</div>
+                ${acertou ? '<p class="resposta-correta">Você acertou!</p>' : '<p class="resposta-incorreta">Você errou.</p>'}
+                <div class="explicacao"><strong>Explicação:</strong> ${pergunta.explanation || "Não disponível."}</div>
                 <hr>
             `;
             feedbackRespostasDiv.appendChild(divPerguntaFeedback);
         });
 
         const porcentagem = (perguntas.length > 0) ? (acertos / perguntas.length) * 100 : 0;
-        porcentagemAcertosP.textContent = `Voc� acertou ${acertos} de ${perguntas.length} perguntas (${porcentagem.toFixed(2)}%).`;
+        porcentagemAcertosP.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas (${porcentagem.toFixed(2)}%).`;
 
-        // Esconder �rea de perguntas e bot�es de navega��o
+        // Esconder �rea de perguntas e bot�es de navegação
         areaPergunta.style.display = 'none';
         areaOpcoes.style.display = 'none';
         botaoProxima.style.display = 'none';
@@ -287,13 +287,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (resposta === null || typeof resposta === 'undefined') return "Nenhuma resposta.";
         if (Array.isArray(resposta)) { // Checkbox
             if (resposta.length === 0) return "Nenhuma resposta.";
-            return resposta.map(index => opcoes[index] || `Op��o inv�lida (${index})`).join(', ');
+            return resposta.map(index => opcoes[index] || `Opção inválida (${index})`).join(', ');
         }
-        return opcoes[resposta] || `Op��o inv�lida (${resposta})`; // Radio
+        return opcoes[resposta] || `Opção inválida (${resposta})`; // Radio
     }
 
     function formatarRespostasCorretas(indicesCorretos, opcoes) {
-        if (!indicesCorretos || indicesCorretos.length === 0) return "N�o definida.";
-        return indicesCorretos.map(index => opcoes[index] || `Op��o inv�lida (${index})`).join(', ');
+        if (!indicesCorretos || indicesCorretos.length === 0) return "Não definida.";
+        return indicesCorretos.map(index => opcoes[index] || `Opção inválida (${index})`).join(', ');
     }
 });

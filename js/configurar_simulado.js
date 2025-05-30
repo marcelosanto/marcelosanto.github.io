@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!arquivoJSON) {
-        alert("Erro: Arquivo do simulado n�o especificado. Por favor, volte e selecione um simulado.");
+        alert("Erro: Arquivo do simulado não especificado. Por favor, volte e selecione um simulado.");
         if (botaoIniciarSimulado) {
             botaoIniciarSimulado.disabled = true;
         }
