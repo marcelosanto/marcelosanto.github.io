@@ -1,0 +1,1088 @@
+[
+  {
+    "id": 2,
+    "text": "Quais serviços da AWS são usados para armazenamento de objetos? (Escolha dois.)",
+    "options": ["Amazon S3", "Amazon RDS", "Amazon Glacier", "AWS Lambda"],
+    "correctAnswers": [0, 2],
+    "explanation": "Amazon S3 é um serviço de armazenamento de objetos que oferece escalabilidade, disponibilidade de dados, segurança e performance. Amazon S3 Glacier é uma classe de armazenamento segura, durável e de baixo custo do Amazon S3 para arquivamento de dados e backup de longo prazo. Amazon RDS é um serviço de banco de dados relacional, e AWS Lambda é um serviço de computação sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 4,
+    "text": "Quais ferramentas monitoram desempenho e enviam alertas? (Escolha dois.)",
+    "options": [
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS Budgets",
+      "Amazon SNS"
+    ],
+    "correctAnswers": [1, 3],
+    "explanation": "Amazon CloudWatch monitora seus recursos da AWS e as aplicações executadas na AWS em tempo real, permitindo coletar e rastrear métricas, criar alarmes e reagir automaticamente a mudanças. Amazon Simple Notification Service (Amazon SNS) é um serviço de mensagens de publicação/assinatura totalmente gerenciado que permite desacoplar microsserviços, sistemas distribuídos e aplicações sem servidor, e pode ser usado para enviar notificações/alertas. AWS CloudTrail registra chamadas de API, e AWS Budgets gerencia custos.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 6,
+    "text": "Qual serviço executa código sem gerenciar servidores?",
+    "options": [
+      "Amazon EC2",
+      "AWS Lambda",
+      "Amazon ECS",
+      "AWS Elastic Beanstalk"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Lambda é um serviço de computação sem servidor que permite executar código sem provisionar ou gerenciar servidores. Amazon EC2 fornece máquinas virtuais onde o cliente gerencia o servidor (SO e acima). Amazon ECS é um serviço de orquestração de contêineres, e AWS Elastic Beanstalk é um serviço para implantar e escalar aplicações web, ambos abstraindo parte do gerenciamento, mas Lambda é o mais representativo do modelo 'sem gerenciar servidores'.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 9,
+    "text": "Qual é o serviço de banco de dados relacional gerenciado?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon ElastiCache"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon Relational Database Service (Amazon RDS) facilita a configuração, operação e escalabilidade de um banco de dados relacional na nuvem AWS. Amazon DynamoDB é um banco de dados NoSQL, Amazon Redshift é um serviço de data warehouse, e Amazon ElastiCache é um serviço de cache em memória.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 11,
+    "text": "Qual serviço fornece DNS na AWS?",
+    "options": [
+      "Amazon Route 53",
+      "Amazon VPC",
+      "AWS Direct Connect",
+      "AWS CloudFront"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Route 53 é um serviço web de Domain Name System (DNS) altamente disponível e escalável. Amazon VPC é sua rede virtual privada, AWS Direct Connect fornece conectividade dedicada, e AWS CloudFront é uma CDN.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 14,
+    "text": "Qual serviço fornece máquinas virtuais na AWS?",
+    "options": ["Amazon EC2", "AWS Lambda", "Amazon S3", "AWS IAM"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) é um serviço web que fornece capacidade computacional segura e redimensionável na nuvem, na forma de máquinas virtuais, conhecidas como instâncias. AWS Lambda executa código sem servidor, Amazon S3 é armazenamento de objetos, e AWS IAM gerencia acesso.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 16,
+    "text": "Qual é o serviço de CDN da AWS?",
+    "options": [
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "AWS Direct Connect",
+      "Amazon VPC"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon CloudFront é um serviço rápido de Content Delivery Network (CDN) que entrega dados, vídeos, aplicações e APIs globalmente com baixa latência e alta velocidade de transferência. Amazon Route 53 é DNS, AWS Direct Connect é conectividade dedicada, e Amazon VPC é rede virtual.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 18,
+    "text": "Quais serviços são de banco de dados NoSQL? (Escolha dois.)",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon RDS",
+      "Amazon ElastiCache",
+      "Amazon Redshift"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon DynamoDB é um serviço de banco de dados NoSQL rápido e flexível para todas as aplicações que precisam de latência consistente de um dígito em milissegundos em qualquer escala. Amazon RDS é para bancos de dados relacionais, Amazon ElastiCache é um serviço de cache em memória, e Amazon Redshift é um data warehouse. Amazon DocumentDB (com compatibilidade com MongoDB) também é um serviço NoSQL da AWS, mas não está entre as opções.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 19,
+    "text": "Qual serviço conecta datacenters à AWS?",
+    "options": [
+      "AWS Direct Connect",
+      "Amazon VPC",
+      "AWS VPN",
+      "Amazon Route 53"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Direct Connect é uma solução de serviço de nuvem que facilita o estabelecimento de uma conexão de rede dedicada de suas instalações para a AWS. AWS VPN também conecta, mas sobre a internet pública ou Direct Connect. Amazon VPC é sua rede na AWS, e Route 53 é DNS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 22,
+    "text": "Qual serviço gerencia filas de mensagens?",
+    "options": ["Amazon SQS", "Amazon SNS", "AWS Lambda", "Amazon MQ"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Simple Queue Service (SQS) é um serviço de enfileiramento de mensagens totalmente gerenciado que permite desacoplar e escalar microsserviços, sistemas distribuídos e aplicações sem servidor. Amazon SNS é para notificações (publish/subscribe), AWS Lambda é computação sem servidor, e Amazon MQ é um message broker gerenciado para Apache ActiveMQ e RabbitMQ [not explicitly in CLF-C02 guide services list but a known AWS service, SQS is the direct answer from options listed in guide].",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 23,
+    "text": "Quais serviços ajudam na entrega de conteúdo? (Escolha dois.)",
+    "options": [
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "AWS Direct Connect",
+      "Amazon S3"
+    ],
+    "correctAnswers": [0, 3],
+    "explanation": "Amazon CloudFront é uma Content Delivery Network (CDN) que acelera a entrega de seu conteúdo web estático e dinâmico para seus usuários. Amazon S3 pode ser usado para armazenar os ativos de conteúdo que são então distribuídos via CloudFront ou acessados diretamente. Amazon Route 53 (DNS) direciona os usuários para o conteúdo, mas não o entrega diretamente, e AWS Direct Connect é para conectividade de rede privada.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 24,
+    "text": "O que é uma VPC?",
+    "options": [
+      "Rede virtual isolada",
+      "Serviço de DNS",
+      "Firewall gerenciado",
+      "Serviço de backup"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Uma Amazon Virtual Private Cloud (VPC) permite provisionar uma seção logicamente isolada da Nuvem AWS onde você pode executar recursos da AWS em uma rede virtual que você define. DNS é Route 53, firewall gerenciado pode ser AWS WAF ou Network Firewall, e serviço de backup é AWS Backup.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 25,
+    "text": "Qual serviço fornece análises de big data?",
+    "options": [
+      "Amazon Redshift",
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Redshift é um serviço de data warehouse rápido, totalmente gerenciado e em escala de petabytes que torna simples e econômico analisar todos os seus dados usando SQL e suas ferramentas de business intelligence existentes. Amazon RDS é para bancos de dados relacionais transacionais, DynamoDB é NoSQL, e Lambda é computação sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 27,
+    "text": "Qual serviço automatiza implantações?",
+    "options": [
+      "AWS Elastic Beanstalk",
+      "Amazon EC2",
+      "AWS Lambda",
+      "Amazon ECS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Elastic Beanstalk é um serviço fácil de usar para implantar e escalar aplicações e serviços web desenvolvidos com Java, .NET, PHP, Node.js, Python, Ruby, Go e Docker em servidores familiares como Apache, Nginx, Passenger e IIS. Ele lida com detalhes de provisionamento, balanceamento de carga, auto scaling e monitoramento da saúde da aplicação. EC2 são VMs, Lambda é serverless, e ECS é orquestração de contêineres.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 29,
+    "text": "Quais serviços oferecem armazenamento em cache? (Escolha dois.)",
+    "options": [
+      "Amazon ElastiCache",
+      "Amazon S3",
+      "Amazon RDS",
+      "Amazon CloudFront"
+    ],
+    "correctAnswers": [0, 3],
+    "explanation": "Amazon ElastiCache é um serviço web que facilita a implantação, operação e escalabilidade de um cache na nuvem em memória. Ele melhora o desempenho de aplicações web, permitindo que você recupere informações de caches em memória rápidos e gerenciados. Amazon CloudFront, como uma CDN, armazena em cache cópias do seu conteúdo em locais de borda próximos aos seus visualizadores, o que reduz a latência. Amazon S3 é armazenamento de objetos e Amazon RDS é um banco de dados relacional.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 30,
+    "text": "Qual serviço gerencia contêineres?",
+    "options": ["Amazon ECS", "AWS Lambda", "Amazon EC2", "AWS Fargate"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Elastic Container Service (Amazon ECS) é um serviço de orquestração de contêineres highly escalável e de alto desempenho que suporta contêineres Docker e permite que você execute e escale facilmente aplicações em contêineres na AWS. AWS Fargate é um motor de computação para contêineres que funciona com ECS e EKS. Lambda é serverless e EC2 são VMs.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 33,
+    "text": "Qual é o serviço de notificação da AWS?",
+    "options": [
+      "Amazon SNS",
+      "Amazon SQS",
+      "AWS CloudTrail",
+      "Amazon CloudWatch"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Simple Notification Service (SNS) é um serviço de mensagens de publicação/assinatura totalmente gerenciado. É comumente usado para enviar notificações. Amazon SQS é para filas de mensagens, CloudTrail para auditoria de API, e CloudWatch para monitoramento.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 34,
+    "text": "O que o AWS Fargate faz?",
+    "options": [
+      "Gerencia servidores",
+      "Executa contêineres sem servidor",
+      "Armazena dados",
+      "Monitora tráfego"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Fargate é um motor de computação sem servidor para contêineres que funciona com Amazon Elastic Container Service (ECS) e Amazon Elastic Kubernetes Service (EKS). O Fargate elimina a necessidade de provisionar e gerenciar servidores. Armazenamento de dados é S3/EBS/RDS etc., e monitoramento de tráfego pode ser VPC Flow Logs/CloudWatch.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 36,
+    "text": "Qual serviço gerencia backups?",
+    "options": ["AWS Backup", "Amazon S3", "AWS Glacier", "Amazon RDS"],
+    "correctAnswers": [0],
+    "explanation": "AWS Backup é um serviço totalmente gerenciado que centraliza e automatiza o backup de dados em serviços AWS na nuvem e no local. Amazon S3 e S3 Glacier são serviços de armazenamento que podem ser usados para armazenar backups, e Amazon RDS tem seus próprios recursos de backup, mas AWS Backup é o serviço de gerenciamento centralizado.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 39,
+    "text": "Qual serviço fornece IP elástico?",
+    "options": ["Amazon EC2", "Amazon VPC", "AWS Lambda", "Amazon Route 53"],
+    "correctAnswers": [0],
+    "explanation": "Endereços IP Elásticos são endereços IPv4 estáticos projetados para computação em nuvem dinâmica, associados a instâncias Amazon EC2 [general AWS knowledge, EC2 is the service for instances]. Enquanto os IPs Elásticos são usados dentro de uma VPC, o serviço que os fornece e gerencia em associação com instâncias é o EC2. Lambda e Route 53 não fornecem IPs Elásticos diretamente.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 40,
+    "text": "O que o AWS Auto Scaling faz?",
+    "options": [
+      "Ajusta recursos automaticamente",
+      "Gerencia bancos de dados",
+      "Monitora custos",
+      "Protege APIs"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Auto Scaling monitora suas aplicações e ajusta automaticamente a capacidade para manter um desempenho estável e previsível com o menor custo possível. Ele ajuda a garantir que você tenha o número correto de instâncias Amazon EC2 disponíveis para lidar com a carga de sua aplicação. Gerenciamento de bancos de dados é RDS/DynamoDB, monitoramento de custos é Cost Explorer, e proteção de APIs é WAF/Shield.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 41,
+    "text": "Qual serviço gerencia filas de mensagens avançadas?",
+    "options": ["Amazon MQ", "Amazon SQS", "Amazon SNS", "AWS Lambda"],
+    "correctAnswers": [0],
+    "explanation": "Amazon MQ é um serviço de message broker gerenciado para Apache ActiveMQ e RabbitMQ que facilita a configuração e operação de message brokers na nuvem [not explicitly in CLF-C02 guide services list but a known AWS service for this purpose]. Ele suporta protocolos padrão da indústria. Amazon SQS é um serviço de fila simples, SNS é para notificações, e Lambda é computação sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 43,
+    "text": "O que é o Amazon Lightsail?",
+    "options": [
+      "Serviço de VPS simplificado",
+      "Ferramenta de custo",
+      "Serviço de DNS",
+      "Firewall"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Lightsail é projetado para ser a maneira mais fácil de lançar e gerenciar um servidor privado virtual (VPS) com a AWS. Lightsail inclui tudo que você precisa para iniciar seu projeto rapidamente. Ferramenta de custo é Cost Explorer/Calculadora, serviço de DNS é Route 53, e firewall é WAF/Security Group.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 44,
+    "text": "Qual serviço fornece armazenamento de arquivos?",
+    "options": ["Amazon EFS", "Amazon S3", "Amazon Glacier", "AWS Backup"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Elastic File System (Amazon EFS) fornece armazenamento de arquivos simples, escalável e elástico para uso com instâncias Amazon EC2 e serviços AWS no local. Amazon S3 é armazenamento de objetos, Glacier é para arquivamento, e AWS Backup gerencia backups.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 46,
+    "text": "O que é o AWS Snowmobile?",
+    "options": [
+      "Caminhão para transferência de dados",
+      "Serviço de computação",
+      "Ferramenta de monitoramento",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Snowmobile é um serviço de transferência de dados em exabytes usado para mover volumes extremamente grandes de dados para a AWS. É parte da família AWS Snow. Serviço de computação é EC2/Lambda, ferramenta de monitoramento é CloudWatch, serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 49,
+    "text": "O que é o Amazon Athena?",
+    "options": [
+      "Serviço de consulta SQL",
+      "Banco de dados relacional",
+      "Serviço de cache",
+      "Ferramenta de custo"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Athena é um serviço de consulta interativo que facilita a análise de dados no Amazon S3 usando SQL padrão. Athena é sem servidor, então não há infraestrutura para gerenciar. Banco de dados relacional é RDS, serviço de cache é ElastiCache, e ferramenta de custo é Cost Explorer.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 50,
+    "text": "Qual serviço fornece balanceamento de carga?",
+    "options": [
+      "Elastic Load Balancer",
+      "Amazon EC2",
+      "AWS Auto Scaling",
+      "Amazon Route 53"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Elastic Load Balancing (ELB) distribui automaticamente o tráfego de entrada de aplicações em vários destinos, como instâncias Amazon EC2. Amazon EC2 são os destinos, AWS Auto Scaling ajusta o número de destinos, e Route 53 é DNS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 51,
+    "text": "O que o AWS Outposts faz?",
+    "options": [
+      "Leva serviços AWS ao local",
+      "Gerencia custos",
+      "Monitora APIs",
+      "Protege contra DDoS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Outposts é um serviço totalmente gerenciado que estende a infraestrutura, os serviços, as APIs e as ferramentas da AWS para praticamente qualquer datacenter, espaço de colocation ou instalação no local do cliente para uma experiência híbrida consistente. Gerenciamento de custos é Cost Explorer, monitoramento de APIs é CloudTrail/CloudWatch, e proteção DDoS é Shield.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 52,
+    "text": "Quais serviços ajudam na análise de dados? (Escolha dois.)",
+    "options": [
+      "Amazon Redshift",
+      "Amazon QuickSight",
+      "Amazon S3",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [0, 1],
+    "explanation": "Amazon Redshift é um serviço de data warehouse para análise de grandes volumes de dados. Amazon QuickSight é um serviço de business intelligence (BI) escalável, sem servidor, incorporável e alimentado por machine learning, usado para visualização e análise de dados. Amazon S3 armazena dados que podem ser analisados, e AWS Lambda pode processar dados, mas Redshift e QuickSight são serviços de análise dedicados.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 53,
+    "text": "Qual serviço fornece IA conversacional?",
+    "options": ["Amazon Lex", "Amazon SageMaker", "AWS Lambda", "Amazon RDS"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Lex é um serviço para construir interfaces de conversação em qualquer aplicação usando voz e texto. Amazon SageMaker é uma plataforma de ML, Lambda é computação sem servidor, e RDS é banco de dados relacional.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 54,
+    "text": "O que é o Amazon SageMaker?",
+    "options": [
+      "Plataforma de machine learning",
+      "Serviço de DNS",
+      "Ferramenta de custo",
+      "Sistema de arquivos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon SageMaker é um serviço totalmente gerenciado que fornece a cada desenvolvedor e cientista de dados a capacidade de construir, treinar e implantar modelos de machine learning (ML) rapidamente. Serviço de DNS é Route 53, ferramenta de custo é Cost Explorer, e sistema de arquivos é EFS/FSx.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 55,
+    "text": "Quais serviços ajudam na transferência de dados? (Escolha dois.)",
+    "options": ["AWS Snowball", "AWS Data Pipeline", "Amazon S3", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Snowball é um serviço de transporte de dados em escala de petabytes que usa dispositivos seguros para transferir grandes quantidades de dados para dentro e para fora da Nuvem AWS. AWS Data Pipeline é um serviço web que ajuda você a processar e mover dados de forma confiável entre diferentes armazenamentos e serviços de computação da AWS [not explicitly in CLF-C02 guide services list, but fits. AWS Database Migration Service (DMS) is another for data/DB transfer]. Amazon S3 é um destino/origem comum para transferência de dados, e Lambda pode processar dados.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 56,
+    "text": "Qual serviço fornece tradução de idiomas?",
+    "options": [
+      "Amazon Translate",
+      "Amazon Lex",
+      "Amazon Polly",
+      "AWS SageMaker"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Translate é um serviço de tradução automática neural que oferece tradução de idiomas rápida, de alta qualidade e acessível. Amazon Lex é para IA conversacional, Amazon Polly converte texto em fala, e SageMaker é uma plataforma de ML.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 57,
+    "text": "O que é o Amazon Polly?",
+    "options": [
+      "Serviço de texto para voz",
+      "Serviço de tradução",
+      "Plataforma de ML",
+      "Sistema de arquivos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Polly é um serviço que transforma texto em fala realista, permitindo que você crie aplicações que falam. Serviço de tradução é Amazon Translate, plataforma de ML é SageMaker, e sistema de arquivos é EFS/FSx.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 58,
+    "text": "Quais serviços ajudam na automação? (Escolha dois.)",
+    "options": ["AWS Step Functions", "AWS Lambda", "Amazon S3", "AWS Shield"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Step Functions permite coordenar vários serviços da AWS em fluxos de trabalho sem servidor. AWS Lambda permite executar código em resposta a eventos, o que é um componente fundamental da automação. Amazon S3 é armazenamento e AWS Shield é proteção DDoS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 59,
+    "text": "Qual serviço fornece reconhecimento de imagem?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon Lex",
+      "Amazon Translate",
+      "AWS SageMaker"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Rekognition facilita a adição de análise de imagem e vídeo às suas aplicações usando tecnologia de aprendizado profundo. Amazon Lex é para IA conversacional, Amazon Translate traduz texto, e SageMaker é uma plataforma de ML.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 60,
+    "text": "O que é o AWS AppSync?",
+    "options": [
+      "Serviço de API GraphQL",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS AppSync é um serviço totalmente gerenciado que facilita o desenvolvimento de APIs GraphQL. Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 61,
+    "text": "Qual serviço fornece computação de borda?",
+    "options": ["AWS Greengrass", "AWS Lambda", "Amazon EC2", "Amazon S3"],
+    "correctAnswers": [0],
+    "explanation": "AWS IoT Greengrass é um software de tempo de execução de borda e serviço de nuvem de Internet das Coisas (IoT) que ajuda você a construir, implantar e gerenciar software de dispositivo [not in CLF-C02 guide, but relevant. Lambda@Edge (com Lambda) e CloudFront também oferecem computação de borda]. EC2 e S3 são serviços de nuvem centralizados.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 63,
+    "text": "O que é o AWS Glue?",
+    "options": [
+      "Serviço de ETL",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Glue é um serviço de extração, transformação e carregamento (ETL) totalmente gerenciado que facilita a preparação e o carregamento de seus dados para análise. Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 65,
+    "text": "Quais serviços ajudam na recuperação de desastres? (Escolha dois.)",
+    "options": ["AWS Backup", "Amazon S3", "AWS Snowball", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Backup ajuda a centralizar e automatizar o backup de dados, o que é crucial para a recuperação de desastres. Amazon S3 oferece armazenamento durável e pode ser usado para armazenar backups e replicar dados entre regiões para fins de recuperação de desastres. AWS Elastic Disaster Recovery também é um serviço chave. AWS Snowball é para transferência de dados e Lambda para computação.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 68,
+    "text": "Quais serviços ajudam na entrega de e-mails? (Escolha dois.)",
+    "options": ["Amazon SES", "Amazon SNS", "Amazon SQS", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "Amazon Simple Email Service (SES) é um serviço de envio de e-mail econômico, flexível e escalável. Amazon SNS pode ser usado para enviar notificações por e-mail (entre outros protocolos) como parte de um sistema de mensagens de publicação/assinatura. SQS é para filas de mensagens e Lambda para computação.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 69,
+    "text": "O que é o AWS CloudFormation?",
+    "options": [
+      "Infraestrutura como código",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS CloudFormation fornece uma linguagem comum para você modelar e provisionar todos os recursos de infraestrutura em seu ambiente de nuvem (Infraestrutura como Código - IaC). Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 70,
+    "text": "Qual serviço fornece IoT?",
+    "options": ["AWS IoT Core", "AWS Greengrass", "Amazon EC2", "Amazon S3"],
+    "correctAnswers": [0],
+    "explanation": "AWS IoT Core é um serviço de nuvem gerenciado que permite que dispositivos conectados interajam de forma fácil e segura com aplicações de nuvem e outros dispositivos. AWS Greengrass estende os recursos da AWS para dispositivos de borda [not in CLF-C02 guide], EC2 são VMs, e S3 é armazenamento.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 71,
+    "text": "O que o AWS Systems Manager faz?",
+    "options": [
+      "Gerencia recursos",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia custos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Systems Manager fornece uma interface unificada para que você possa visualizar dados operacionais de vários serviços da AWS e permite automatizar tarefas operacionais em seus recursos da AWS. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de custos é Cost Explorer.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 73,
+    "text": "Qual serviço fornece aprendizado profundo?",
+    "options": [
+      "Amazon SageMaker",
+      "Amazon Lex",
+      "Amazon Translate",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon SageMaker é uma plataforma totalmente gerenciada que permite a desenvolvedores e cientistas de dados construir, treinar e implantar modelos de machine learning (ML) em qualquer escala, incluindo modelos de aprendizado profundo. Amazon Lex e Amazon Translate usam aprendizado profundo, mas SageMaker é a plataforma para construir modelos personalizados. Lambda é computação sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 74,
+    "text": "O que é o AWS Elastic Disaster Recovery?",
+    "options": [
+      "Recuperação de desastres",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Elastic Disaster Recovery (AWS DRS) minimiza o tempo de inatividade e a perda de dados com recuperação rápida e confiável de servidores físicos, virtuais e em nuvem para a AWS. Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 75,
+    "text": "Quais serviços ajudam na integração de dados? (Escolha dois.)",
+    "options": ["AWS Glue", "AWS Data Pipeline", "Amazon S3", "AWS Shield"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Glue é um serviço de ETL (extração, transformação e carregamento) que ajuda a preparar e carregar dados para análise, o que é uma forma de integração de dados. AWS Data Pipeline é um serviço web para processar e mover dados entre diferentes armazenamentos e serviços [not explicitly in CLF-C02 guide services list, but fits. AWS Database Migration Service (DMS) can also integrate data]. Amazon S3 pode armazenar dados de várias fontes, e AWS Shield é para proteção DDoS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 76,
+    "text": "Qual serviço fornece VPN?",
+    "options": [
+      "AWS VPN",
+      "Amazon VPC",
+      "AWS Direct Connect",
+      "Amazon Route 53"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Virtual Private Network (AWS VPN) permite que você estabeleça uma conexão segura e privada de sua rede no local ou cliente para sua rede virtual da AWS (VPC). Amazon VPC é a rede virtual, Direct Connect é uma conexão dedicada, e Route 53 é DNS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 78,
+    "text": "Quais serviços ajudam na visualização de dados? (Escolha dois.)",
+    "options": [
+      "Amazon QuickSight",
+      "Amazon Redshift",
+      "Amazon S3",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon QuickSight é um serviço de business intelligence (BI) rápido e baseado na nuvem que facilita a entrega de insights a todos em sua organização, permitindo criar e publicar painéis interativos. Amazon Redshift é um data warehouse que armazena dados para análise, S3 armazena dados, e Lambda processa dados. A pergunta pede dois, mas apenas QuickSight é primariamente para visualização entre as opções.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 79,
+    "text": "Qual serviço fornece transcrição de áudio?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Polly",
+      "Amazon Lex",
+      "AWS SageMaker"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Transcribe é um serviço de reconhecimento automático de fala (ASR) que facilita a adição de recursos de fala para texto às aplicações. Amazon Polly faz texto para fala, Amazon Lex é para chatbots, e SageMaker é uma plataforma de ML.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 80,
+    "text": "O que é o AWS X-Ray?",
+    "options": [
+      "Rastreia aplicações",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS X-Ray ajuda desenvolvedores a analisar e depurar aplicações distribuídas, como aquelas construídas usando uma arquitetura de microsserviços. Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 81,
+    "text": "Qual serviço fornece blockchain gerenciado?",
+    "options": [
+      "Amazon Managed Blockchain",
+      "Amazon QLDB",
+      "Amazon RDS",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Managed Blockchain é um serviço totalmente gerenciado que facilita a criação e o gerenciamento de redes blockchain escaláveis [not in CLF-C02 guide services list, but is the AWS service for this]. Amazon QLDB é um banco de dados ledger [not in CLF-C02 guide]. RDS é relacional, e Lambda é computação sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 83,
+    "text": "O que é o Amazon QLDB?",
+    "options": [
+      "Ledger imutável",
+      "Banco relacional",
+      "Sistema de arquivos",
+      "Ferramenta de custo"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Quantum Ledger Database (QLDB) é um banco de dados ledger totalmente gerenciado que fornece um log de transações transparente, imutável e criptograficamente verificável [not in CLF-C02 guide services list]. Banco relacional é RDS, sistema de arquivos é EFS/FSx, e ferramenta de custo é Cost Explorer.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 84,
+    "text": "Qual serviço fornece computação em tempo real?",
+    "options": ["Amazon Kinesis", "AWS Lambda", "Amazon EC2", "Amazon S3"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Kinesis facilita a coleta, o processamento e a análise de dados de streaming em tempo real. AWS Lambda pode processar dados em (quase) tempo real, EC2 fornece capacidade de computação geral, e S3 é armazenamento. Kinesis é projetado especificamente para fluxos de dados em tempo real.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 87,
+    "text": "Qual serviço fornece monitoramento de contêineres?",
+    "options": ["Amazon CloudWatch", "AWS X-Ray", "AWS Config", "AWS Shield"],
+    "correctAnswers": [0],
+    "explanation": "Amazon CloudWatch coleta dados de monitoramento e operacionais na forma de logs, métricas e eventos, e pode ser usado para monitorar contêineres. AWS X-Ray é para rastreamento de aplicações, AWS Config para rastreamento de configurações, e AWS Shield para proteção DDoS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 88,
+    "text": "Quais serviços ajudam na entrega de mensagens? (Escolha dois.)",
+    "options": ["Amazon SQS", "Amazon SNS", "Amazon EC2", "AWS Budgets"],
+    "correctAnswers": [0, 1],
+    "explanation": "Amazon Simple Queue Service (SQS) oferece uma fila hospedada segura, durável e disponível para integrar e desacoplar sistemas. Amazon Simple Notification Service (SNS) é um serviço de mensagens de publicação/assinatura. EC2 é computação e Budgets é para custos.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 89,
+    "text": "O que é o AWS Global Accelerator?",
+    "options": [
+      "Melhora desempenho de rede",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Global Accelerator é um serviço de rede que melhora a disponibilidade e o desempenho de suas aplicações com usuários globais, usando a rede global da AWS. Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 90,
+    "text": "Qual serviço fornece análise de logs?",
+    "options": [
+      "Amazon CloudWatch Logs",
+      "AWS CloudTrail",
+      "Amazon S3",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon CloudWatch Logs permite monitorar, armazenar e acessar seus arquivos de log e analisá-los com CloudWatch Logs Insights. AWS CloudTrail gera logs de chamadas de API, S3 pode armazenar logs, e Lambda pode processar logs.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 93,
+    "text": "Qual serviço fornece orquestração de contêineres?",
+    "options": ["Amazon ECS", "AWS Fargate", "Amazon EC2", "AWS Lambda"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Elastic Container Service (ECS) é um serviço de orquestração de contêineres altamente escalável e rápido que suporta contêineres Docker. AWS Fargate é um motor de computação para contêineres, EC2 são VMs, e Lambda é computação sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 95,
+    "text": "Quais serviços ajudam na entrega de conteúdo global? (Escolha dois.)",
+    "options": [
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "Amazon S3",
+      "AWS Direct Connect"
+    ],
+    "correctAnswers": [0, 1],
+    "explanation": "Amazon CloudFront é uma Content Delivery Network (CDN) global que entrega conteúdo de locais de borda. Amazon Route 53 é um serviço DNS global que direciona os usuários para a infraestrutura da AWS. Amazon S3 pode armazenar conteúdo. Direct Connect é para conectividade privada.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 96,
+    "text": "Qual serviço fornece armazenamento híbrido?",
+    "options": ["AWS Storage Gateway", "Amazon S3", "Amazon EFS", "AWS Backup"],
+    "correctAnswers": [0],
+    "explanation": "AWS Storage Gateway é um serviço de armazenamento híbrido que permite que suas aplicações no local usem o armazenamento da AWS na nuvem. S3 e EFS são serviços de armazenamento na nuvem, e AWS Backup é para gerenciamento de backup.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 99,
+    "text": "Qual serviço fornece transação em tempo real?",
+    "options": ["Amazon Kinesis", "Amazon RDS", "Amazon DynamoDB", "AWS Glue"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Kinesis Data Streams permite coletar e processar grandes fluxos de registros de dados em tempo real. RDS e DynamoDB são bancos de dados que suportam transações, mas Kinesis é para processamento de fluxos de dados transacionais em tempo real. AWS Glue é para ETL.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 102,
+    "text": "Uma empresa está planejando migrar seu data warehouse on-premises para a AWS. Eles buscam uma solução que seja otimizada para análise de grandes volumes de dados e que se integre com ferramentas de Business Intelligence existentes. Qual serviço da AWS é o mais indicado para este caso de uso?",
+    "options": [
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Redshift",
+      "Amazon S3"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon Redshift é um serviço de data warehouse em escala de petabytes, totalmente gerenciado e rápido, otimizado para análise de dados e consultas complexas, integrando-se com ferramentas de BI. Amazon RDS é para bancos de dados relacionais transacionais. Amazon DynamoDB é um banco de dados NoSQL. Amazon S3 é um serviço de armazenamento de objetos.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 104,
+    "text": "Uma empresa de mídia deseja distribuir grandes arquivos de vídeo para usuários em todo o mundo com baixa latência. Qual combinação de serviços AWS é mais adequada para alcançar este objetivo?",
+    "options": [
+      "Amazon EC2 e Amazon EBS",
+      "Amazon S3 e Amazon CloudFront",
+      "AWS Lambda e Amazon API Gateway",
+      "Amazon VPC e AWS Direct Connect"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon S3 pode ser usado para armazenar os arquivos de vídeo de forma durável e escalável. Amazon CloudFront é uma Content Delivery Network (CDN) que armazena em cache cópias do conteúdo em locais de borda próximos aos usuários, reduzindo a latência na entrega global. EC2 e EBS são para computação e armazenamento em bloco. Lambda e API Gateway são para aplicações sem servidor. VPC e Direct Connect são para rede.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 109,
+    "text": "Uma equipe de desenvolvimento precisa implantar rapidamente uma aplicação web construída em PHP, sem se preocupar com o provisionamento e gerenciamento da infraestrutura subjacente (servidores, balanceadores de carga, etc.). Qual serviço da AWS é o mais adequado para essa finalidade?",
+    "options": [
+      "Amazon EC2 com instâncias configuradas manualmente",
+      "AWS Elastic Beanstalk",
+      "Amazon ECS com AWS Fargate",
+      "AWS Lambda"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Elastic Beanstalk é um serviço fácil de usar para implantar e escalar aplicações e serviços web (incluindo PHP) onde a AWS gerencia a infraestrutura. EC2 manual requer gerenciamento de infraestrutura. ECS com Fargate é para contêineres. Lambda é para funções sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 110,
+    "text": "Uma empresa precisa de um banco de dados relacional gerenciado para sua aplicação. Eles querem que a AWS cuide de tarefas administrativas como patching de software, backups e provisionamento de hardware. Qual serviço atende a esses requisitos?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon ElastiCache",
+      "Instalar um banco de dados em uma instância Amazon EC2",
+      "Amazon RDS (Relational Database Service)"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Amazon RDS (Relational Database Service) facilita a configuração, operação e escalabilidade de um banco de dados relacional na nuvem, automatizando tarefas administrativas. DynamoDB é NoSQL. ElastiCache é um serviço de cache. Instalar um banco de dados no EC2 transfere a responsabilidade de gerenciamento para o cliente.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 112,
+    "text": "Uma organização deseja implementar uma arquitetura de microsserviços e precisa de uma maneira de desacoplar os componentes, garantindo que as mensagens entre eles sejam armazenadas de forma confiável até serem processadas. Qual serviço da AWS é ideal para criar filas de mensagens duráveis?",
+    "options": [
+      "Amazon SNS (Simple Notification Service)",
+      "Amazon SQS (Simple Queue Service)",
+      "AWS Step Functions",
+      "Amazon Kinesis Data Streams"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon SQS (Simple Queue Service) oferece um serviço de enfileiramento de mensagens totalmente gerenciado que permite desacoplar e escalar microsserviços, armazenando mensagens de forma durável. Amazon SNS é um serviço de notificação publish/subscribe. Step Functions orquestra fluxos de trabalho. Kinesis é para streaming de dados em tempo real.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 113,
+    "text": "Uma empresa de jogos está lançando um novo jogo online e espera milhões de jogadores. Eles precisam de um banco de dados com latência de milissegundos de um dígito, altamente escalável e capaz de lidar com um grande volume de leituras e escritas para armazenar pontuações e estados de jogo. Qual serviço de banco de dados da AWS seria a melhor escolha?",
+    "options": [
+      "Amazon Aurora",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "Amazon RDS para SQL Server"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon DynamoDB é um banco de dados NoSQL chave-valor e de documentos que oferece desempenho de milissegundos de um dígito em qualquer escala, tornando-o ideal para aplicações que exigem alta escalabilidade e baixa latência. Amazon Aurora é um banco de dados relacional. Redshift é um data warehouse. RDS para SQL Server é um banco de dados relacional.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 114,
+    "text": "Uma empresa precisa conectar sua rede on-premises à sua Amazon VPC de forma segura e privada, estabelecendo uma conexão dedicada que não passe pela internet pública, para garantir uma largura de banda consistente. Qual serviço da AWS permite isso?",
+    "options": [
+      "AWS VPN (Site-to-Site VPN)",
+      "Amazon VPC Peering",
+      "AWS Direct Connect",
+      "AWS Global Accelerator"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Direct Connect estabelece uma conexão de rede dedicada privada entre suas instalações e a AWS. AWS VPN cria um túnel seguro pela internet. VPC Peering conecta VPCs [not directly in service list, but a VPC feature]. Global Accelerator melhora o desempenho de aplicações globais.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 115,
+    "text": "Um cientista de dados precisa de uma plataforma para construir, treinar e implantar modelos de machine learning (ML) rapidamente, sem ter que gerenciar a infraestrutura subjacente para cada etapa do processo de ML. Qual serviço AWS oferece um ambiente de ML totalmente gerenciado?",
+    "options": [
+      "Amazon EC2 com instâncias otimizadas para ML",
+      "AWS Lambda",
+      "Amazon SageMaker",
+      "AWS Glue"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon SageMaker é um serviço totalmente gerenciado que fornece a capacidade de construir, treinar e implantar modelos de machine learning (ML) rapidamente. EC2 para ML requer gerenciamento manual da infraestrutura. Lambda é para computação sem servidor. Glue é um serviço de ETL.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 116,
+    "text": "Uma empresa está migrando uma aplicação on-premises para a AWS. A aplicação consiste em vários servidores web que precisam distribuir o tráfego de entrada uniformemente entre eles para garantir alta disponibilidade e desempenho. Qual serviço AWS deve ser usado para distribuir o tráfego?",
+    "options": [
+      "Amazon Route 53",
+      "Elastic Load Balancing (ELB)",
+      "AWS Auto Scaling",
+      "Amazon CloudFront"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Elastic Load Balancing (ELB) distribui automaticamente o tráfego de entrada de aplicações em vários destinos, como instâncias Amazon EC2. Route 53 é um serviço DNS. AWS Auto Scaling ajusta o número de instâncias. CloudFront é uma CDN.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 125,
+    "text": "Uma empresa está lançando um novo website de notícias que espera um grande volume de tráfego e precisa que as páginas carreguem rapidamente para usuários em diferentes partes do mundo. Qual serviço da AWS é projetado para entregar conteúdo web estático e dinâmico com baixa latência e alta velocidade de transferência globalmente?",
+    "options": [
+      "Amazon S3",
+      "Amazon EC2 Auto Scaling",
+      "Amazon CloudFront",
+      "AWS Global Accelerator"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon CloudFront é um serviço de rede de entrega de conteúdo (CDN) que armazena em cache o conteúdo em locais da borda (edge locations) próximos aos usuários finais, reduzindo a latência. Amazon S3 armazena o conteúdo. EC2 Auto Scaling lida com a capacidade do servidor. AWS Global Accelerator melhora o desempenho do tráfego da aplicação.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 130,
+    "text": "Uma empresa precisa armazenar logs de auditoria por vários anos para fins de conformidade. Os logs são raramente acessados, mas devem estar disponíveis se necessário. O custo de armazenamento é uma grande preocupação. Qual classe de armazenamento do Amazon S3 seria a MAIS econômica para este caso de uso?",
+    "options": [
+      "S3 Standard",
+      "S3 Glacier Flexible Retrieval",
+      "S3 Glacier Deep Archive",
+      "S3 One Zone-Infrequent Access"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon S3 Glacier Deep Archive é a classe de armazenamento de menor custo da Amazon S3, ideal para arquivamento de dados de longo prazo que são acessados raramente. S3 Glacier Flexible Retrieval é para arquivamento com opções de recuperação mais flexíveis. S3 Standard é para acesso frequente. S3 One Zone-IA não é recomendado para dados que não podem ser facilmente recriados.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 131,
+    "text": "Uma equipe de desenvolvimento está usando contêineres Docker para suas aplicações e precisa de um serviço para orquestrar a implantação, o gerenciamento e a escalabilidade desses contêineres na AWS. Qual serviço da AWS é projetado para essa finalidade?",
+    "options": [
+      "AWS Lambda",
+      "Amazon EC2",
+      "Amazon ECS (Elastic Container Service)",
+      "AWS Elastic Beanstalk"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon Elastic Container Service (Amazon ECS) é um serviço de orquestração de contêineres que oferece suporte a contêineres Docker e permite executar e escalar aplicações em contêineres. AWS Lambda é para computação sem servidor. Amazon EC2 fornece instâncias virtuais. Elastic Beanstalk é uma plataforma como serviço.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 132,
+    "text": "Uma empresa precisa executar uma função de código curta em resposta a uploads de arquivos em um bucket S3, sem precisar provisionar ou gerenciar servidores. Qual serviço de computação da AWS é o MAIS adequado para este cenário?",
+    "options": [
+      "Amazon EC2",
+      "AWS Lambda",
+      "Amazon Lightsail",
+      "AWS Fargate"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Lambda é um serviço de computação sem servidor que permite executar código em resposta a eventos sem provisionar ou gerenciar servidores. Amazon EC2 e Lightsail envolvem o gerenciamento de servidores virtuais. AWS Fargate é para contêineres sem servidor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 133,
+    "text": "Uma aplicação web precisa de um banco de dados relacional com alta disponibilidade e que suporte replicação para diferentes Zonas de Disponibilidade automaticamente. A empresa quer minimizar o esforço de gerenciamento do banco de dados. Qual opção é a MAIS apropriada?",
+    "options": [
+      "Instalar MySQL em uma instância EC2 e configurar replicação manualmente.",
+      "Amazon DynamoDB.",
+      "Amazon RDS com configuração Multi-AZ.",
+      "Amazon Redshift."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon RDS (Relational Database Service) permite configurar implantações Multi-AZ, que provisionam e mantêm uma réplica síncrona em uma Zona de Disponibilidade diferente, fornecendo alta disponibilidade. Instalar em EC2 requer gerenciamento manual. DynamoDB é NoSQL. Redshift é um data warehouse.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 134,
+    "text": "Uma empresa precisa fornecer aos seus funcionários acesso a aplicações de desktop virtualizadas a partir de qualquer dispositivo compatível, sem a complexidade de gerenciar a infraestrutura VDI. Qual serviço da AWS atende a essa necessidade?",
+    "options": [
+      "Amazon AppStream 2.0",
+      "Amazon WorkSpaces",
+      "AWS Client VPN",
+      "Amazon EC2"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon WorkSpaces é um serviço de computação de desktop seguro, totalmente gerenciado e persistente (DaaS). Amazon AppStream 2.0 é para streaming de aplicações. Client VPN fornece acesso à rede. EC2 fornece VMs.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 135,
+    "text": "Uma empresa deseja analisar grandes volumes de dados armazenados em seu data lake no Amazon S3 usando consultas SQL padrão, sem a necessidade de carregar os dados em um banco de dados tradicional ou gerenciar infraestrutura. Qual serviço da AWS permite consultas interativas diretamente nos dados do S3?",
+    "options": [
+      "Amazon Redshift Spectrum",
+      "Amazon Athena",
+      "AWS Glue",
+      "Amazon Kinesis Data Analytics"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon Athena é um serviço de consulta interativo que facilita a análise de dados diretamente no Amazon S3 usando SQL padrão e é sem servidor. Redshift Spectrum também pode consultar dados no S3, mas requer um cluster Redshift. AWS Glue é um serviço de ETL. Kinesis Data Analytics é para análise de streaming.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 136,
+    "text": "Uma empresa de desenvolvimento de software está adotando uma abordagem de DevOps e precisa automatizar seu pipeline de lançamento de software, desde a compilação do código até a implantação em produção. Qual serviço da AWS pode ajudar a modelar e automatizar esse processo de CI/CD (Integração Contínua/Entrega Contínua)?",
+    "options": [
+      "AWS CodeCommit",
+      "AWS CodeBuild",
+      "AWS CodeDeploy",
+      "AWS CodePipeline"
+    ],
+    "correctAnswers": [3],
+    "explanation": "AWS CodePipeline é um serviço de entrega contínua totalmente gerenciado que ajuda a automatizar seus pipelines de lançamento. AWS CodeBuild compila código. CodeCommit [not in CLF-C02 guide] e CodeDeploy [not in CLF-C02 guide] são outros serviços de ferramentas do desenvolvedor.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 141,
+    "text": "Uma organização precisa de um sistema de arquivos compartilhado que possa ser acessado simultaneamente por várias instâncias Amazon EC2 Linux para cargas de trabalho como sistemas de gerenciamento de conteúdo ou desenvolvimento web. O sistema de arquivos precisa escalar automaticamente. Qual serviço de armazenamento da AWS é o MAIS adequado?",
+    "options": [
+      "Amazon S3",
+      "Amazon EBS (Elastic Block Store)",
+      "Amazon EFS (Elastic File System)",
+      "AWS Storage Gateway - File Gateway"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon EFS (Elastic File System) fornece armazenamento de arquivos simples, escalável e elástico para uso com instâncias Amazon EC2. S3 é armazenamento de objetos. EBS fornece volumes de armazenamento em bloco para uma única instância. File Gateway é para acesso no local a arquivos no S3.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 143,
+    "text": "Uma aplicação precisa enviar notificações por e-mail, SMS e push móvel para seus usuários sobre eventos importantes. Qual serviço da AWS é projetado para facilitar o envio de mensagens para múltiplos endpoints de assinatura (como e-mail, SMS, SQS, Lambda)?",
+    "options": [
+      "Amazon SQS (Simple Queue Service)",
+      "Amazon SES (Simple Email Service)",
+      "Amazon SNS (Simple Notification Service)",
+      "Amazon MQ"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon SNS (Simple Notification Service) é um serviço de mensagens de publicação/assinatura que pode enviar notificações para uma variedade de endpoints, incluindo e-mail, SMS e notificações push móveis. SES é especificamente para e-mail. SQS é para enfileiramento de mensagens. Amazon MQ [not in CLF-C02 guide] é um message broker.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 144,
+    "text": "Uma empresa de análise de dados processa grandes conjuntos de dados usando scripts Python. Eles querem executar esses scripts em um ambiente gerenciado sem se preocupar com a infraestrutura subjacente e pagar apenas pelo tempo de execução dos scripts. Os scripts são acionados por eventos. Qual serviço é ideal para esse caso?",
+    "options": [
+      "Amazon EC2 com cron jobs",
+      "AWS Elastic Beanstalk",
+      "AWS Lambda",
+      "Amazon EMR"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Lambda é um serviço de computação sem servidor que permite executar código em resposta a eventos, pagando apenas pelo tempo de computação consumido. EC2 requer gerenciamento de servidor. Elastic Beanstalk é para aplicações web. EMR é para processamento de big data.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 166,
+    "text": "Uma empresa precisa de uma capacidade computacional escalável para hospedar um website que experimenta tráfego flutuante. Eles querem controle total sobre o sistema operacional e o ambiente de software. Qual serviço de computação da AWS é o MAIS adequado para este requisito?",
+    "options": [
+      "AWS Lambda",
+      "Amazon EC2 (Elastic Compute Cloud)",
+      "AWS Elastic Beanstalk",
+      "Amazon S3 (para hospedagem de site estático)"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon EC2 fornece capacidade computacional segura e redimensionável (máquinas virtuais) na nuvem, oferecendo controle total sobre o sistema operacional, aplicações e ambiente de software. Lambda é sem servidor. Elastic Beanstalk abstrai o gerenciamento da infraestrutura. S3 é para sites estáticos.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 167,
+    "text": "Uma organização precisa armazenar terabytes de arquivos de backup e mídia que são acessados com pouca frequência, mas devem ser altamente duráveis e recuperáveis dentro de algumas horas, se necessário. Qual serviço de armazenamento da AWS oferece uma solução de baixo custo e durável para esses dados 'frios'?",
+    "options": [
+      "Amazon EBS (Elastic Block Store) - Magnetic volumes",
+      "Amazon S3 Standard",
+      "Amazon S3 Glacier Flexible Retrieval (anteriormente S3 Glacier)",
+      "Amazon EFS (Elastic File System)"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon S3 Glacier Flexible Retrieval é uma classe de armazenamento segura, durável e de custo extremamente baixo para arquivamento de dados e backup de longo prazo. Ele é otimizado para dados que são acessados com pouca frequência e para os quais tempos de recuperação de alguns minutos a várias horas são adequados. EBS é armazenamento em bloco para EC2. S3 Standard é para dados acessados frequentemente. EFS é armazenamento de arquivos compartilhado.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 168,
+    "text": "Uma empresa está implantando uma aplicação em várias instâncias EC2 atrás de um balanceador de carga. Eles querem que o número de instâncias EC2 aumente ou diminua automaticamente com base na utilização da CPU para otimizar o desempenho e os custos. Qual serviço da AWS permite essa funcionalidade?",
+    "options": [
+      "Amazon CloudWatch Alarms",
+      "AWS Auto Scaling",
+      "Elastic Load Balancing (Application Load Balancer)",
+      "Amazon Route 53 health checks"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Auto Scaling monitora suas aplicações e ajusta automaticamente a capacidade (por exemplo, o número de instâncias EC2) para manter um desempenho estável e previsível com o menor custo possível, com base em métricas como a utilização da CPU. CloudWatch Alarms pode acionar ações de Auto Scaling. ELB distribui tráfego. Route 53 faz verificações de saúde para DNS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 169,
+    "text": "Uma aplicação precisa de um banco de dados NoSQL totalmente gerenciado, altamente escalável, com baixa latência para armazenar e recuperar perfis de usuário e dados de sessão. Qual serviço de banco de dados da AWS é projetado para esses requisitos?",
+    "options": [
+      "Amazon RDS para MySQL",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "Amazon Aurora"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon DynamoDB é um serviço de banco de dados NoSQL chave-valor e de documentos totalmente gerenciado que oferece desempenho de milissegundos de um dígito em qualquer escala. É ideal para aplicações que exigem alta escalabilidade e baixa latência, como gerenciamento de perfis de usuário e dados de sessão. RDS e Aurora são relacionais. Redshift é um data warehouse.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 170,
+    "text": "Uma empresa deseja isolar seus recursos da AWS em uma rede virtual privada na nuvem, onde possa definir seus próprios intervalos de endereços IP, sub-redes, tabelas de rotas e gateways de rede. Qual serviço da AWS permite criar essa rede isolada?",
+    "options": [
+      "AWS Direct Connect",
+      "Amazon CloudFront",
+      "Amazon VPC (Virtual Private Cloud)",
+      "AWS Shield"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon Virtual Private Cloud (VPC) permite provisionar uma seção logicamente isolada da Nuvem AWS onde você pode executar recursos da AWS em uma rede virtual que você define, tendo controle sobre seu ambiente de rede virtual. Direct Connect é para conectividade dedicada. CloudFront é uma CDN. Shield é para proteção DDoS.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 171,
+    "text": "Uma empresa precisa de um serviço de DNS (Domain Name System) altamente disponível e escalável para traduzir nomes de domínio de sites (como www.exemplo.com) em endereços IP numéricos. Qual serviço da AWS fornece essa funcionalidade?",
+    "options": [
+      "Elastic Load Balancing (ELB)",
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "Amazon API Gateway"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon Route 53 é um serviço web de Sistema de Nomes de Domínio (DNS) na nuvem altamente disponível e escalável. Ele é projetado para fornecer aos desenvolvedores e empresas uma maneira extremamente confiável e econômica de direcionar os usuários finais para aplicações da Internet. ELB distribui tráfego. CloudFront é uma CDN. API Gateway gerencia APIs.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 172,
+    "text": "Uma aplicação requer um sistema de arquivos compartilhado que possa ser montado em múltiplas instâncias EC2 Linux simultaneamente e que escale automaticamente conforme os dados são adicionados ou removidos. Qual serviço de armazenamento da AWS é o MAIS adequado para este cenário?",
+    "options": [
+      "Amazon S3",
+      "Amazon EBS (Elastic Block Store) Multi-Attach",
+      "Amazon EFS (Elastic File System)",
+      "AWS Storage Gateway (File Gateway)"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon EFS (Elastic File System) fornece armazenamento de arquivos simples, escalável e elástico para uso com instâncias Amazon EC2. Ele é projetado para fornecer acesso compartilhado a dados para múltiplas instâncias EC2 simultaneamente e escala automaticamente. S3 é armazenamento de objetos. EBS Multi-Attach tem limitações e é para casos de uso específicos de cluster. File Gateway é para acesso híbrido.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 173,
+    "text": "Uma equipe de desenvolvimento precisa de uma maneira fácil de implantar e escalar uma aplicação web desenvolvida em Node.js, sem ter que se preocupar com o provisionamento da infraestrutura, gerenciamento de patches ou configuração de balanceadores de carga. Qual serviço da AWS abstrai a infraestrutura subjacente para este caso de uso?",
+    "options": [
+      "Amazon EC2 com PM2",
+      "AWS Lambda com Amazon API Gateway",
+      "AWS Elastic Beanstalk",
+      "Amazon ECS com definições de tarefa manuais"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Elastic Beanstalk é um serviço fácil de usar para implantar e escalar aplicações e serviços web desenvolvidos com linguagens como Node.js. Você simplesmente carrega seu código, e o Elastic Beanstalk lida automaticamente com a implantação, desde o provisionamento de capacidade, balanceamento de carga, auto-scaling até o monitoramento da saúde da aplicação.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 174,
+    "text": "Uma empresa precisa processar um grande volume de dados de streaming em tempo real, como logs de cliques de websites ou dados de telemetria de dispositivos IoT, para análises imediatas. Qual serviço da AWS é projetado para coletar, processar e analisar fluxos de dados em tempo real?",
+    "options": [
+      "Amazon SQS (Simple Queue Service)",
+      "AWS Glue",
+      "Amazon Kinesis",
+      "AWS Batch"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon Kinesis facilita a coleta, o processamento e a análise de dados de streaming em tempo real para que você possa obter insights oportunos e reagir rapidamente a novas informações. Ele pode lidar com qualquer quantidade de dados de streaming de centenas de milhares de fontes. SQS é para filas de mensagens. Glue é para ETL. Batch é para processamento em lote.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  },
+  {
+    "id": 175,
+    "text": "Para melhorar a disponibilidade de uma aplicação web, uma empresa decide implantá-la em instâncias EC2 distribuídas em diferentes locais físicos isolados dentro da mesma Região AWS. Esses locais isolados são conhecidos como:",
+    "options": [
+      "Locais da Borda (Edge Locations)",
+      "Regiões AWS",
+      "Zonas de Disponibilidade (Availability Zones)",
+      "Pontos de Presença (PoPs)"
+    ],
+    "correctAnswers": [2],
+    "explanation": "As Zonas de Disponibilidade (AZs) são locais distintos dentro de uma Região AWS que são projetados para serem isolados de falhas em outras AZs e fornecem conectividade de rede de baixa latência e alta largura de banda para outras AZs na mesma Região. Implantar em múltiplas AZs aumenta a disponibilidade.",
+    "category": "Tecnologia e Serviços da Nuvem"
+  }
+]

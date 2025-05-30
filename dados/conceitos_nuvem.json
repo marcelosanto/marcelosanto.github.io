@@ -1,0 +1,304 @@
+[
+  {
+    "id": 1,
+    "text": "Qual é o principal benefício da computação em nuvem da AWS?",
+    "options": [
+      "Custo fixo previsível",
+      "Escalabilidade sob demanda",
+      "Controle total do hardware",
+      "Manutenção local"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A escalabilidade sob demanda (elasticidade) é um benefício fundamental da nuvem AWS, permitindo ajustar recursos (aumentar ou diminuir) conforme a necessidade e a demanda. Isso difere dos custos fixos de datacenters locais, onde o provisionamento excessivo é comum. A AWS gerencia o hardware e a manutenção da infraestrutura da nuvem, o que está alinhado com o Modelo de Responsabilidade Compartilhada.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 26,
+    "text": "Quais são benefícios do modelo pay-as-you-go? (Escolha dois.)",
+    "options": [
+      "Custo fixo",
+      "Flexibilidade",
+      "Sem investimento inicial",
+      "Manutenção local"
+    ],
+    "correctAnswers": [1, 2],
+    "explanation": "O modelo pay-as-you-go (pague conforme o uso) oferece flexibilidade para escalar recursos para cima ou para baixo e elimina a necessidade de grandes investimentos iniciais em hardware (CapEx), transformando-os em despesas operacionais variáveis (OpEx). Custos fixos e manutenção local são características de ambientes on-premises.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 32,
+    "text": "Quais serviços ajudam na migração? (Escolha dois.)",
+    "options": ["AWS Snowball", "AWS Migration Hub", "Amazon S3", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "A família AWS Snow (que inclui Snowball) oferece dispositivos para transferir grandes quantidades de dados para dentro e fora da AWS. AWS Migration Hub fornece um local único para rastrear o progresso das migrações de aplicações em várias soluções AWS e de parceiros. Amazon S3 é armazenamento de objetos e AWS Lambda é computação sem servidor.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 37,
+    "text": "O que é o AWS Well-Architected Framework?",
+    "options": [
+      "Guia de boas práticas",
+      "Serviço de monitoramento",
+      "Ferramenta de custo",
+      "Firewall"
+    ],
+    "correctAnswers": [0],
+    "explanation": "O AWS Well-Architected Framework ajuda os arquitetos de nuvem a construir infraestruturas seguras, de alto desempenho, resilientes e eficientes para suas aplicações e cargas de trabalho. Ele fornece um conjunto de melhores práticas e princípios de design em seis pilares. Um serviço de monitoramento é o CloudWatch, uma ferramenta de custo é o Cost Explorer, e um firewall pode ser AWS WAF ou Security Groups.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 38,
+    "text": "Quais são pilares do Well-Architected? (Escolha dois.)",
+    "options": [
+      "Segurança",
+      "Otimização de custos",
+      "Escalabilidade máxima",
+      "Manutenção local"
+    ],
+    "correctAnswers": [0, 1],
+    "explanation": "O AWS Well-Architected Framework é baseado em seis pilares: Excelência Operacional, Segurança, Confiabilidade, Eficiência de Desempenho, Otimização de Custos e Sustentabilidade. Portanto, Segurança e Otimização de Custos são dois desses pilares. 'Escalabilidade máxima' se encaixaria em Eficiência de Desempenho ou Confiabilidade, mas não é um pilar em si. 'Manutenção local' não é um conceito da nuvem AWS.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 48,
+    "text": "Quais serviços ajudam na escalabilidade? (Escolha dois.)",
+    "options": ["AWS Auto Scaling", "Amazon EC2", "AWS Lambda", "Amazon S3"],
+    "correctAnswers": [0, 2],
+    "explanation": "AWS Auto Scaling monitora suas aplicações e ajusta automaticamente a capacidade para manter um desempenho estável e previsível. AWS Lambda escala automaticamente sua aplicação executando código em resposta a cada gatilho. Amazon EC2 fornece instâncias que podem ser escaladas, mas o Auto Scaling é o serviço que automatiza isso. Amazon S3 é inerentemente escalável para armazenamento.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 72,
+    "text": "Quais serviços ajudam na otimização de desempenho? (Escolha dois.)",
+    "options": [
+      "Amazon CloudFront",
+      "AWS Auto Scaling",
+      "Amazon S3",
+      "AWS Budgets"
+    ],
+    "correctAnswers": [0, 1],
+    "explanation": "Amazon CloudFront (CDN) melhora o desempenho entregando conteúdo de locais de borda próximos aos usuários, reduzindo a latência. AWS Auto Scaling ajuda a manter o desempenho da aplicação ajustando automaticamente a capacidade para atender à demanda. Amazon S3 é armazenamento. AWS Budgets é para gerenciamento de custos.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 101,
+    "text": "Uma startup de e-commerce está crescendo rapidamente e precisa garantir que seu website possa lidar com picos de tráfego durante promoções, sem provisionar excessivamente recursos caros. Qual benefício da nuvem AWS atende MELHOR a essa necessidade?",
+    "options": [
+      "Alcance global imediato",
+      "Elasticidade e escalabilidade sob demanda",
+      "Custos de capital (CapEx) em vez de custos operacionais (OpEx)",
+      "Controle total sobre o hardware físico"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A elasticidade e a escalabilidade sob demanda permitem que a startup ajuste os recursos computacionais conforme a variação do tráfego, pagando apenas pelo que usa. Isso evita o provisionamento excessivo e os custos associados. O alcance global é um benefício, mas a elasticidade aborda diretamente o problema do tráfego variável. A nuvem AWS foca em OpEx em vez de CapEx. O controle do hardware físico não é um benefício da nuvem gerenciada pela AWS.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 103,
+    "text": "Uma organização precisa garantir que suas aplicações na AWS sigam as melhores práticas de arquitetura em relação à segurança, confiabilidade e otimização de custos. Qual recurso da AWS pode orientá-los nesse processo?",
+    "options": [
+      "AWS Cost Explorer",
+      "AWS Trusted Advisor",
+      "AWS Well-Architected Framework",
+      "Amazon CloudWatch"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O AWS Well-Architected Framework fornece um conjunto de melhores práticas e princípios de design para ajudar a construir infraestruturas seguras, de alto desempenho, resilientes e eficientes. O AWS Trusted Advisor oferece recomendações baseadas nesses pilares, mas o Framework é o guia conceitual. O AWS Cost Explorer ajuda a visualizar custos. O Amazon CloudWatch é para monitoramento.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 119,
+    "text": "Uma empresa de software está implantando uma aplicação crítica que exige alta disponibilidade e tolerância a falhas. Eles decidiram usar várias Zonas de Disponibilidade (AZs) dentro de uma Região AWS. Qual é o principal benefício dessa abordagem?",
+    "options": [
+      "Menor custo de transferência de dados entre AZs.",
+      "Proteção contra falhas em nível de Região.",
+      "Aplicações podem permanecer operacionais mesmo se uma AZ falhar.",
+      "Melhora a soberania dos dados, isolando-os em uma única AZ."
+    ],
+    "correctAnswers": [2],
+    "explanation": "As Zonas de Disponibilidade são locais fisicamente separados dentro de uma Região AWS, projetadas para serem isoladas de falhas em outras AZs. Ao implantar uma aplicação em várias AZs, ela pode permanecer operacional mesmo se uma única AZ se tornar indisponível. A proteção contra falhas em nível de Região exigiria o uso de várias Regiões.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 121,
+    "text": "Uma empresa de varejo deseja expandir suas operações para um novo país rapidamente, sem investir em infraestrutura física local. Qual benefício principal da Nuvem AWS permite essa agilidade e alcance?",
+    "options": [
+      "Pagamento conforme o uso (pay-as-you-go)",
+      "Infraestrutura global e alcance geográfico",
+      "Segurança gerenciada pela AWS",
+      "Elasticidade e escalabilidade"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A infraestrutura global da AWS, com Regiões e Zonas de Disponibilidade em todo o mundo, permite que as empresas implantem aplicações e serviços próximos aos seus usuários em diferentes localizações geográficas rapidamente. Isso facilita a expansão global. O pagamento conforme o uso, a segurança e a elasticidade são benefícios, mas a infraestrutura global aborda a expansão geográfica.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 122,
+    "text": "Uma startup está desenvolvendo uma nova aplicação e quer garantir que a arquitetura seja eficiente em termos de desempenho e custo desde o início. Qual pilar do AWS Well-Architected Framework foca especificamente em utilizar os recursos de TI e nuvem de forma eficaz para atender aos requisitos do sistema e otimizar os custos?",
+    "options": [
+      "Segurança",
+      "Confiabilidade",
+      "Eficiência de Desempenho",
+      "Excelência Operacional"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O pilar de Eficiência de Desempenho do AWS Well-Architected Framework foca na utilização eficiente dos recursos de computação para atender aos requisitos e manter essa eficiência. A otimização de custos é outro pilar.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 123,
+    "text": "Uma organização está considerando migrar suas aplicações on-premises para a Nuvem AWS e precisa de orientação sobre as diferentes fases e perspectivas envolvidas na jornada de adoção da nuvem, como negócios, pessoas e governança. Qual framework da AWS pode ajudar a estruturar essa jornada?",
+    "options": [
+      "AWS Well-Architected Framework",
+      "AWS Shared Responsibility Model",
+      "AWS Cloud Adoption Framework (AWS CAF)",
+      "AWS Pricing Calculator"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O AWS Cloud Adoption Framework (AWS CAF) fornece orientação para ajudar as organizações a construir um plano para a adoção da nuvem, organizado em seis perspectivas, incluindo Negócios, Pessoas e Governança. O Well-Architected Framework foca no design de arquiteturas. O Shared Responsibility Model define responsabilidades de segurança. A Pricing Calculator estima custos.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 124,
+    "text": "Uma empresa quer evitar grandes investimentos iniciais em hardware e prefere um modelo de custo onde paga apenas pelos recursos de computação que utiliza, com a capacidade de escalar para cima ou para baixo conforme a demanda. Qual aspecto econômico da nuvem AWS descreve MELHOR essa abordagem?",
+    "options": [
+      "Custos de capital (CapEx) fixos",
+      "Economia de escala",
+      "Custos variáveis e pagamento conforme o uso (OpEx)",
+      "Licenciamento Bring-Your-Own-License (BYOL)"
+    ],
+    "correctAnswers": [2],
+    "explanation": "A nuvem AWS permite que as empresas troquem despesas de capital (CapEx) por despesas variáveis (OpEx), pagando apenas pelos recursos de TI que consomem. Isso proporciona flexibilidade para escalar. A economia de escala é um benefício que a AWS repassa.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 146,
+    "text": "Uma empresa de mídia está lançando um novo serviço de streaming de vídeo e espera um crescimento de audiência imprevisível e rápido em diferentes regiões geográficas. Qual benefício fundamental da nuvem AWS é MAIS crucial para lidar com essa demanda incerta e garantir uma boa experiência do usuário globalmente?",
+    "options": [
+      "Custos operacionais fixos (OpEx)",
+      "Controle total sobre o hardware do data center",
+      "Agilidade, elasticidade e alcance global",
+      "Responsabilidade total da AWS pela segurança da aplicação"
+    ],
+    "correctAnswers": [2],
+    "explanation": "A agilidade permite que a empresa responda rapidamente às mudanças. A elasticidade permite escalar recursos para cima ou para baixo conforme a demanda imprevisível do serviço de streaming. O alcance global da infraestrutura AWS (Regiões e Locais da Borda com serviços como CloudFront) é vital para uma boa experiência do usuário em diferentes geografias. Custos na nuvem são variáveis (OpEx). O cliente tem controle sobre a nuvem, não o hardware físico. A segurança da aplicação é uma responsabilidade compartilhada.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 147,
+    "text": "Ao projetar uma nova aplicação crítica na AWS, uma equipe de arquitetos quer garantir que a aplicação possa se recuperar rapidamente de falhas de infraestrutura e que os dados não sejam perdidos. Qual pilar do AWS Well-Architected Framework aborda DIRETAMENTE esses requisitos?",
+    "options": [
+      "Otimização de Custos",
+      "Excelência Operacional",
+      "Segurança",
+      "Confiabilidade"
+    ],
+    "correctAnswers": [3],
+    "explanation": "O pilar de Confiabilidade do AWS Well-Architected Framework foca na capacidade de um sistema se recuperar de falhas de infraestrutura ou serviço, adquirir dinamicamente recursos de computação para atender à demanda e mitigar interrupções como configurações incorretas ou problemas de rede transitórios. Isso inclui estratégias de backup e recuperação de desastres.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 148,
+    "text": "Uma grande empresa com múltiplos datacenters on-premises está iniciando sua jornada para a nuvem AWS. Eles precisam de uma estratégia para mover um grande volume de dados arquivados (petabytes) que não são acessados frequentemente, de forma segura e econômica para a AWS. Qual serviço ou estratégia da AWS é MAIS adequado para esta transferência de dados em larga escala?",
+    "options": [
+      "AWS Direct Connect para transferência online contínua",
+      "AWS Snowmobile",
+      "Transferência via AWS Management Console para buckets S3",
+      "AWS Database Migration Service (DMS)"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Snowmobile é um serviço de transferência de dados em exabytes usado para mover volumes extremamente grandes de dados (múltiplos petabytes) para a AWS. Para essa escala de dados arquivados, o Snowmobile é mais eficiente e econômico do que transferências online, mesmo com Direct Connect. DMS é para migração de bancos de dados.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 149,
+    "text": "Uma startup está comparando os custos de manter sua infraestrutura de TI on-premises versus migrar para a Nuvem AWS. Qual é uma vantagem econômica CHAVE da Nuvem AWS em relação aos datacenters tradicionais on-premises?",
+    "options": [
+      "Transformar despesas operacionais (OpEx) em despesas de capital (CapEx)",
+      "Necessidade de provisionar capacidade para picos de carga previstos, resultando em maior utilização média",
+      "Substituir despesas de capital iniciais (CapEx) por despesas operacionais variáveis (OpEx)",
+      "Custos de hardware e software totalmente previsíveis e fixos anualmente"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Uma vantagem econômica chave da Nuvem AWS é a capacidade de substituir grandes despesas de capital (CapEx) iniciais, como a compra de servidores e infraestrutura de data center, por despesas operacionais (OpEx) variáveis, onde você paga apenas pelos recursos que consome. Isso elimina a necessidade de provisionamento excessivo para picos de carga.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 150,
+    "text": "Uma empresa está desenvolvendo uma aplicação que será usada globalmente. Para garantir baixa latência para todos os usuários, independentemente de sua localização, qual aspecto da infraestrutura global da AWS é MAIS relevante considerar ao implantar a aplicação?",
+    "options": [
+      "Utilizar uma única Zona de Disponibilidade para simplificar o gerenciamento.",
+      "Implantar a aplicação em múltiplas Regiões AWS próximas aos usuários finais.",
+      "Aumentar o tamanho das instâncias EC2 na Região primária.",
+      "Implementar políticas de IAM rigorosas para acesso global."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Para fornecer baixa latência a usuários globais, a implantação da aplicação em múltiplas Regiões AWS, geograficamente distribuídas e próximas aos usuários finais, é a estratégia mais eficaz. Cada Região é uma área geográfica separada. Zonas de Disponibilidade fornecem alta disponibilidade dentro de uma Região, mas não resolvem a latência global.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 151,
+    "text": "Uma empresa está buscando reduzir o custo total de propriedade (TCO) de sua infraestrutura de TI. Ao migrar para a Nuvem AWS, quais custos associados a um data center on-premises são tipicamente reduzidos ou eliminados?",
+    "options": [
+      "Custos de licenciamento de software aplicativo.",
+      "Custos de desenvolvimento de novas funcionalidades.",
+      "Custos de aquisição de hardware, manutenção, energia e espaço físico do data center.",
+      "Custos de treinamento de pessoal em novas tecnologias."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Ao migrar para a Nuvem AWS, as empresas podem reduzir significativamente ou eliminar os custos associados à aquisição e manutenção de hardware físico, custos de energia, refrigeração e o espaço físico do data center, que são componentes do TCO de um ambiente on-premises. Custos de licenciamento de software aplicativo e desenvolvimento podem ou não mudar drasticamente, e treinamento ainda é necessário.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 152,
+    "text": "Uma organização quer otimizar seus gastos na AWS, garantindo que está usando os tipos e tamanhos de instância corretos para suas cargas de trabalho e identificando recursos ociosos. Qual pilar do AWS Well-Architected Framework se concentra em evitar custos desnecessários?",
+    "options": [
+      "Segurança",
+      "Confiabilidade",
+      "Otimização de Custos",
+      "Eficiência de Desempenho"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O pilar de Otimização de Custos do AWS Well-Architected Framework foca em evitar ou eliminar custos não necessários ou recursos subótimos, pagando o preço mais baixo possível enquanto ainda atende aos requisitos funcionais e de desempenho. Isso inclui o dimensionamento correto dos recursos.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 153,
+    "text": "Uma empresa possui um data center on-premises e deseja estender sua infraestrutura para a Nuvem AWS, mantendo algumas cargas de trabalho no local e movendo outras para a nuvem, com conectividade segura entre os ambientes. Que tipo de modelo de implantação na nuvem isso representa?",
+    "options": [
+      "Totalmente na nuvem (Cloud-native)",
+      "On-premises exclusivo",
+      "Nuvem Híbrida",
+      "Nuvem Privada hospedada pela AWS"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Uma implantação de nuvem híbrida conecta infraestrutura on-premises (ou nuvens privadas) com infraestrutura de nuvem pública, como a AWS. As organizações podem executar aplicações em ambos os ambientes, gerenciando-os como um ambiente integrado ou interconectado.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 154,
+    "text": "Uma empresa está considerando o uso do AWS Cloud Adoption Framework (AWS CAF) para sua migração para a nuvem. Qual das seguintes opções representa uma das seis perspectivas abordadas pelo AWS CAF?",
+    "options": [
+      "Perspectiva de Rede",
+      "Perspectiva de Pessoas",
+      "Perspectiva de Banco de Dados",
+      "Perspectiva de Armazenamento"
+    ],
+    "correctAnswers": [1],
+    "explanation": "O AWS Cloud Adoption Framework (AWS CAF) organiza sua orientação em seis áreas de foco, chamadas Perspectivas: Negócios, Pessoas, Governança, Plataforma, Segurança e Operações. A perspectiva de Pessoas aborda papéis, habilidades e prontidão organizacional.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 155,
+    "text": "Qual dos seguintes é um exemplo de benefício da elasticidade na Nuvem AWS?",
+    "options": [
+      "A capacidade de implantar recursos em múltiplas Regiões AWS.",
+      "A capacidade de aumentar ou diminuir automaticamente a capacidade dos recursos para atender à demanda flutuante.",
+      "A garantia de que os dados serão automaticamente replicados em pelo menos três Zonas de Disponibilidade.",
+      "A redução de custos obtida através de compromissos de longo prazo com Instâncias Reservadas."
+    ],
+    "correctAnswers": [1],
+    "explanation": "A elasticidade na nuvem refere-se à capacidade de adquirir recursos conforme você precisa deles e liberá-los quando não precisar mais. Na AWS, isso muitas vezes se traduz na capacidade de escalar automaticamente para cima (aumentar capacidade) ou para baixo (diminuir capacidade) em resposta à demanda.",
+    "category": "Conceitos da Nuvem"
+  }
+]

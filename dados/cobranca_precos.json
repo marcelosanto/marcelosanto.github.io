@@ -1,0 +1,344 @@
+[
+  {
+    "id": 10,
+    "text": "O que a AWS Pricing Calculator faz?",
+    "options": [
+      "Monitora uso",
+      "Estima custos",
+      "Gera relatórios",
+      "Controla acesso"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A Calculadora de Preços da AWS permite explorar os serviços da AWS e criar uma estimativa dos custos para seus casos de uso na AWS. O monitoramento de uso é feito pelo CloudWatch ou Cost Explorer, relatórios de custos são gerados pelo AWS Cost and Usage Report ou Cost Explorer, e o controle de acesso é gerenciado pelo AWS IAM.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 12,
+    "text": "Quais serviços ajudam a reduzir custos? (Escolha dois.)",
+    "options": ["AWS Budgets", "AWS Cost Explorer", "Amazon SNS", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Budgets permite definir orçamentos personalizados que alertam quando seus custos ou uso excedem (ou estão previstos para exceder) seu valor orçado. AWS Cost Explorer possui uma interface fácil de usar que permite visualizar, entender e gerenciar seus custos e uso da AWS ao longo do tempo. Amazon SNS é para notificações e AWS Lambda para computação sem servidor; embora Lambda possa ser econômico, Budgets e Cost Explorer são ferramentas diretas de gerenciamento de custos.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 13,
+    "text": "O que é o nível gratuito da AWS?",
+    "options": [
+      "Serviços ilimitados",
+      "Uso gratuito por 12 meses",
+      "Desconto permanente",
+      "Apenas para grandes empresas"
+    ],
+    "correctAnswers": [1],
+    "explanation": "O nível gratuito da AWS oferece a certos serviços e quantidades de uso gratuitamente por 12 meses após a inscrição inicial da conta, além de ofertas que não expiram [general AWS knowledge, mentioned as a concept in]. O objetivo é dar experiência prática com os serviços da AWS. Não são serviços ilimitados e está disponível para diversos tipos de clientes, não apenas grandes empresas.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 20,
+    "text": "Uma empresa deseja receber uma notificação quando um limite de custo específico da AWS for atingido. Quais serviços ou ferramentas da AWS a empresa pode usar para atender a esse requisito? (Escolha dois.)",
+    "options": [
+      "AWS Budgets",
+      "AWS Cost and Usage Report",
+      "Cost Explorer",
+      "Amazon Simple Queue Service (Amazon SQS)",
+      "Amazon CloudWatch"
+    ],
+    "correctAnswers": [0, 4],
+    "explanation": "AWS Budgets permite definir orçamentos personalizados e acionar alertas (por exemplo, via Amazon SNS, que pode integrar com CloudWatch) quando os custos ou o uso excedem os limites definidos. Amazon CloudWatch pode ser usado para monitorar métricas de faturamento e criar alarmes que notificam quando os limites são atingidos, muitas vezes em conjunto com AWS Budgets. O AWS Cost and Usage Report fornece dados detalhados de custos, Cost Explorer é para análise, e SQS é um serviço de enfileiramento de mensagens.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 21,
+    "text": "Uma empresa está explorando o uso da Nuvem AWS e precisa criar uma estimativa de custo para um projeto antes que a infraestrutura seja provisionada. Qual serviço ou recurso da AWS pode ser usado para estimar custos antes da implantação?",
+    "options": [
+      "AWS Pricing Calculator",
+      "Nível gratuito da AWS",
+      "AWS Billing and Cost Management",
+      "AWS Cost and Usage Report"
+    ],
+    "correctAnswers": [0],
+    "explanation": "O AWS Pricing Calculator (Calculadora de Preços da AWS) permite que você configure uma estimativa de custo detalhada para sua arquitetura AWS específica. O Nível gratuito da AWS oferece alguns serviços gratuitos [general AWS knowledge, mentioned as a concept in], o AWS Billing and Cost Management é para gerenciar custos existentes, e o AWS Cost and Usage Report é para relatórios detalhados de custos.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 31,
+    "text": "O que é o AWS Marketplace?",
+    "options": [
+      "Loja de software",
+      "Serviço de DNS",
+      "Ferramenta de monitoramento",
+      "Gerenciador de custos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Marketplace é um catálogo digital com milhares de listagens de software de fornecedores de software independentes (ISVs) que facilitam encontrar, testar, comprar e implantar software que roda na AWS. DNS é Route 53, monitoramento é CloudWatch, e gerenciador de custos pode ser Cost Explorer.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 77,
+    "text": "O que é o AWS Cost Anomaly Detection?",
+    "options": [
+      "Detecta anomalias de custo",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia segredos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Cost Anomaly Detection é um recurso do AWS Cost Management que usa machine learning para identificar gastos anormais e suas causas raízes [related to cost management under]. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de segredos é Secrets Manager.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 91,
+    "text": "O que o AWS Compute Optimizer faz?",
+    "options": [
+      "Recomenda recursos",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia custos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Compute Optimizer recomenda recursos de computação ótimos para suas cargas de trabalho para reduzir custos e melhorar o desempenho. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de custos é Cost Explorer.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 94,
+    "text": "O que é o AWS Budgets?",
+    "options": [
+      "Define limites de custo",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia segredos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Budgets permite definir orçamentos personalizados para rastrear seu custo e uso da AWS e alerta quando os custos ou o uso excedem seu valor orçado. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de segredos é Secrets Manager.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 98,
+    "text": "Quais serviços ajudam na gestão de custos? (Escolha dois.)",
+    "options": ["AWS Cost Explorer", "AWS Budgets", "Amazon SNS", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Cost Explorer tem uma interface fácil de usar que permite visualizar, entender e gerenciar seus custos e uso da AWS. AWS Budgets permite definir orçamentos personalizados para rastrear seu custo e uso da AWS. Amazon SNS é para notificações e AWS Lambda é computação sem servidor.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 100,
+    "text": "O que é o AWS Trusted Advisor?",
+    "options": [
+      "Recomenda otimizações",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia segredos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Trusted Advisor é um recurso online que ajuda você a reduzir custos, aumentar o desempenho e melhorar a segurança, fornecendo recomendações em tempo real com base nas melhores práticas da AWS. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de segredos é Secrets Manager.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 117,
+    "text": "Uma empresa quer reduzir seus custos com instâncias Amazon EC2 que executam cargas de trabalho não críticas e tolerantes a falhas, como processamento em lote, que podem ser interrompidas. Qual opção de compra de instâncias EC2 oferece o MAIOR desconto, mas pode resultar na interrupção das instâncias pela AWS?",
+    "options": [
+      "Instâncias Reservadas (Reserved Instances)",
+      "Instâncias Sob Demanda (On-Demand Instances)",
+      "Savings Plans",
+      "Instâncias Spot (Spot Instances)"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Instâncias Spot (Spot Instances) permitem que você aproveite a capacidade EC2 não utilizada na nuvem AWS com descontos significativos. A AWS pode interromper essas instâncias com um aviso. Instâncias Reservadas e Savings Plans oferecem descontos em troca de compromissos de uso a longo prazo.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 118,
+    "text": "O departamento financeiro de uma empresa precisa visualizar e analisar os gastos da AWS por serviço, por conta vinculada e por tags de alocação de custos para entender melhor onde o orçamento está sendo consumido. Qual ferramenta da AWS oferece esses recursos de visualização e análise de custos?",
+    "options": [
+      "AWS Budgets",
+      "AWS Cost Explorer",
+      "Calculadora de Preços da AWS",
+      "Relatórios de Custo e Uso da AWS (AWS Cost and Usage Reports)"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Cost Explorer possui uma interface fácil de usar que permite visualizar, entender e gerenciar seus custos e uso da AWS ao longo do tempo, incluindo a capacidade de filtrar e agrupar dados. AWS Budgets é para definir limites e alertas de custo. A Calculadora de Preços estima custos futuros. Os Relatórios de Custo e Uso fornecem dados brutos detalhados.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 137,
+    "text": "Uma empresa possui uma carga de trabalho estável e previsível em instâncias Amazon EC2 e deseja obter um desconto significativo em comparação com os preços Sob Demanda, comprometendo-se com um uso consistente por um período de 1 ou 3 anos. Qual opção de compra do EC2 é a MAIS adequada?",
+    "options": [
+      "Instâncias Spot",
+      "Hosts Dedicados",
+      "Instâncias Reservadas (Reserved Instances) ou Savings Plans",
+      "Instâncias Sob Demanda com AWS Budgets"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Instâncias Reservadas (RIs) e Savings Plans oferecem descontos significativos em troca de um compromisso de uso. Instâncias Spot são para cargas de trabalho tolerantes a falhas. Hosts Dedicados são para requisitos específicos. AWS Budgets ajuda a rastrear custos.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 138,
+    "text": "Uma equipe financeira precisa entender detalhadamente os custos da AWS e alocá-los a diferentes departamentos ou projetos dentro da organização. Qual recurso da AWS é fundamental para categorizar e rastrear custos dessa maneira?",
+    "options": [
+      "Contas consolidadas do AWS Organizations",
+      "Tags de alocação de custos",
+      "AWS Budgets",
+      "Calculadora de Preços da AWS"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Tags de alocação de custos são pares de chave-valor que você pode atribuir a recursos da AWS para organizá-los e rastrear custos. AWS Organizations ajuda a gerenciar várias contas e consolida o faturamento. AWS Budgets define limites de custo. A Calculadora de Preços estima custos.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 139,
+    "text": "Um desenvolvedor está encontrando problemas técnicos ao tentar integrar um serviço da AWS em sua aplicação e precisa de assistência. Além da documentação oficial, qual recurso da AWS oferece suporte técnico através de diferentes planos e acesso a engenheiros de suporte na nuvem?",
+    "options": [
+      "AWS Personal Health Dashboard",
+      "AWS Trusted Advisor",
+      "Planos do AWS Support",
+      "AWS Marketplace"
+    ],
+    "correctAnswers": [2],
+    "explanation": "A AWS oferece uma variedade de planos do AWS Support para ajudar os clientes com suporte técnico. O Personal Health Dashboard informa sobre eventos da AWS. O Trusted Advisor oferece recomendações. O Marketplace é para software de terceiros.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 140,
+    "text": "Uma empresa deseja receber um alerta quando seus gastos mensais com a AWS se aproximarem de um limite orçamentário predefinido. Qual serviço da AWS pode ser usado para criar esses alertas de orçamento?",
+    "options": [
+      "Amazon CloudWatch Alarms diretamente sobre métricas de custo",
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Trusted Advisor Cost Optimization checks"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Budgets permite que você defina orçamentos personalizados para rastrear seus custos e uso da AWS e configura alertas. CloudWatch pode ser usado para alarmes, mas Budgets é específico para o gerenciamento de custos. Cost Explorer é para análise. Trusted Advisor oferece recomendações.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 176,
+    "text": "Uma empresa tem uma carga de trabalho que pode ser executada em horários flexíveis e é altamente tolerante a interrupções. Eles querem minimizar drasticamente os custos de computação EC2. Qual modelo de precificação de instância EC2 oferece os maiores descontos, mas com o risco de as instâncias serem encerradas pela AWS?",
+    "options": [
+      "Instâncias Sob Demanda (On-Demand)",
+      "Instâncias Reservadas (Reserved Instances)",
+      "Savings Plans",
+      "Instâncias Spot (Spot Instances)"
+    ],
+    "correctAnswers": [3],
+    "explanation": "As Instâncias Spot da Amazon EC2 permitem que você aproveite a capacidade EC2 não utilizada na nuvem AWS com descontos de até 90% em comparação com os preços Sob Demanda. No entanto, as instâncias Spot podem ser interrompidas pela AWS com um aviso de dois minutos se a AWS precisar da capacidade de volta.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 177,
+    "text": "Uma equipe de finanças precisa rastrear os custos da AWS por projeto. Eles já atribuíram tags de 'Projeto' a todos os recursos relevantes. Qual ferramenta da AWS pode ser usada para filtrar e visualizar os custos com base nessas tags de alocação de custos?",
+    "options": [
+      "Calculadora de Preços da AWS",
+      "AWS Budgets",
+      "AWS Cost Explorer",
+      "AWS Trusted Advisor"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O AWS Cost Explorer possui uma interface fácil de usar que permite visualizar, entender e gerenciar seus custos e uso da AWS ao longo do tempo. Você pode filtrar seus dados por várias dimensões, incluindo tags de alocação de custos, para analisar despesas por projeto, departamento, etc..",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 178,
+    "text": "Uma startup está desenvolvendo uma aplicação crítica e precisa de acesso a engenheiros de suporte na nuvem da AWS 24x7 com tempos de resposta rápidos para casos de produção urgentes. Qual plano do AWS Support seria o MÍNIMO recomendado para atender a esses requisitos?",
+    "options": [
+      "AWS Basic Support",
+      "AWS Developer Support",
+      "AWS Business Support",
+      "AWS Enterprise On-Ramp Support"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O plano AWS Business Support oferece acesso 24x7 a engenheiros de suporte na nuvem por telefone, chat e e-mail, com tempos de resposta mais rápidos para casos de sistema de produção inoperante (geralmente < 1 hora). O Developer Support tem tempos de resposta mais longos e é para casos de sistema de desenvolvimento. O Basic Support não oferece suporte técnico individualizado. O Enterprise On-Ramp e o Enterprise oferecem níveis ainda mais altos de suporte.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 179,
+    "text": "Uma empresa quer estimar os custos mensais de uma arquitetura complexa que planeja implantar na AWS, envolvendo vários serviços como EC2, S3, RDS e ELB, antes de qualquer provisionamento. Qual ferramenta da AWS é projetada para criar essas estimativas de custo detalhadas?",
+    "options": [
+      "AWS Cost and Usage Report",
+      "AWS Cost Explorer",
+      "Calculadora de Preços da AWS (AWS Pricing Calculator)",
+      "AWS Budgets"
+    ],
+    "correctAnswers": [2],
+    "explanation": "A Calculadora de Preços da AWS (anteriormente AWS Simple Monthly Calculator) permite que você explore os serviços da AWS e crie uma estimativa dos custos para seus casos de uso específicos na AWS. Você pode modelar suas soluções antes de construí-las, explorar os pontos de preço e as premissas por trás de suas estimativas.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 180,
+    "text": "Uma empresa está usando várias contas AWS gerenciadas através do AWS Organizations. Como o faturamento é tratado nesse cenário para simplificar o pagamento?",
+    "options": [
+      "Cada conta recebe uma fatura separada e paga individualmente.",
+      "A conta de gerenciamento (mestra) recebe uma fatura consolidada para todas as contas membro, e o pagamento é centralizado.",
+      "Os custos são divididos igualmente entre todas as contas membro para pagamento.",
+      "A AWS envia faturas individuais para cada departamento dentro da conta de gerenciamento."
+    ],
+    "correctAnswers": [1],
+    "explanation": "O AWS Organizations oferece o recurso de faturamento consolidado (consolidated billing). Com o faturamento consolidado, você recebe uma única fatura para todas as contas AWS em sua organização. A conta de gerenciamento é usada para pagar as cobranças de todas as contas membro.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 181,
+    "text": "Qual ferramenta da AWS fornece recomendações em tempo real para ajudar a otimizar seu ambiente AWS em cinco categorias: otimização de custos, desempenho, segurança, tolerância a falhas e limites de serviço?",
+    "options": [
+      "AWS Personal Health Dashboard",
+      "AWS Config",
+      "Amazon CloudWatch",
+      "AWS Trusted Advisor"
+    ],
+    "correctAnswers": [3],
+    "explanation": "O AWS Trusted Advisor inspeciona seu ambiente AWS e faz recomendações para economizar dinheiro, melhorar a disponibilidade e o desempenho do sistema, ou ajudar a fechar lacunas de segurança. As verificações cobrem categorias como otimização de custos, desempenho, segurança, tolerância a falhas e limites de serviço.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 182,
+    "text": "Uma empresa adquiriu um Savings Plan para suas instâncias EC2. Como esse plano de precificação ajuda a reduzir custos?",
+    "options": [
+      "Ele fornece instâncias com capacidade de interrupção com grandes descontos.",
+      "Ele oferece um desconto em troca de um compromisso de um valor consistente de uso de computação (medido em $/hora) por um período de 1 ou 3 anos.",
+      "Ele permite pagar uma taxa fixa mensal por uso ilimitado de EC2.",
+      "Ele aplica descontos automaticamente com base no volume total de uso de todos os serviços AWS."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Os Savings Plans são um modelo de precificação flexível que oferece preços mais baixos em comparação com os preços Sob Demanda, em troca de um compromisso de um valor consistente de uso de computação (medido em $/hora) por um período de 1 ou 3 anos. Este modelo se aplica a instâncias EC2, AWS Fargate e AWS Lambda.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 183,
+    "text": "Uma organização deseja definir um limite de gastos para um projeto específico e ser notificada se os custos projetados excederem esse limite antes do final do mês. Qual serviço da AWS é MAIS adequado para criar esse tipo de alerta de custo?",
+    "options": [
+      "AWS Cost Explorer com filtros de projeto",
+      "Amazon CloudWatch com métricas de faturamento",
+      "AWS Budgets",
+      "Relatórios de Custo e Uso da AWS agendados"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O AWS Budgets permite que você defina orçamentos personalizados para rastrear seus custos e uso, e configura alertas para notificá-lo se seus custos ou uso excederem (ou estiverem previstos para exceder) os limites orçados. Você pode definir orçamentos para projetos específicos usando filtros como tags.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 184,
+    "text": "Um cliente está procurando uma solução de software de terceiros para gerenciamento de segurança que se integre com seu ambiente AWS. Onde ele pode encontrar, testar e implantar esse tipo de software?",
+    "options": [
+      "No console do AWS IAM",
+      "Na documentação do AWS Well-Architected Framework",
+      "No AWS Marketplace",
+      "No AWS Support Center"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O AWS Marketplace é um catálogo digital com milhares de listagens de software de fornecedores de software independentes (ISVs) que facilitam encontrar, testar, comprar e implantar software que roda na AWS. Muitas soluções de segurança de terceiros estão disponíveis no Marketplace.",
+    "category": "Cobrança, Preços e Suporte"
+  },
+  {
+    "id": 185,
+    "text": "Qual das seguintes opções descreve CORRETAMENTE um benefício do faturamento consolidado (consolidated billing) no AWS Organizations?",
+    "options": [
+      "Cada conta membro recebe um desconto de volume individual com base em seu próprio uso.",
+      "Ele permite que você receba uma única fatura para múltiplas contas AWS e possa se qualificar para descontos de volume agregados.",
+      "Ele simplifica o gerenciamento de permissões IAM em todas as contas.",
+      "Ele fornece relatórios de conformidade detalhados para cada conta membro."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Com o faturamento consolidado no AWS Organizations, você pode agregar o uso de várias contas AWS para possivelmente se qualificar para níveis de preços de volume mais favoráveis para alguns serviços. Você também recebe uma única fatura para todas as contas, simplificando o pagamento. Gerenciamento de permissões é feito com IAM e SCPs. Relatórios de conformidade são via AWS Artifact.",
+    "category": "Cobrança, Preços e Suporte"
+  }
+]

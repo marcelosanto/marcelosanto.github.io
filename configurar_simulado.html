@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Simulado AWS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="titulo-config-simulado">Configurar Simulado</h1>
+    </header>
+    <main>
+        <div id="opcoes-simulado">
+            <p>Você está configurando o simulado: <strong id="nome-categoria-simulado"></strong></p>
+
+            <div>
+                <label for="num-perguntas">Número de Perguntas (0 ou deixe em branco para todas):</label>
+                <input type="number" id="num-perguntas" name="num-perguntas" min="0" placeholder="Ex: 10">
+            </div>
+
+            <div style="margin-top: 15px;">
+                <input type="checkbox" id="randomizar-perguntas" name="randomizar-perguntas">
+                <label for="randomizar-perguntas">Randomizar ordem das perguntas</label>
+            </div>
+
+            <button id="botao-iniciar-simulado" style="margin-top: 20px;">Iniciar Simulado</button>
+        </div>
+    </main>
+    <footer>
+        <p><a href="index.html">Voltar para a lista de simulados</a></p>
+    </footer>
+    <script src="js/configurar_simulado.js"></script>
+</body>
+
+</html>

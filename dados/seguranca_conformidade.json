@@ -1,0 +1,488 @@
+[
+  {
+    "id": 3,
+    "text": "Qual serviço gerencia chaves de criptografia na AWS?",
+    "options": ["AWS KMS", "AWS IAM", "Amazon CloudWatch", "AWS Shield"],
+    "correctAnswers": [0],
+    "explanation": "O AWS Key Management Service (AWS KMS) facilita a criação e o gerenciamento de chaves criptográficas e o controle do uso em uma ampla gama de serviços AWS e em suas aplicações. AWS IAM gerencia o acesso a serviços e recursos, Amazon CloudWatch monitora recursos, e AWS Shield protege contra ataques DDoS.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 5,
+    "text": "O que define o AWS Shared Responsibility Model?",
+    "options": [
+      "AWS cuida de tudo",
+      "Cliente cuida de tudo",
+      "Responsabilidades compartilhadas",
+      "Terceiros gerenciam"
+    ],
+    "correctAnswers": [2],
+    "explanation": "O Modelo de Responsabilidade Compartilhada da AWS define que a AWS é responsável pela segurança 'da' nuvem (infraestrutura, hardware, software, rede e instalações que executam os serviços da AWS), enquanto o cliente é responsável pela segurança 'na' nuvem (configuração de segurança dos seus dados, aplicações, sistemas operacionais, redes e firewalls). As responsabilidades podem variar dependendo do serviço utilizado.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 7,
+    "text": "Qual serviço rastreia chamadas de API na AWS?",
+    "options": [
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS Config",
+      "AWS Trusted Advisor"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS CloudTrail é um serviço que habilita governança, conformidade, auditoria operacional e de risco de sua conta AWS. Ele registra ações tomadas por um usuário, um perfil ou um serviço AWS, como chamadas de API. Amazon CloudWatch monitora métricas e logs, AWS Config avalia configurações de recursos, e AWS Trusted Advisor fornece recomendações.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 8,
+    "text": "Quais serviços melhoram a segurança? (Escolha dois.)",
+    "options": ["AWS Shield", "AWS WAF", "Amazon EC2", "AWS Cost Explorer"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Shield é um serviço gerenciado de proteção contra Distributed Denial of Service (DDoS). AWS Web Application Firewall (AWS WAF) ajuda a proteger suas aplicações web ou APIs contra web exploits comuns. Amazon EC2 é um serviço de computação, e AWS Cost Explorer é para gerenciamento de custos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 15,
+    "text": "Quais serviços gerenciam identidades? (Escolha dois.)",
+    "options": ["AWS IAM", "AWS KMS", "AWS Cognito", "AWS Shield"],
+    "correctAnswers": [0, 2],
+    "explanation": "AWS Identity and Access Management (IAM) permite gerenciar o acesso a serviços e recursos da AWS de forma segura. Amazon Cognito permite adicionar rapidamente inscrição, login de usuário e controle de acesso a suas aplicações web e móveis. AWS KMS gerencia chaves de criptografia, e AWS Shield protege contra DDoS.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 17,
+    "text": "O que o AWS Trusted Advisor faz?",
+    "options": [
+      "Monitora APIs",
+      "Recomenda otimizações",
+      "Gerencia chaves",
+      "Filtra tráfego"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Trusted Advisor é um recurso online que ajuda a reduzir custos, aumentar o desempenho e melhorar a segurança, fornecendo recomendações com base nas melhores práticas da AWS. Monitoramento de APIs pode ser feito com CloudTrail/CloudWatch, gerenciamento de chaves com KMS, e filtragem de tráfego com WAF/Security Groups.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 28,
+    "text": "O que o AWS Config faz?",
+    "options": [
+      "Monitora desempenho",
+      "Rastreia configurações",
+      "Gerencia custos",
+      "Protege contra DDoS"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Config é um serviço que permite acessar, auditar e avaliar as configurações de seus recursos da AWS. Ele monitora e registra continuamente as configurações de seus recursos e permite automatizar a avaliação das configurações registradas em relação às configurações desejadas. Monitoramento de desempenho é CloudWatch, gerenciamento de custos é Cost Explorer/Budgets, e proteção DDoS é Shield.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 35,
+    "text": "Quais serviços protegem APIs? (Escolha dois.)",
+    "options": ["AWS WAF", "AWS Shield", "Amazon CloudFront", "AWS IAM"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS WAF (Web Application Firewall) ajuda a proteger suas aplicações web ou APIs contra web exploits comuns. AWS Shield é um serviço gerenciado de proteção contra Distributed Denial of Service (DDoS) que protege aplicações executadas na AWS, incluindo APIs. Amazon CloudFront pode entregar APIs, mas sua principal função de proteção é como CDN. AWS IAM controla o acesso às APIs.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 42,
+    "text": "Quais serviços ajudam na auditoria? (Escolha dois.)",
+    "options": ["AWS CloudTrail", "AWS Config", "Amazon SNS", "AWS Budgets"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS CloudTrail registra chamadas de API e eventos em sua conta AWS, fornecendo um histórico de atividades para auditoria de segurança e conformidade operacional. AWS Config monitora e registra continuamente as configurações de recursos da AWS e permite automatizar a avaliação das configurações registradas em relação às configurações desejadas, o que é crucial para auditoria e conformidade. Amazon SNS é para notificações e AWS Budgets para gerenciamento de custos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 45,
+    "text": "Quais serviços ajudam na segurança de rede? (Escolha dois.)",
+    "options": ["Amazon VPC", "AWS WAF", "Amazon S3", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "Amazon Virtual Private Cloud (VPC) permite provisionar uma seção logicamente isolada da Nuvem AWS onde você pode controlar aspectos como sub-redes, tabelas de rotas e gateways de rede, incluindo security groups e network ACLs para segurança. AWS WAF (Web Application Firewall) ajuda a proteger suas aplicações web ou APIs contra web exploits comuns que podem ser entregues pela rede. Amazon S3 é armazenamento e Lambda é computação.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 47,
+    "text": "Qual serviço gerencia regras de firewall?",
+    "options": ["AWS Network Firewall", "AWS WAF", "AWS Shield", "Amazon VPC"],
+    "correctAnswers": [0],
+    "explanation": "AWS Network Firewall é um serviço de firewall gerenciado que facilita a implantação de proteções de rede essenciais para todas as suas Amazon Virtual Private Clouds (VPCs). AWS WAF protege aplicações web, AWS Shield protege contra DDoS, e Amazon VPC usa security groups e network ACLs como firewalls.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 62,
+    "text": "Quais serviços ajudam na governança? (Escolha dois.)",
+    "options": ["AWS Organizations", "AWS Config", "Amazon SNS", "AWS Budgets"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Organizations ajuda você a gerenciar e governar centralmente seu ambiente à medida que cresce e escala seus recursos da AWS. AWS Config permite avaliar, auditar e avaliar as configurações de seus recursos da AWS, o que é fundamental para a governança. Amazon SNS é para notificações e AWS Budgets para gerenciamento de custos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 64,
+    "text": "Qual serviço fornece monitoramento de segurança?",
+    "options": [
+      "Amazon GuardDuty",
+      "AWS Shield",
+      "AWS WAF",
+      "Amazon CloudWatch"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon GuardDuty é um serviço de detecção de ameaças que monitora continuamente atividades maliciosas e comportamentos não autorizados para proteger suas contas, cargas de trabalho e dados da AWS. AWS Shield protege contra DDoS, AWS WAF protege aplicações web, e Amazon CloudWatch monitora métricas e logs.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 66,
+    "text": "O que é o AWS Secrets Manager?",
+    "options": [
+      "Gerencia segredos",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia custos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Secrets Manager ajuda você a proteger o acesso às suas aplicações, serviços e recursos de TI, permitindo rotacionar, gerenciar e recuperar credenciais e outros segredos. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de custos é Cost Explorer.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 67,
+    "text": "Qual serviço fornece autenticação de usuários?",
+    "options": ["Amazon Cognito", "AWS IAM", "AWS KMS", "Amazon CloudWatch"],
+    "correctAnswers": [0],
+    "explanation": "Amazon Cognito permite adicionar rapidamente inscrição, login de usuário e controle de acesso a suas aplicações web e móveis. AWS IAM é para gerenciar o acesso a recursos AWS por identidades AWS, KMS gerencia chaves, e CloudWatch monitora.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 82,
+    "text": "Quais serviços ajudam na proteção de dados? (Escolha dois.)",
+    "options": ["AWS KMS", "AWS Secrets Manager", "Amazon S3", "AWS Budgets"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Key Management Service (KMS) permite criar e gerenciar chaves criptográficas, que são essenciais para proteger dados em repouso e em trânsito. AWS Secrets Manager ajuda a proteger segredos necessários para acessar suas aplicações, serviços e recursos de TI. Amazon S3 armazena dados e tem recursos de segurança, mas KMS e Secrets Manager são mais diretamente focados na proteção. AWS Budgets é para custos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 85,
+    "text": "Quais serviços ajudam na gestão de usuários? (Escolha dois.)",
+    "options": ["AWS IAM", "Amazon Cognito", "Amazon S3", "AWS Shield"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Identity and Access Management (IAM) permite gerenciar o acesso de usuários e permissões a serviços e recursos da AWS. Amazon Cognito permite adicionar inscrição, login de usuário e controle de acesso a suas aplicações web e móveis. Amazon S3 é armazenamento e AWS Shield é proteção DDoS.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 86,
+    "text": "O que é o AWS Artifact?",
+    "options": [
+      "Relatórios de conformidade",
+      "Sistema de arquivos",
+      "Ferramenta de custo",
+      "Serviço de DNS"
+    ],
+    "correctAnswers": [0],
+    "explanation": "AWS Artifact é seu portal central de autoatendimento para informações de conformidade da AWS e relatórios de conformidade sob demanda. Sistema de arquivos é EFS/FSx, ferramenta de custo é Cost Explorer, e serviço de DNS é Route 53.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 92,
+    "text": "Quais serviços ajudam na conformidade? (Escolha dois.)",
+    "options": ["AWS Artifact", "AWS Config", "Amazon S3", "AWS Lambda"],
+    "correctAnswers": [0, 1],
+    "explanation": "AWS Artifact fornece acesso sob demanda a relatórios de segurança e conformidade da AWS. AWS Config avalia continuamente as configurações de seus recursos em relação às regras desejadas, facilitando a auditoria de conformidade. Amazon S3 armazena dados e Lambda executa código.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 97,
+    "text": "O que é o AWS Inspector?",
+    "options": [
+      "Avalia segurança",
+      "Monitora APIs",
+      "Protege contra DDoS",
+      "Gerencia custos"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Amazon Inspector é um serviço automatizado de gerenciamento de vulnerabilidades que verifica continuamente suas cargas de trabalho da AWS. Monitoramento de APIs é CloudTrail/CloudWatch, proteção DDoS é Shield, e gerenciamento de custos é Cost Explorer.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 105,
+    "text": "Um desenvolvedor precisa de acesso temporário e limitado para realizar uma tarefa específica em um bucket do Amazon S3, seguindo o princípio do menor privilégio. Qual é a maneira MAIS segura de conceder esse acesso?",
+    "options": [
+      "Compartilhar as credenciais do usuário raiz da conta.",
+      "Criar um novo usuário IAM com permissões de administrador.",
+      "Criar um perfil (role) do IAM com as permissões necessárias e permitir que o desenvolvedor assuma esse perfil.",
+      "Adicionar o desenvolvedor a um grupo IAM que já possui amplas permissões no S3."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Criar um perfil (role) do IAM com permissões estritamente necessárias para a tarefa e permitir que o desenvolvedor o assuma é a melhor prática para conceder acesso temporário e limitado, aderindo ao princípio do menor privilégio. Compartilhar credenciais de usuário raiz é extremamente arriscado e deve ser evitado. Conceder permissões de administrador ou amplas permissões viola o princípio do menor privilégio.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 106,
+    "text": "Uma empresa está executando uma aplicação em instâncias Amazon EC2. Para garantir a conformidade com políticas internas, eles precisam registrar todas as chamadas de API feitas para os serviços da AWS em sua conta, incluindo quem fez a chamada, quando e de qual endereço IP. Qual serviço da AWS atende a esse requisito?",
+    "options": [
+      "Amazon CloudWatch",
+      "AWS Config",
+      "AWS CloudTrail",
+      "AWS IAM"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS CloudTrail é um serviço que habilita governança, conformidade e auditoria operacional e de risco de sua conta AWS, registrando chamadas de API e eventos. Amazon CloudWatch monitora métricas e logs de performance. AWS Config rastreia mudanças de configuração de recursos. AWS IAM gerencia identidades e acessos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 107,
+    "text": "Durante uma auditoria, uma empresa precisa fornecer relatórios de conformidade da AWS, como SOC 2 ou ISO 27001, para validar a segurança da plataforma AWS. Onde esses documentos podem ser encontrados?",
+    "options": [
+      "No console do AWS Billing and Cost Management",
+      "No AWS Trusted Advisor",
+      "No AWS Artifact",
+      "No AWS Security Hub"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Artifact é o portal central de autoatendimento para informações de conformidade da AWS e relatórios de conformidade sob demanda, como relatórios SOC e ISO. O console de Billing é para custos. O Trusted Advisor dá recomendações. O Security Hub centraliza alertas de segurança.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 108,
+    "text": "Uma empresa está preocupada com a proteção de suas aplicações web contra ataques comuns como SQL injection e Cross-Site Scripting (XSS). Qual serviço da AWS pode ajudar a mitigar esses tipos de ameaças?",
+    "options": [
+      "AWS Shield",
+      "Amazon GuardDuty",
+      "AWS WAF (Web Application Firewall)",
+      "Network ACLs (NACLs) em uma VPC"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS WAF (Web Application Firewall) ajuda a proteger aplicações web ou APIs contra web exploits comuns, como SQL injection e XSS. AWS Shield protege contra ataques DDoS. Amazon GuardDuty detecta ameaças e atividades maliciosas. NACLs são firewalls de nível de sub-rede.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 111,
+    "text": "Uma empresa está desenvolvendo uma aplicação móvel que precisa armazenar dados de perfil de usuário e permitir login através de provedores de identidade social como Google e Facebook. Qual serviço AWS é projetado para facilitar essa funcionalidade?",
+    "options": [
+      "AWS IAM (Identity and Access Management)",
+      "Amazon Cognito",
+      "AWS Secrets Manager",
+      "AWS Directory Service"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Amazon Cognito permite adicionar rapidamente inscrição, login de usuário e controle de acesso a suas aplicações web e móveis, suportando login com provedores de identidade social. AWS IAM gerencia o acesso a recursos da AWS. Secrets Manager armazena segredos. Directory Service integra com diretórios.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 120,
+    "text": "Uma empresa precisa garantir que o acesso aos seus recursos na AWS seja estritamente controlado e que os usuários tenham apenas as permissões mínimas necessárias para realizar suas tarefas (princípio do menor privilégio). Qual serviço da AWS é fundamental para gerenciar usuários, grupos, perfis e políticas de permissões?",
+    "options": [
+      "Amazon Macie",
+      "AWS Key Management Service (KMS)",
+      "AWS Identity and Access Management (IAM)",
+      "AWS Security Hub"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Identity and Access Management (IAM) permite gerenciar de forma segura o acesso a serviços e recursos da AWS, criando e gerenciando usuários, grupos e usando permissões para permitir e negar acesso. Amazon Macie é para descoberta e proteção de dados sensíveis. KMS gerencia chaves de criptografia. Security Hub fornece uma visão dos alertas de segurança.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 126,
+    "text": "Uma instituição financeira está implantando uma aplicação na AWS que processa dados sensíveis de clientes. Eles precisam garantir que a infraestrutura subjacente que executa os serviços AWS (hardware, software, rede e instalações) seja segura. De acordo com o Modelo de Responsabilidade Compartilhada da AWS, quem é responsável por essa segurança 'DA' nuvem?",
+    "options": [
+      "O cliente",
+      "A AWS",
+      "Ambos, cliente e AWS, em conjunto",
+      "Auditores externos"
+    ],
+    "correctAnswers": [1],
+    "explanation": "De acordo com o Modelo de Responsabilidade Compartilhada da AWS, a AWS é responsável pela segurança 'DA' nuvem, incluindo a infraestrutura que executa todos os serviços AWS. O cliente é responsável pela segurança 'NA' nuvem.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 127,
+    "text": "Uma empresa precisa monitorar a conformidade das configurações de seus recursos AWS, como verificar se os buckets S3 não estão publicamente acessíveis ou se as instâncias EC2 estão usando apenas AMIs aprovadas. Qual serviço da AWS permite avaliar, auditar e fiscalizar continuamente as configurações dos recursos?",
+    "options": [
+      "Amazon CloudWatch",
+      "AWS CloudTrail",
+      "AWS Config",
+      "AWS Security Hub"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Config é um serviço que permite acessar, auditar e avaliar as configurações dos seus recursos da AWS, monitorando e registrando continuamente as configurações. CloudWatch é para monitoramento de performance e logs. CloudTrail registra chamadas de API. Security Hub agrega alertas de segurança.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 128,
+    "text": "Um administrador de sistemas precisa conceder a um novo desenvolvedor permissões para criar e gerenciar instâncias Amazon EC2, mas NENHUMA outra permissão em outros serviços AWS. Qual é a abordagem MAIS segura e alinhada com o princípio do menor privilégio?",
+    "options": [
+      "Adicionar o desenvolvedor ao grupo de administradores.",
+      "Criar um usuário IAM para o desenvolvedor e anexar uma política gerenciada pela AWS que conceda acesso total ao EC2 (ex: AmazonEC2FullAccess).",
+      "Criar um usuário IAM para o desenvolvedor e anexar uma política personalizada que defina explicitamente apenas as ações EC2 necessárias.",
+      "Fornecer ao desenvolvedor as credenciais de um usuário IAM existente que já tenha acesso ao EC2."
+    ],
+    "correctAnswers": [2],
+    "explanation": "O princípio do menor privilégio dita que se deve conceder apenas as permissões mínimas necessárias. Criar um usuário IAM e anexar uma política personalizada é a abordagem mais granular. A política gerenciada 'AmazonEC2FullAccess' pode conceder mais permissões do que o necessário.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 129,
+    "text": "Uma loja online está sofrendo um ataque de negação de serviço distribuído (DDoS) que está sobrecarregando seus servidores web e tornando o site indisponível. Qual serviço da AWS é projetado especificamente para proteger contra esses tipos de ataques?",
+    "options": [
+      "AWS WAF",
+      "Amazon Inspector",
+      "AWS Shield",
+      "Security Groups"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Shield é um serviço gerenciado de proteção contra Distributed Denial of Service (DDoS). AWS WAF protege contra exploits de aplicações web. Amazon Inspector avalia vulnerabilidades. Security Groups atuam como firewall para instâncias.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 142,
+    "text": "Uma empresa está preocupada com a segurança de sua conta AWS e quer garantir que, mesmo que as credenciais de um usuário IAM sejam comprometidas, um invasor não consiga acesso sem um segundo fator de autenticação. Qual mecanismo de segurança deve ser implementado para os usuários IAM?",
+    "options": [
+      "Políticas de senha fortes",
+      "Autenticação Multifator (MFA)",
+      "Perfis (Roles) do IAM",
+      "Criptografia do lado do servidor para dados em repouso"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A Autenticação Multifator (MFA) adiciona uma camada extra de proteção sobre o nome de usuário e senha, exigindo um segundo fator de autenticação. Políticas de senha são importantes, mas a MFA oferece uma proteção mais forte.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 145,
+    "text": "Uma empresa possui várias contas AWS para diferentes departamentos (desenvolvimento, teste, produção). Eles precisam de uma maneira de gerenciar centralmente as políticas de segurança, aplicar controles de serviço (SCPs) e consolidar o faturamento para todas essas contas. Qual serviço da AWS permite essa gestão centralizada de múltiplas contas?",
+    "options": [
+      "AWS IAM (Identity and Access Management)",
+      "AWS Organizations",
+      "AWS Control Tower",
+      "AWS Resource Access Manager (RAM)"
+    ],
+    "correctAnswers": [1],
+    "explanation": "AWS Organizations ajuda você a gerenciar e governar centralmente seu ambiente, consolidar o faturamento e controlar o acesso com Service Control Policies (SCPs). AWS Control Tower ajuda a configurar um ambiente de várias contas. IAM gerencia usuários e permissões dentro de uma conta. RAM compartilha recursos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 156,
+    "text": "Uma empresa está executando um banco de dados em uma instância Amazon RDS. De acordo com o Modelo de Responsabilidade Compartilhada da AWS, qual das seguintes tarefas é responsabilidade da AWS?",
+    "options": [
+      "Gerenciar as regras de firewall nos security groups da instância RDS.",
+      "Aplicar patches no sistema operacional do host subjacente da instância RDS.",
+      "Otimizar as consultas SQL executadas pela aplicação no banco de dados.",
+      "Criptografar os dados armazenados no banco de dados usando chaves gerenciadas pelo cliente."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Para serviços gerenciados como o Amazon RDS, a AWS é responsável por gerenciar a infraestrutura subjacente, o que inclui o patching do sistema operacional do host, o patching do software do banco de dados e a manutenção do hardware. O cliente é responsável pela configuração da rede (security groups), otimização de consultas e gerenciamento da criptografia de dados em nível de aplicação ou com chaves KMS.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 157,
+    "text": "Uma equipe de segurança deseja detectar automaticamente ameaças como instâncias EC2 comprometidas que se comunicam com endereços IP maliciosos conhecidos ou atividades de API incomuns que podem indicar uma conta comprometida. Qual serviço da AWS usa machine learning para essa finalidade?",
+    "options": [
+      "Amazon Inspector",
+      "AWS WAF",
+      "Amazon GuardDuty",
+      "AWS Secrets Manager"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon GuardDuty é um serviço de detecção de ameaças que monitora continuamente atividades maliciosas e comportamentos não autorizados para proteger suas contas e cargas de trabalho AWS. Ele usa machine learning, detecção de anomalias e inteligência de ameaças integrada para identificar e priorizar ameaças potenciais.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 158,
+    "text": "Um administrador precisa conceder a uma aplicação executada em uma instância Amazon EC2 permissões para acessar um bucket Amazon S3. Qual é a maneira MAIS segura e recomendada de conceder essas permissões à aplicação, sem embutir credenciais de longo prazo na instância?",
+    "options": [
+      "Criar um usuário IAM com as permissões necessárias e armazenar suas chaves de acesso na instância EC2.",
+      "Usar as credenciais do usuário raiz da conta na aplicação.",
+      "Criar um perfil (role) do IAM com as permissões S3 necessárias e associá-lo à instância EC2.",
+      "Permitir acesso público ao bucket S3 para que a aplicação possa acessá-lo."
+    ],
+    "correctAnswers": [2],
+    "explanation": "A maneira mais segura de conceder permissões a aplicações executadas em instâncias EC2 é usar perfis (roles) do IAM. Você cria um perfil com as permissões necessárias e o anexa à instância. A aplicação então obtém credenciais temporárias do perfil, eliminando a necessidade de armazenar chaves de acesso de longo prazo na instância.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 159,
+    "text": "Uma empresa precisa armazenar e rotacionar automaticamente senhas de banco de dados e chaves de API usadas por suas aplicações de forma segura. Qual serviço da AWS é projetado para gerenciar esses tipos de segredos?",
+    "options": [
+      "AWS Key Management Service (KMS)",
+      "AWS IAM (Identity and Access Management)",
+      "AWS Secrets Manager",
+      "AWS Certificate Manager (ACM)"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Secrets Manager ajuda a proteger o acesso a aplicações, serviços e recursos de TI. Ele permite que você rotacione, gerencie e recupere facilmente credenciais de banco de dados, chaves de API e outros segredos durante todo o seu ciclo de vida. KMS é para gerenciar chaves de criptografia. IAM é para permissões. ACM é para certificados SSL/TLS.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 160,
+    "text": "Uma organização precisa avaliar continuamente suas instâncias Amazon EC2 em busca de vulnerabilidades de software e exposições de rede não intencionais. Qual serviço da AWS pode automatizar essas avaliações de segurança?",
+    "options": [
+      "AWS Trusted Advisor",
+      "Amazon Macie",
+      "AWS Config",
+      "Amazon Inspector"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Amazon Inspector é um serviço automatizado de gerenciamento de vulnerabilidades que verifica continuamente suas cargas de trabalho da AWS (como instâncias EC2 e imagens de contêiner) em busca de vulnerabilidades de software e exposição não intencional à rede. Trusted Advisor oferece recomendações de melhores práticas. Macie descobre e protege dados sensíveis. AWS Config rastreia configurações de recursos.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 161,
+    "text": "Para aumentar a segurança do login no Console de Gerenciamento da AWS, um administrador de conta raiz deseja exigir que todos os usuários IAM forneçam algo que eles sabem (senha) e algo que eles possuem (um código de um dispositivo). Qual recurso de segurança deve ser habilitado para os usuários IAM?",
+    "options": [
+      "Políticas de senha complexas",
+      "Perfis (Roles) do IAM para acesso federado",
+      "Autenticação Multifator (MFA)",
+      "Service Control Policies (SCPs) no AWS Organizations"
+    ],
+    "correctAnswers": [2],
+    "explanation": "A Autenticação Multifator (MFA) adiciona uma camada extra de segurança exigindo que os usuários forneçam um código de autenticação único de um dispositivo físico ou virtual (algo que possuem) além de sua senha (algo que sabem).",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 162,
+    "text": "Uma empresa precisa demonstrar aos auditores que está aderindo a padrões de conformidade específicos, como PCI DSS ou HIPAA, em seu ambiente AWS. Qual serviço da AWS fornece acesso sob demanda a relatórios de conformidade da AWS e permite que os clientes compartilhem esses relatórios com auditores?",
+    "options": [
+      "AWS Security Hub",
+      "Amazon GuardDuty",
+      "AWS Artifact",
+      "AWS CloudTrail"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Artifact é o seu portal central de autoatendimento para informações de conformidade da AWS e relatórios de conformidade sob demanda. Ele fornece acesso a relatórios de segurança e conformidade da AWS (por exemplo, SOC, PCI, ISO) e a determinados acordos online.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 163,
+    "text": "Uma aplicação web hospedada na AWS precisa ser protegida contra tráfego malicioso proveniente da internet, como bots comuns e tentativas de exploração de vulnerabilidades em nível de aplicação. Qual serviço funciona como um firewall de aplicação web para filtrar esse tráfego?",
+    "options": [
+      "Network ACLs (NACLs)",
+      "Security Groups",
+      "AWS Shield Advanced",
+      "AWS WAF (Web Application Firewall)"
+    ],
+    "correctAnswers": [3],
+    "explanation": "AWS WAF (Web Application Firewall) ajuda a proteger suas aplicações web ou APIs contra web exploits comuns que podem afetar a disponibilidade, comprometer a segurança ou consumir recursos excessivos. Ele permite configurar regras para bloquear padrões de tráfego malicioso. NACLs e Security Groups são firewalls de nível de rede/instância. Shield Advanced protege contra DDoS.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 164,
+    "text": "Uma empresa armazena dados confidenciais no Amazon S3 e precisa garantir que esses dados sejam criptografados em repouso. Qual serviço da AWS pode ser usado para gerenciar as chaves de criptografia usadas para proteger esses dados no S3?",
+    "options": [
+      "AWS IAM",
+      "AWS Secrets Manager",
+      "AWS Key Management Service (KMS)",
+      "Amazon Macie"
+    ],
+    "correctAnswers": [2],
+    "explanation": "AWS Key Management Service (KMS) facilita a criação e o controle das chaves de criptografia usadas para criptografar seus dados. O S3 se integra ao KMS para criptografia do lado do servidor (SSE-KMS), permitindo que você use chaves gerenciadas pelo KMS para proteger seus objetos. IAM gerencia permissões. Secrets Manager gerencia segredos como senhas. Macie descobre dados sensíveis.",
+    "category": "Segurança e Conformidade"
+  },
+  {
+    "id": 165,
+    "text": "Uma organização deseja descobrir, classificar e proteger dados sensíveis, como informações de identificação pessoal (PII), armazenados em seus buckets Amazon S3. Qual serviço da AWS usa machine learning para ajudar a identificar e proteger esses dados?",
+    "options": [
+      "Amazon GuardDuty",
+      "Amazon Inspector",
+      "Amazon Macie",
+      "AWS Config"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Amazon Macie é um serviço de segurança e privacidade de dados totalmente gerenciado que usa machine learning e correspondência de padrões para descobrir e proteger seus dados sensíveis na AWS. Atualmente, o Macie oferece suporte à descoberta de dados sensíveis no Amazon S3. GuardDuty detecta ameaças. Inspector avalia vulnerabilidades. Config rastreia configurações.",
+    "category": "Segurança e Conformidade"
+  }
+]

@@ -1,0 +1,330 @@
+html {
+    height: 100%;
+    /* Garante que o html ocupe toda a altura */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fonte mais moderna */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    /* Um cinza mais claro e suave para o fundo */
+    color: #333;
+    display: flex;
+    /* Ativa o Flexbox */
+    flex-direction: column;
+    /* Organiza os filhos (header, main, footer) em coluna */
+    min-height: 100vh;
+    /* Altura mínima de 100% da altura da viewport */
+}
+
+main {
+    width: 90%;
+    /* Um pouco mais largo para aproveitar melhor o espaço */
+    max-width: 900px;
+    /* Largura máxima para não ficar excessivamente largo em telas grandes */
+    margin: 30px auto;
+    /* Aumenta a margem superior/inferior e centraliza */
+    padding: 25px;
+    background-color: #ffffff;
+    /* Branco para o conteúdo principal */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    /* Sombra mais suave */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    flex: 1;
+    /* Faz com que o main ocupe o espaço disponível, empurrando o footer para baixo */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    /* Cinza de fundo mais suave */
+    color: #16191f;
+    /* Cor de texto principal (um cinza bem escuro) */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #232f3e;
+    /* Azul escuro da AWS */
+    color: #ffffff;
+    padding: 1.5rem 0;
+    /* Aumenta um pouco o padding */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    /* Ajusta o tamanho da fonte do título */
+}
+
+#lista-simulados ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lista-simulados li {
+    margin-bottom: 12px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    /* Borda sutil */
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Transição suave */
+}
+
+#lista-simulados li:hover {
+    transform: translateY(-3px);
+    /* Efeito de elevação sutil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+}
+
+#lista-simulados li a {
+    display: block;
+    /* Faz o link ocupar todo o li para facilitar o clique */
+    padding: 15px 20px;
+    /* Aumenta o padding interno */
+    text-decoration: none;
+    color: #007bff;
+    /* Azul para os links */
+    font-weight: 500;
+    /* Um pouco mais de peso na fonte */
+    font-size: 1.1em;
+}
+
+#lista-simulados li a:hover {
+    color: #0056b3;
+    /* Azul mais escuro no hover */
+}
+
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    /* Aumenta o padding */
+    margin-top: auto;
+    /* Garante que ele seja empurrado para baixo com flexbox */
+    background-color: #1d2531;
+    /* Um tom ligeiramente diferente para o footer */
+    color: #ced4da;
+    /* Cor de texto mais clara para o footer */
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #adb5bd;
+    /* Cor dos links no footer */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Estilos para a página do simulado */
+#area-pergunta p strong {
+    color: #232f3e;
+    /* Cor do texto "Pergunta X de Y" */
+}
+
+#area-opcoes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#area-opcoes li {
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#area-opcoes li:hover {
+    background-color: #e9ecef;
+    /* Fundo mais suave no hover */
+    border-color: #adb5bd;
+}
+
+#area-opcoes li input[type="checkbox"],
+#area-opcoes li input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.1);
+    /* Deixa os inputs um pouco maiores */
+}
+
+/* Estilo para opção selecionada (requer JavaScript para adicionar uma classe, ou CSS :has() se o suporte do navegador for suficiente) */
+/* Exemplo de como poderia ser com uma classe 'selecionada' adicionada via JS:
+#area-opcoes li.selecionada {
+    background-color: #cfe2ff;
+    border-color: #007bff;
+}
+*/
+
+
+button {
+    display: inline-block;
+    background-color: #007bff;
+    /* Azul principal para botões */
+    color: white;
+    padding: 12px 20px;
+    /* Aumenta o padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-right: 10px;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Tom mais escuro no hover */
+}
+
+button#botao-finalizar {
+    background-color: #ff9900;
+    /* Laranja AWS para o botão de finalizar */
+}
+
+button#botao-finalizar:hover {
+    background-color: #cc7a00;
+    /* Laranja mais escuro no hover */
+}
+
+
+#area-resultado {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    /* Fundo levemente acinzentado */
+    border-radius: 6px;
+}
+
+#area-resultado h2 {
+    color: #232f3e;
+    margin-top: 0;
+}
+
+.resposta-correta {
+    color: #198754;
+    /* Verde para correto */
+    font-weight: bold;
+}
+
+.resposta-incorreta {
+    color: #dc3545;
+    /* Vermelho para incorreto */
+    font-weight: bold;
+}
+
+.explicacao {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #e0e7ff;
+    /* Fundo azul claro para explicação */
+    border-left: 4px solid #0056b3;
+    /* Destaque azul à esquerda */
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    /* Cor da linha horizontal */
+    margin: 25px 0;
+    /* Espaçamento da linha */
+}
+
+/* Para tablets e telas menores (ex: até 768px) */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        /* Ocupa mais da largura da tela */
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    #lista-simulados li a {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+}
+
+/* Para smartphones (ex: até 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+        /* Ajusta o tamanho base da fonte para melhor leitura */
+    }
+
+    main {
+        padding: 15px;
+        /* Menor padding em telas muito pequenas */
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    #lista-simulados li a {
+        padding: 10px;
+    }
+
+    #area-opcoes li {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    #area-opcoes li input[type="checkbox"],
+    #area-opcoes li input[type="radio"] {
+        margin-right: 8px;
+        transform: scale(1);
+        /* Tamanho normal para inputs em mobile */
+    }
+
+    button {
+        width: 100%;
+        /* Faz os botões ocuparem a largura total para facilitar o toque */
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Espaço entre botões se houver mais de um */
+    }
+
+    button:last-of-type {
+        margin-bottom: 0;
+    }
+
+    #area-resultado {
+        padding: 15px;
+    }
+
+    .explicacao {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
