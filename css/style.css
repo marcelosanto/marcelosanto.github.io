@@ -1,330 +1,423 @@
+/* Tailwind CSS via CDN */
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+/* Custom styles for AWS Quiz System */
+:root {
+    --aws-blue: #1e3a8a;
+    --aws-orange: #f97316;
+    --aws-gray: #f8fafc;
+    --aws-dark-gray: #0f172a;
+    --aws-light-blue: #dbeafe;
+    --aws-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
 html {
     height: 100%;
-    /* Garante que o html ocupe toda a altura */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fonte mais moderna */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5;
-    /* Um cinza mais claro e suave para o fundo */
-    color: #333;
-    display: flex;
-    /* Ativa o Flexbox */
-    flex-direction: column;
-    /* Organiza os filhos (header, main, footer) em coluna */
-    min-height: 100vh;
-    /* Altura mínima de 100% da altura da viewport */
-}
-
-main {
-    width: 90%;
-    /* Um pouco mais largo para aproveitar melhor o espaço */
-    max-width: 900px;
-    /* Largura máxima para não ficar excessivamente largo em telas grandes */
-    margin: 30px auto;
-    /* Aumenta a margem superior/inferior e centraliza */
-    padding: 25px;
-    background-color: #ffffff;
-    /* Branco para o conteúdo principal */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-    /* Sombra mais suave */
-    border-radius: 8px;
-    /* Bordas arredondadas */
-    flex: 1;
-    /* Faz com que o main ocupe o espaço disponível, empurrando o footer para baixo */
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5;
-    /* Cinza de fundo mais suave */
-    color: #16191f;
-    /* Cor de texto principal (um cinza bem escuro) */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--aws-gray);
+    color: #1e293b;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.7;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
 header {
-    background-color: #232f3e;
-    /* Azul escuro da AWS */
-    color: #ffffff;
-    padding: 1.5rem 0;
-    /* Aumenta um pouco o padding */
+    background: var(--aws-gradient);
+    color: white;
+    padding: clamp(1.5rem, 5vw, 2.5rem) 1rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid var(--aws-orange);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 1.8em;
-    /* Ajusta o tamanho da fonte do título */
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+main {
+    width: 95%;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 #lista-simulados ul {
     list-style-type: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 #lista-simulados li {
-    margin-bottom: 12px;
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    /* Borda sutil */
-    border-radius: 6px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    /* Transição suave */
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    transition: all 0.3s ease;
 }
 
 #lista-simulados li:hover {
-    transform: translateY(-3px);
-    /* Efeito de elevação sutil */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--aws-blue);
 }
 
 #lista-simulados li a {
     display: block;
-    /* Faz o link ocupar todo o li para facilitar o clique */
-    padding: 15px 20px;
-    /* Aumenta o padding interno */
+    padding: 1.75rem;
     text-decoration: none;
-    color: #007bff;
-    /* Azul para os links */
-    font-weight: 500;
-    /* Um pouco mais de peso na fonte */
-    font-size: 1.1em;
+    color: var(--aws-blue);
+    font-weight: 700;
+    font-size: clamp(1.125rem, 3vw, 1.25rem);
+    text-align: center;
+    transition: all 0.2s ease;
 }
 
 #lista-simulados li a:hover {
-    color: #0056b3;
-    /* Azul mais escuro no hover */
+    color: white;
+    background: var(--aws-gradient);
+    border-radius: 1.25rem;
 }
 
 footer {
     text-align: center;
-    padding: 25px 20px;
-    /* Aumenta o padding */
+    padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
+    background: var(--aws-dark-gray);
+    color: #d1d5db;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     margin-top: auto;
-    /* Garante que ele seja empurrado para baixo com flexbox */
-    background-color: #1d2531;
-    /* Um tom ligeiramente diferente para o footer */
-    color: #ced4da;
-    /* Cor de texto mais clara para o footer */
-    font-size: 0.9em;
+    border-top: 4px solid var(--aws-orange);
 }
 
 footer a {
-    color: #adb5bd;
-    /* Cor dos links no footer */
+    color: #93c5fd;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 footer a:hover {
-    color: #ffffff;
+    color: white;
     text-decoration: underline;
 }
 
-/* Estilos para a página do simulado */
 #area-pergunta p strong {
-    color: #232f3e;
-    /* Cor do texto "Pergunta X de Y" */
+    color: var(--aws-blue);
+    font-weight: 700;
+    font-size: clamp(1.125rem, 3vw, 1.35rem);
+}
+
+#area-pergunta p {
+    color: #475569;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
 }
 
 #area-opcoes ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 1.75rem;
 }
 
 #area-opcoes li {
-    margin-bottom: 10px;
-    padding: 12px 15px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
+    padding: 1.25rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.875rem;
+    margin-bottom: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    background: #f9fafb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 #area-opcoes li:hover {
-    background-color: #e9ecef;
-    /* Fundo mais suave no hover */
-    border-color: #adb5bd;
+    background: var(--aws-light-blue);
+    border-color: var(--aws-blue);
+    transform: translateX(8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 #area-opcoes li input[type="checkbox"],
 #area-opcoes li input[type="radio"] {
-    margin-right: 12px;
-    transform: scale(1.1);
-    /* Deixa os inputs um pouco maiores */
+    margin-right: 1rem;
+    transform: scale(1.4);
+    accent-color: var(--aws-blue);
+    transition: transform 0.2s ease;
 }
 
-/* Estilo para opção selecionada (requer JavaScript para adicionar uma classe, ou CSS :has() se o suporte do navegador for suficiente) */
-/* Exemplo de como poderia ser com uma classe 'selecionada' adicionada via JS:
-#area-opcoes li.selecionada {
-    background-color: #cfe2ff;
-    border-color: #007bff;
+#area-opcoes li input:checked {
+    transform: scale(1.6);
 }
-*/
 
+#area-opcoes li.selected {
+    background: var(--aws-light-blue);
+    border-color: var(--aws-blue);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
+}
+
+#area-opcoes li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--aws-orange);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#area-opcoes li:hover::after {
+    opacity: 1;
+}
 
 button {
     display: inline-block;
-    background-color: #007bff;
-    /* Azul principal para botões */
+    background: var(--aws-blue);
     color: white;
-    padding: 12px 20px;
-    /* Aumenta o padding */
+    padding: clamp(0.875rem, 2.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
     border: none;
-    border-radius: 5px;
+    border-radius: 0.875rem;
     cursor: pointer;
-    margin-top: 25px;
-    margin-right: 10px;
-    font-size: 1em;
-    transition: background-color 0.2s ease;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
-    background-color: #0056b3;
-    /* Tom mais escuro no hover */
+    background: #3b82f6;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-button#botao-finalizar {
-    background-color: #ff9900;
-    /* Laranja AWS para o botão de finalizar */
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
 }
 
-button#botao-finalizar:hover {
-    background-color: #cc7a00;
-    /* Laranja mais escuro no hover */
+button:hover::after {
+    left: 100%;
 }
 
+button#botao-finalizar,
+button#botao-imprimir {
+    background: var(--aws-orange);
+}
+
+button#botao-finalizar:hover,
+button#botao-imprimir:hover {
+    background: #ea580c;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+button#botao-voltar {
+    background: #6b7280;
+    /* Cinza neutro para o botão de voltar */
+}
+
+button#botao-voltar:hover {
+    background: #4b5563;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
 #area-resultado {
-    margin-top: 30px;
-    padding: 25px;
-    border: 1px solid #dee2e6;
-    background-color: #f8f9fa;
-    /* Fundo levemente acinzentado */
-    border-radius: 6px;
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 2px solid #e2e8f0;
+    background: #f9fafb;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 #area-resultado h2 {
-    color: #232f3e;
-    margin-top: 0;
+    color: var(--aws-blue);
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
 .resposta-correta {
-    color: #198754;
-    /* Verde para correto */
-    font-weight: bold;
+    color: #16a34a;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
 }
 
 .resposta-incorreta {
-    color: #dc3545;
-    /* Vermelho para incorreto */
-    font-weight: bold;
+    color: #dc2626;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
 }
 
 .explicacao {
-    margin-top: 12px;
-    padding: 12px;
-    background-color: #e0e7ff;
-    /* Fundo azul claro para explicação */
-    border-left: 4px solid #0056b3;
-    /* Destaque azul à esquerda */
-    border-radius: 0 4px 4px 0;
-    font-size: 0.95em;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--aws-light-blue);
+    border-left: 6px solid var(--aws-blue);
+    border-radius: 0 1rem 1rem 0;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    line-height: 1.7;
 }
 
 hr {
     border: 0;
     height: 1px;
-    background-color: #e0e0e0;
-    /* Cor da linha horizontal */
-    margin: 25px 0;
-    /* Espaçamento da linha */
+    background: #d1d5db;
+    margin: 2rem 0;
 }
 
-/* Para tablets e telas menores (ex: até 768px) */
+/* Configurar Simulado Page */
+#configurar-simulado-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#configurar-simulado-form label {
+    font-weight: 600;
+    color: var(--aws-blue);
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+}
+
+#configurar-simulado-form input[type="number"],
+#configurar-simulado-form input[type="checkbox"] {
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#configurar-simulado-form input:focus {
+    outline: none;
+    border-color: var(--aws-blue);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Estilos para impressão */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #area-resultado,
+    #area-resultado * {
+        visibility: visible;
+    }
+
+    #area-resultado {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 1rem;
+    }
+
+    button#botao-voltar,
+    button#botao-imprimir {
+        display: none;
+    }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     main {
-        width: 95%;
-        /* Ocupa mais da largura da tela */
-        margin: 20px auto;
-        padding: 20px;
+        width: 90%;
+        padding: 1.25rem;
     }
 
     header h1 {
-        font-size: 1.6em;
+        font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
     #lista-simulados li a {
-        font-size: 1em;
-        padding: 12px 15px;
+        font-size: clamp(1rem, 2.5vw, 1.125rem);
+        padding: 1.25rem;
     }
 
     button {
-        padding: 10px 15px;
-        font-size: 0.95em;
-    }
-}
-
-/* Para smartphones (ex: até 480px) */
-@media (max-width: 480px) {
-    body {
-        font-size: 15px;
-        /* Ajusta o tamanho base da fonte para melhor leitura */
-    }
-
-    main {
-        padding: 15px;
-        /* Menor padding em telas muito pequenas */
-    }
-
-    header h1 {
-        font-size: 1.4em;
-    }
-
-    #lista-simulados li a {
-        padding: 10px;
+        padding: 0.75rem 1.25rem;
+        font-size: clamp(0.95rem, 2.5vw, 1rem);
     }
 
     #area-opcoes li {
-        padding: 10px;
-        font-size: 0.9em;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+    }
+
+    #lista-simulados li a {
+        padding: 0.875rem;
+        font-size: clamp(0.95rem, 2.5vw, 1rem);
+    }
+
+    #area-opcoes li {
+        padding: 0.875rem;
+        font-size: clamp(0.9rem, 2.5vw, 0.95rem);
     }
 
     #area-opcoes li input[type="checkbox"],
     #area-opcoes li input[type="radio"] {
-        margin-right: 8px;
-        transform: scale(1);
-        /* Tamanho normal para inputs em mobile */
+        margin-right: 0.75rem;
+        transform: scale(1.2);
     }
 
     button {
         width: 100%;
-        /* Faz os botões ocuparem a largura total para facilitar o toque */
         margin-right: 0;
-        margin-bottom: 10px;
-        /* Espaço entre botões se houver mais de um */
-    }
-
-    button:last-of-type {
-        margin-bottom: 0;
+        margin-bottom: 1rem;
     }
 
     #area-resultado {
-        padding: 15px;
+        padding: 1.25rem;
     }
 
     .explicacao {
-        padding: 10px;
-        font-size: 0.9em;
+        padding: 1rem;
+        font-size: clamp(0.9rem, 2.5vw, 0.95rem);
     }
 }

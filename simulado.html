@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulado AWS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,22 +14,34 @@
         <h1 id="titulo-simulado">Simulado AWS</h1>
     </header>
     <main>
-        <div id="area-pergunta">
-        </div>
-        <div id="area-opcoes">
-        </div>
-        <button id="botao-proxima" style="display: none;">Próxima Pergunta</button>
-        <button id="botao-finalizar" style="display: none;">Finalizar Simulado</button>
-
+        <div id="area-pergunta"></div>
+        <div id="area-opcoes"></div>
+        <button id="botao-proxima" aria-label="Ir para a próxima pergunta">
+            <i class="fas fa-arrow-right mr-2"></i> Próxima Pergunta
+        </button>
+        <button id="botao-finalizar" aria-label="Finalizar e ver resultados">
+            <i class="fas fa-check mr-2"></i> Finalizar Simulado
+        </button>
         <div id="area-resultado" style="display: none;">
             <h2>Seu Resultado:</h2>
             <p id="porcentagem-acertos"></p>
-            <div id="feedback-respostas">
+            <div id="feedback-respostas"></div>
+            <div class="flex space-x-4 mt-6">
+                <button id="botao-voltar" aria-label="Voltar para a página inicial">
+                    <i class="fas fa-home mr-2"></i> Voltar para Início
+                </button>
+                <button id="botao-imprimir" aria-label="Imprimir resultados">
+                    <i class="fas fa-print mr-2"></i> Imprimir Resultados
+                </button>
             </div>
         </div>
+        <hr>
+        <a href="index.html" aria-label="Voltar para a lista de simulados">
+            Voltar para a lista de simulados
+        </a>
     </main>
     <footer>
-        <p><a href="index.html">Voltar para a lista de simulados</a></p>
+        Seu Parceiro de Programação para Simulados AWS
     </footer>
     <script src="js/simulado.js"></script>
 </body>
