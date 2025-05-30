@@ -421,3 +421,27 @@ hr {
         font-size: clamp(0.9rem, 2.5vw, 0.95rem);
     }
 }
+
+#personal-ranking {
+    border: 1px solid #e2e8f0;
+}
+
+#personal-ranking p {
+    margin: 0.5rem 0;
+}
+
+#personal-ranking .improved {
+    color: #2f855a;
+    font-weight: bold;
+}
+
+#personal-ranking .no-improvement {
+    color: #c53030;
+    font-weight: bold;
+}
+
+@media print {
+    #personal-ranking {
+        display: none;
+    }
+}

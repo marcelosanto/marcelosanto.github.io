@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const areaResultado = document.getElementById('area-resultado');
     const porcentagemAcertosP = document.getElementById('porcentagem-acertos');
     const feedbackRespostasDiv = document.getElementById('feedback-respostas');
+    const personalRankingDiv = document.getElementById('personal-ranking');
     const botaoVoltar = document.getElementById('botao-voltar');
     const botaoImprimir = document.getElementById('botao-imprimir');
 
@@ -23,12 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let respostasUsuario = [];
 
     areaPergunta.innerHTML = '<p class="text-center text-gray-500">Carregando simulado...</p>';
+    areaOpcoes.innerHTML = '';
 
     const params = new URLSearchParams(window.location.search);
     const arquivoJSON = params.get('arquivo');
     const nomeCategoria = params.get('categoria');
     const numPerguntasParam = params.get('numPerguntas');
     const randomizarParam = params.get('randomizar');
+
+    // console.log('Parâmetros da URL:', { arquivoJSON, nomeCategoria, numPerguntasParam, randomizarParam });
 
     if (tituloSimuladoH1 && nomeCategoria) {
         tituloSimuladoH1.textContent = `Simulado: ${decodeURIComponent(nomeCategoria)}`;
@@ -37,16 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (arquivoJSON) {
+        // console.log(`Tentando carregar JSON: dados/${arquivoJSON}`);
         fetch(`dados/${arquivoJSON}`)
             .then(response => {
+                // console.log('Resposta do fetch:', response);
                 if (!response.ok) {
                     throw new Error(`Erro HTTP ${response.status}: ${response.statusText}`);
                 }
                 return response.json();
             })
             .then(data => {
+                // console.log('Dados JSON recebidos:', data);
                 if (!Array.isArray(data)) {
-                    throw new Error("O arquivo JSON Não contém um array de perguntas.");
+                    throw new Error("O arquivo JSON não contém um array de perguntas.");
                 }
 
                 let perguntasProcessadas = [...data];
@@ -61,31 +68,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 perguntas = perguntasProcessadas;
+                // console.log('Perguntas processadas:', perguntas);
                 if (perguntas.length > 0) {
                     respostasUsuario = new Array(perguntas.length).fill(null);
                     mostrarPergunta(perguntaAtualIndex);
                 } else {
-                    areaPergunta.innerHTML = '<p class="text-red-500">Nenhuma pergunta encontrada para este simulado.</p>';
+                    areaPergunta.innerHTML = '<p class="text-red-500 font-bold">Nenhuma pergunta encontrada para este simulado com os critérios selecionados.</p>';
+                    areaOpcoes.innerHTML = '';
                     botaoProxima.style.display = 'none';
                     botaoFinalizar.style.display = 'none';
                 }
             })
             .catch(error => {
                 console.error('Erro ao carregar simulado:', error);
-                areaPergunta.innerHTML = `<p class="text-red-500">Erro: ${error.message}. Verifique o console para mais detalhes.</p>`;
+                areaPergunta.innerHTML = `<p class="text-red-500 font-bold">Erro ao carregar o simulado: ${error.message}. Verifique se o arquivo JSON está na pasta 'dados' e no formato correto.</p>`;
+                areaOpcoes.innerHTML = '';
                 botaoProxima.style.display = 'none';
                 botaoFinalizar.style.display = 'none';
             });
     } else {
-        areaPergunta.innerHTML = '<p class="text-red-500">Nenhum simulado selecionado. Volte para a p�gina inicial.</p>';
-        if (tituloSimuladoH1) tituloSimuladoH1.textContent = "Erro na Sele��o";
+        console.warn('Nenhum arquivo JSON especificado na URL.');
+        areaPergunta.innerHTML = '<p class="text-red-500 font-bold">Nenhum simulado selecionado. Volte para a página inicial e escolha um.</p>';
+        areaOpcoes.innerHTML = '';
+        if (tituloSimuladoH1) tituloSimuladoH1.textContent = "Erro na Seleção";
         botaoProxima.style.display = 'none';
         botaoFinalizar.style.display = 'none';
     }
 
     function mostrarPergunta(index) {
+        // console.log('Mostrando pergunta:', index, perguntas[index]);
         if (perguntas.length === 0) {
-            areaPergunta.innerHTML = "<p class='text-red-500'>Nenhuma pergunta dispon�vel.</p>";
+            areaPergunta.innerHTML = "<p class='text-red-500 font-bold'>Nenhuma pergunta disponível.</p>";
             areaOpcoes.innerHTML = '';
             botaoProxima.style.display = 'none';
             botaoFinalizar.style.display = 'none';
@@ -93,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (index < 0 || index >= perguntas.length) {
-            console.error("�ndice inv�lido:", index);
+            console.error("Índice inválido:", index);
+            areaPergunta.innerHTML = "<p class='text-red-500 font-bold'>Erro: Índice de pergunta inválido.</p>";
             return;
         }
 
@@ -113,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.value = i;
             input.id = `opcao_${index}_${i}`;
 
-            // Clique no <li> marca/desmarca o input
             li.addEventListener('click', (e) => {
                 if (e.target.tagName !== 'INPUT') {
                     if (tipoInput === 'radio') {
@@ -184,18 +197,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function salvarRespostaAtual() {
-        if (perguntas.length === 0 || perguntaAtualIndex < 0 || perguntaAtualIndex >= perguntas.length) return;
+        try {
+            if (perguntas.length === 0 || perguntaAtualIndex < 0 || perguntaAtualIndex >= perguntas.length) return;
 
-        const pergunta = perguntas[perguntaAtualIndex];
-        const tipoInput = pergunta.correctAnswers.length > 1 ? 'checkbox' : 'radio';
-        const inputs = areaOpcoes.querySelectorAll(`input[name="pergunta_${perguntaAtualIndex}"]`);
+            const pergunta = perguntas[perguntaAtualIndex];
+            const tipoInput = pergunta.correctAnswers.length > 1 ? 'checkbox' : 'radio';
+            const inputs = areaOpcoes.querySelectorAll(`input[name="pergunta_${perguntaAtualIndex}"]`);
 
-        if (tipoInput === 'radio') {
-            const checkedInput = Array.from(inputs).find(input => input.checked);
-            respostasUsuario[perguntaAtualIndex] = checkedInput ? parseInt(checkedInput.value) : null;
-        } else {
-            const checkedInputs = Array.from(inputs).filter(input => input.checked);
-            respostasUsuario[perguntaAtualIndex] = checkedInputs.length > 0 ? checkedInputs.map(input => parseInt(input.value)) : null;
+            if (tipoInput === 'radio') {
+                const checkedInput = Array.from(inputs).find(input => input.checked);
+                respostasUsuario[perguntaAtualIndex] = checkedInput ? parseInt(checkedInput.value) : null;
+            } else {
+                const checkedInputs = Array.from(inputs).filter(input => input.checked);
+                respostasUsuario[perguntaAtualIndex] = checkedInputs.length > 0 ? checkedInputs.map(input => parseInt(input.value)) : null;
+            }
+            // console.log('Respostas do usuário:', respostasUsuario);
+        } catch (error) {
+            console.error('Erro ao salvar resposta:', error);
         }
     }
 
@@ -213,14 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
         areaResultado.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Evento para o bot�o Voltar
     if (botaoVoltar) {
         botaoVoltar.addEventListener('click', () => {
             window.location.href = 'index.html';
         });
     }
 
-    // Evento para o bot�o Imprimir
     if (botaoImprimir) {
         botaoImprimir.addEventListener('click', () => {
             window.print();
@@ -228,62 +244,95 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function calcularResultado() {
-        let acertos = 0;
-        feedbackRespostasDiv.innerHTML = '';
+        try {
+            let acertos = 0;
+            feedbackRespostasDiv.innerHTML = '';
+            const simuladoNome = decodeURIComponent(new URLSearchParams(window.location.search).get('categoria')) || "Desconhecido";
 
-        if (perguntas.length === 0) {
-            porcentagemAcertosP.textContent = "Nenhuma pergunta foi respondida.";
+            if (perguntas.length === 0) {
+                porcentagemAcertosP.textContent = "Nenhuma pergunta foi respondida.";
+                areaPergunta.style.display = 'none';
+                areaOpcoes.style.display = 'none';
+                botaoProxima.style.display = 'none';
+                botaoFinalizar.style.display = 'none';
+                areaResultado.style.display = 'block';
+                personalRankingDiv.innerHTML = '<p class="text-red-500">Nenhum resultado para comparar.</p>';
+                return;
+            }
+
+            perguntas.forEach((pergunta, index) => {
+                const respostaDoUsuario = respostasUsuario[index];
+                const respostasCorretas = pergunta.correctAnswers;
+
+                let acertou = false;
+                if (respostaDoUsuario !== null) {
+                    if (respostasCorretas.length > 1) {
+                        if (Array.isArray(respostaDoUsuario) &&
+                            respostaDoUsuario.length === respostasCorretas.length &&
+                            respostaDoUsuario.every(val => respostasCorretas.includes(val)) &&
+                            respostasCorretas.every(val => respostaDoUsuario.includes(val))) {
+                            acertou = true;
+                        }
+                    } else {
+                        if (respostasCorretas.includes(respostaDoUsuario)) {
+                            acertou = true;
+                        }
+                    }
+                }
+
+                if (acertou) acertos++;
+
+                const divPerguntaFeedback = document.createElement('div');
+                divPerguntaFeedback.style.marginBottom = '20px';
+                divPerguntaFeedback.innerHTML = `
+                    <h4 class="font-bold text-lg text-aws-blue">Pergunta ${index + 1}: ${pergunta.text}</h4>
+                    <p>Sua resposta: ${formatarRespostaUsuario(respostaDoUsuario, pergunta.options)}</p>
+                    <p>Resposta correta: ${formatarRespostasCorretas(pergunta.correctAnswers, pergunta.options)}</p>
+                    ${acertou ? '<p class="resposta-correta">Você acertou!</p>' : '<p class="resposta-incorreta">Você errou.</p>'}
+                    <div class="explicacao"><strong>Explicação:</strong> ${pergunta.explanation || "Não disponível."}</div>
+                    <hr />
+                `;
+                feedbackRespostasDiv.appendChild(divPerguntaFeedback);
+            });
+
+            const porcentagem = perguntas.length > 0 ? (acertos / perguntas.length) * 100 : 0;
+            porcentagemAcertosP.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas (${acertos.toFixed(2)}%).`;
+
+            // Salvar resultado no localStorage
+            const resultado = {
+                simulado: simuladoNome,
+                pontuacao: porcentagem.toFixed(2),
+                data: new Date().toLocaleString('pt-BR')
+            };
+            const chaveStorage = `simulado_${simuladoNome.replace(/\s/g, '_')}`;
+            let historico = JSON.parse(localStorage.getItem(chaveStorage) || '[]');
+            historico.push(resultado);
+            localStorage.setItem(chaveStorage, JSON.stringify(historico));
+
+            // Comparar com a última tentativa
+            if (historico.length > 1) {
+                const ultimaPontuacao = parseFloat(historico[historico.length - 2].pontuacao);
+                const atualPontuacao = parseFloat(resultado.pontuacao);
+                if (atualPontuacao > ultimaPontuacao) {
+                    personalRankingDiv.innerHTML = `<p class="improved">Parabéns! Você melhorou em relação à última tentativa (${atualPontuacao}% vs ${ultimaPontuacao}%).</p>`;
+                } else if (atualPontuacao === ultimaPontuacao) {
+                    personalRankingDiv.innerHTML = `<p>Mesmo desempenho da última vez (${atualPontuacao}%). Tente melhorar!</p>`;
+                } else {
+                    personalRankingDiv.innerHTML = `<p class="no-improvement">Sua pontuação caiu (${atualPontuacao}% vs ${ultimaPontuacao}%). Tente novamente!</p>`;
+                }
+            } else {
+                personalRankingDiv.innerHTML = `<p>Primeira tentativa! Sua pontuação: ${resultado.pontuacao}%.</p>`;
+            }
+
             areaPergunta.style.display = 'none';
             areaOpcoes.style.display = 'none';
             botaoProxima.style.display = 'none';
             botaoFinalizar.style.display = 'none';
             areaResultado.style.display = 'block';
-            return;
+        } catch (error) {
+            console.error('Erro ao calcular resultado:', error);
+            personalRankingDiv.innerHTML = '<p class="text-red-500">Erro ao processar resultado.</p>';
         }
-
-        perguntas.forEach((pergunta, index) => {
-            const respostaDoUsuario = respostasUsuario[index];
-            const respostasCorretas = pergunta.correctAnswers;
-
-            let acertou = false;
-            if (respostaDoUsuario !== null) {
-                if (respostasCorretas.length > 1) {
-                    if (Array.isArray(respostaDoUsuario) &&
-                        respostaDoUsuario.length === respostasCorretas.length &&
-                        respostaDoUsuario.every(val => respostasCorretas.includes(val)) &&
-                        respostasCorretas.every(val => respostaDoUsuario.includes(val))) {
-                        acertou = true;
-                    }
-                } else {
-                    if (respostasCorretas.includes(respostaDoUsuario)) {
-                        acertou = true;
-                    }
-                }
-            }
-
-            if (acertou) acertos++;
-
-            const divPerguntaFeedback = document.createElement('div');
-            divPerguntaFeedback.style.marginBottom = '20px';
-            divPerguntaFeedback.innerHTML = `
-                <h4 class="font-bold text-lg text-aws-blue">Pergunta ${index + 1}: ${pergunta.text}</h4>
-                <p>Sua resposta: ${formatarRespostaUsuario(respostaDoUsuario, pergunta.options)}</p>
-                <p>Resposta correta: ${formatarRespostasCorretas(pergunta.correctAnswers, pergunta.options)}</p>
-                ${acertou ? '<p class="resposta-correta">Você acertou!</p>' : '<p class="resposta-incorreta">Você errou.</p>'}
-                <div class="explicacao"><strong>Explicação:</strong> ${pergunta.explanation || "Não disponível."}</div>
-                <hr>
-            `;
-            feedbackRespostasDiv.appendChild(divPerguntaFeedback);
-        });
-
-        const porcentagem = perguntas.length > 0 ? (acertos / perguntas.length) * 100 : 0;
-        porcentagemAcertosP.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas (${porcentagem.toFixed(2)}%).`;
-
-        areaPergunta.style.display = 'none';
-        areaOpcoes.style.display = 'none';
-        botaoProxima.style.display = 'none';
-        botaoFinalizar.style.display = 'none';
-        areaResultado.style.display = 'block';
     }
 
     function formatarRespostaUsuario(resposta, opcoes) {
