@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     respostasUsuario = new Array(perguntas.length).fill(null);
                     mostrarPergunta(perguntaAtualIndex);
                 } else {
-                    areaPergunta.innerHTML = '<p>Nenhuma pergunta encontrada para este simulado com os crit�rios selecionados.</p>';
+                    areaPergunta.innerHTML = '<p>Nenhuma pergunta encontrada para este simulado com os critérios selecionados.</p>';
                     botaoProxima.style.display = 'none';
                     botaoFinalizar.style.display = 'none';
                 }
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     } else {
         areaPergunta.innerHTML = '<p>Nenhum simulado selecionado. Volte para a p�gina inicial e escolha um.</p>';
-        if (tituloSimuladoH1) tituloSimuladoH1.textContent = "Erro na Sele��o";
+        if (tituloSimuladoH1) tituloSimuladoH1.textContent = "Erro na Seleção";
         botaoProxima.style.display = 'none';
         botaoFinalizar.style.display = 'none';
     }
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Fun��o para mostrar uma pergunta
     function mostrarPergunta(index) {
         if (perguntas.length === 0) {
-            areaPergunta.innerHTML = "<p>Nenhuma pergunta dispon�vel para os crit�rios selecionados.</p>";
+            areaPergunta.innerHTML = "<p>Nenhuma pergunta disponível para os critérios selecionados.</p>";
             areaOpcoes.innerHTML = '';
             botaoProxima.style.display = 'none';
             botaoFinalizar.style.display = 'none';
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (index < 0 || index >= perguntas.length) {
-            console.error("�ndice de pergunta inválido:", index);
+            console.error("Índice de pergunta inválido:", index);
             return;
         }
 
