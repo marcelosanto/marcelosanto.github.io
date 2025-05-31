@@ -1,5 +1,110 @@
 [
   {
+    "id": 198,
+    "text": "Uma empresa está planejando sua migração para a AWS e quer garantir que os resultados de negócios esperados, como aumento de receita e eficiência operacional, sejam claramente definidos e alinhados com a estratégia de adoção da nuvem. Qual perspectiva do AWS Cloud Adoption Framework (AWS CAF) é PRIMARIAMENTE responsável por garantir esse alinhamento estratégico e de valor para o negócio?",
+    "options": [
+      "Perspectiva de Plataforma",
+      "Perspectiva de Pessoas",
+      "Perspectiva de Negócios",
+      "Perspectiva de Segurança"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "A Perspectiva de Negócios do AWS CAF ajuda a garantir que a TI esteja alinhada com as necessidades do negócio e que os investimentos em nuvem gerem resultados de negócios específicos. Ela se concentra em identificar como a nuvem pode ajudar a alcançar objetivos como aumento de receita, melhoria da eficiência operacional e redução do risco comercial.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 199,
+    "text": "Durante a adoção da Nuvem AWS, uma organização percebe que precisa atualizar as habilidades de sua equipe de TI, promover uma cultura de aprendizado contínuo e gerenciar as mudanças organizacionais para dar suporte à nova forma de operar na nuvem. Qual perspectiva do AWS Cloud Adoption Framework (AWS CAF) trata dessas áreas?",
+    "options": [
+      "Perspectiva de Governança",
+      "Perspectiva de Pessoas",
+      "Perspectiva de Operações",
+      "Perspectiva de Plataforma"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "A Perspectiva de Pessoas do AWS CAF foca no desenvolvimento de uma estratégia de gerenciamento de mudanças organizacionais e de prontidão para a nuvem. Isso inclui o desenvolvimento de habilidades da equipe, a identificação de lacunas de competência, o treinamento e a criação de uma cultura que abrace a mudança e a inovação possibilitadas pela nuvem.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 200,
+    "text": "Uma empresa está migrando para a AWS e precisa estabelecer controles para gerenciar seus recursos na nuvem, garantir a conformidade com as políticas internas e regulatórias, e otimizar os custos. Qual perspectiva do AWS Cloud Adoption Framework (AWS CAF) é responsável por definir e implementar esses mecanismos de controle e supervisão?",
+    "options": [
+      "Perspectiva de Segurança",
+      "Perspectiva de Plataforma",
+      "Perspectiva de Negócios",
+      "Perspectiva de Governança"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "A Perspectiva de Governança do AWS CAF concentra-se em orquestrar a adoção da nuvem enquanto minimiza os riscos relacionados à transformação. Ela fornece orientação sobre como estabelecer controles, gerenciar portfólios de TI, garantir a conformidade e otimizar os custos na nuvem.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 201,
+    "text": "Ao construir seu ambiente na AWS, uma equipe de TI precisa projetar e implementar uma arquitetura de nuvem escalável e resiliente, modernizar as aplicações existentes e usar as melhores práticas para a infraestrutura de nuvem. Qual perspectiva do AWS Cloud Adoption Framework (AWS CAF) orienta essas atividades técnicas de arquitetura e implementação?",
+    "options": [
+      "Perspectiva de Operações",
+      "Perspectiva de Segurança",
+      "Perspectiva de Plataforma",
+      "Perspectiva de Pessoas"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "A Perspectiva de Plataforma do AWS CAF foca em projetar, implementar e otimizar a arquitetura da AWS com base nos requisitos de negócios. Isso inclui a definição de princípios de arquitetura, a seleção de serviços apropriados, a garantia de escalabilidade, resiliência e a modernização de aplicações.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 202,
+    "text": "Uma organização está preocupada em proteger seus ativos de dados e cargas de trabalho na Nuvem AWS. Eles precisam definir controles de segurança, gerenciar identidades e acessos, e implementar mecanismos de detecção de ameaças e resposta a incidentes. Qual perspectiva do AWS Cloud Adoption Framework (AWS CAF) se concentra nesses requisitos de segurança?",
+    "options": [
+      "Perspectiva de Governança",
+      "Perspectiva de Segurança",
+      "Perspectiva de Confiabilidade (Pilar do Well-Architected)",
+      "Perspectiva de Negócios"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "A Perspectiva de Segurança do AWS CAF ajuda as organizações a alcançar a confidencialidade, integridade e disponibilidade de seus dados e cargas de trabalho na nuvem. Ela abrange áreas como gerenciamento de identidade e acesso, controles de detecção, segurança da infraestrutura, proteção de dados e resposta a incidentes.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 203,
+    "text": "Após a migração para a AWS, uma empresa precisa definir como vai monitorar a saúde de suas aplicações, gerenciar eventos e incidentes operacionais, e automatizar processos para manter a eficiência e a confiabilidade do ambiente de nuvem. Qual perspectiva do AWS Cloud Adoption Framework (AWS CAF) aborda a execução e o gerenciamento eficazes das cargas de trabalho na nuvem?",
+    "options": [
+      "Perspectiva de Plataforma",
+      "Perspectiva de Pessoas",
+      "Perspectiva de Operações",
+      "Perspectiva de Otimização de Custos (Pilar do Well-Architected)"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "A Perspectiva de Operações do AWS CAF foca em como você executa, usa, opera e evolui suas cargas de trabalho na nuvem. Ela ajuda a definir processos operacionais, implementar monitoramento, gerenciar eventos, automatizar operações e garantir a continuidade dos negócios e a recuperação de desastres.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
+    "id": 204,
+    "text": "Uma empresa está usando o AWS Cloud Adoption Framework (AWS CAF) para orientar sua transição para a nuvem. O framework é composto por várias 'Perspectivas' que representam áreas de foco distintas. Qual é o objetivo principal do AWS CAF como um todo?",
+    "options": [
+      "Fornecer uma lista detalhada de todos os serviços da AWS e seus preços.",
+      "Ajudar as organizações a desenvolver um plano eficiente e eficaz para sua jornada de adoção da nuvem.",
+      "Certificar profissionais de TI em tecnologias específicas da AWS.",
+      "Automatizar a implantação de infraestrutura como código na AWS."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "O AWS Cloud Adoption Framework (AWS CAF) fornece orientação e melhores práticas para ajudar as organizações a construir um plano abrangente para a adoção da nuvem, abordando aspectos técnicos, de negócios, de governança e de pessoas. Seu objetivo é ajudar as empresas a realizarem uma transição suave e bem-sucedida para a nuvem, minimizando riscos e maximizando o valor.",
+    "category": "Conceitos da Nuvem"
+  },
+  {
     "id": 186,
     "text": "Uma equipe de desenvolvimento está implantando uma nova aplicação na AWS e quer garantir que as alterações na infraestrutura sejam feitas de forma consistente e previsível, com a capacidade de reverter para estados anteriores se necessário. Qual princípio do pilar de Excelência Operacional do AWS Well-Architected Framework é MAIS relevante para este objetivo?",
     "options": [
