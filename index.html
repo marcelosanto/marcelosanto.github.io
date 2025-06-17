@@ -164,22 +164,24 @@
             </div>
 
             <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl flex flex-col gap-8 items-center">
-                <div class="w-full min-h-[600px] overflow-x-auto">
-                    <div id="diagram-container" class="relative w-[1200px] h-[700px] scale-90 md:scale-100 mx-auto">
+                <!-- Diagram Container -->
+                <div class="w-full min-h-[650px] overflow-x-auto">
+                    <div id="diagram-container" class="relative w-[1200px] h-[500px] scale-90 md:scale-100 mx-auto">
                         <!-- Nodes -->
-                        <div id="node-user" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 20px; top: 310px;">👤<br>Utilizador</div>
-                        <div id="node-cloudfront" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 220px; top: 310px;">☁️<br>CloudFront</div>
-                        <div id="node-api" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 420px; top: 310px;">🔗<br>API Gateway</div>
-                        <div id="node-cognito" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 420px; top: 100px;">🔐<br>Cognito</div>
-                        <div id="node-logic-main" class="diagram-node absolute w-52 text-center p-4 rounded-lg bg-gray-100 border-gray-400" style="left: 620px; top: 190px; height: 320px; opacity: 1;">Orquestração<br>(Agentes de IA)</div>
-                            <div id="node-lambda" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 220px;">λ<br>Lambda</div>
-                            <div id="node-step" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 290px;">⚙️<br>Step Functions</div>
-                            <div id="node-event" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 360px;">🗓️<br>EventBridge</div>
-                            <div id="node-sns" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 430px;">🔔<br>SNS</div>
-                        <div id="node-rekognition" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 100px;">👁️<br>Rekognition</div>
-                        <div id="node-bedrock" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 240px;">🧠<br>Bedrock (LLM)</div>
-                        <div id="node-external" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 380px;">🌍<br>APIs Externas</div>
-                        <div id="node-db" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 520px;">🗃️<br>DynamoDB / S3</div>
+                        <div data-tech-id="user" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 20px; top: 330px;">👤<br>Utilizador</div>
+                        <div data-tech-id="s3-hosting" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 220px; top: 180px;">📦<br>S3 (Hospedagem)</div>
+                        <div data-tech-id="cloudfront" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 220px; top: 330px;">☁️<br>CloudFront</div>
+                        <div data-tech-id="api" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 420px; top: 330px;">🔗<br>API Gateway</div>
+                        <div data-tech-id="cognito" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 420px; top: 100px;">🔐<br>Cognito</div>
+                        <div data-tech-id="logic-main" class="diagram-node absolute w-52 text-center p-4 rounded-lg bg-gray-100 border-gray-400" style="left: 620px; top: 210px; height: 380px; opacity: 1;">Orquestração<br>(Agentes de IA)</div>
+                            <div data-tech-id="lambda" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 240px;">λ<br>Lambda</div>
+                            <div data-tech-id="step" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 310px;">⚙️<br>Step Functions</div>
+                            <div data-tech-id="event" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 380px;">🗓️<br>EventBridge</div>
+                            <div data-tech-id="sns" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 650px; top: 450px;">🔔<br>SNS</div>
+                        <div data-tech-id="rekognition" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 100px;">👁️<br>Rekognition</div>
+                        <div data-tech-id="bedrock" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 240px;">🧠<br>Bedrock (LLM)</div>
+                        <div data-tech-id="external" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 380px;">🌍<br>APIs Externas</div>
+                        <div data-tech-id="db" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 880px; top: 520px;">🗃️<br>DynamoDB / S3</div>
 
                         <!-- Data Pulse Element -->
                         <div id="data-pulse"></div>
@@ -187,13 +189,13 @@
                 </div>
                  <div id="explanation-container" class="w-full p-4 bg-gray-50 rounded-lg border min-h-[120px]">
                     <div id="exp-0" class="explanation-box active"><p class="font-bold tech-text-medium text-lg">Bem-vindo à nossa arquitetura!</p><p>Clique em "Iniciar Animação" para ver a magia acontecer. Acompanhe a jornada de uma requisição e entenda o papel de cada serviço.</p></div>
-                    <div id="exp-1" class="explanation-box"><p class="font-bold tech-text-medium">Passo 1: O Ponto de Partida</p><p>Tudo começa com o <strong>Utilizador</strong>. A requisição é enviada para o <strong>CloudFront</strong>, que entrega a interface da aplicação de forma rápida e segura.</p></div>
-                    <div id="exp-2" class="explanation-box"><p class="font-bold tech-text-medium">Passo 2: A Porta de Entrada</p><p>As chamadas dinâmicas são direcionadas para o <strong>API Gateway</strong>, a porta de entrada segura e escalável para o nosso backend.</p></div>
+                    <div id="exp-1" class="explanation-box"><p class="font-bold tech-text-medium">Passo 1: Carregamento do Site</p><p>O <strong>Utilizador</strong> acede ao site. O <strong>CloudFront</strong> entrega a interface, buscando os ficheiros estáticos do **Amazon S3** onde o site está hospedado.</p></div>
+                    <div id="exp-2" class="explanation-box"><p class="font-bold tech-text-medium">Passo 2: Requisição Dinâmica</p><p>Uma ação (como login) envia uma requisição para o <strong>API Gateway</strong>, a nossa porta de entrada segura para o backend.</p></div>
                     <div id="exp-3" class="explanation-box"><p class="font-bold tech-text-medium">Passo 3: Verificação de Identidade</p><p>O API Gateway comunica com o <strong>Cognito</strong> para autenticar o utilizador, garantindo que apenas utilizadores autorizados prossigam.</p></div>
                     <div id="exp-4" class="explanation-box"><p class="font-bold tech-text-medium">Passo 4: Orquestração da Lógica</p><p>A requisição invoca os nossos "Agentes de IA", que são os fluxos do <strong>Step Functions</strong>. Eles coordenam as <strong>Funções Lambda</strong> que executam a lógica de negócio específica.</p></div>
                     <div id="exp-5" class="explanation-box"><p class="font-bold tech-text-medium">Passo 5: Análise com IA</p><p>A nossa lógica aciona as IAs: <strong>Rekognition</strong> para validar documentos e <strong>AWS Bedrock</strong> para usar LLMs em análises e decisões. O <strong>EventBridge</strong> pode acionar estes fluxos de forma agendada.</p></div>
                     <div id="exp-6" class="explanation-box"><p class="font-bold tech-text-medium">Passo 6: Interação e Notificação</p><p>O sistema pode comunicar com <strong>APIs Externas</strong> para verificações e pagamentos. O <strong>SNS</strong> é usado para enviar notificações (email, SMS) aos utilizadores.</p></div>
-                    <div id="exp-7" class="explanation-box"><p class="font-bold tech-text-medium">Passo 7: Persistência dos Dados</p><p>Finalmente, todas as informações são guardadas de forma segura no <strong>DynamoDB</strong> (dados) e no <strong>Amazon S3</strong> (ficheiros).</p></div>
+                    <div id="exp-7" class="explanation-box"><p class="font-bold tech-text-medium">Passo 7: Persistência dos Dados</p><p>Finalmente, todas as informações são guardadas de forma segura no <strong>DynamoDB</strong> (dados) e no <strong>Amazon S3</strong> (ficheiros de utilizador).</p></div>
                 </div>
             </div>
         </section>
@@ -281,35 +283,36 @@
             const startBtn = document.getElementById('start-animation-btn');
             const nodes = document.querySelectorAll('.diagram-node');
             const explanations = document.querySelectorAll('.explanation-box');
-            const pulse = document.getElementById('data-pulse');
             const diagramContainer = document.getElementById('diagram-container');
+            const pulse = document.getElementById('data-pulse');
             let animationTimeout;
 
             const animationSteps = [
                 { exp: 'exp-0', activeNodes: [] },
-                { from: 'node-user', to: 'node-cloudfront', exp: 'exp-1', activeNodes: ['node-user', 'node-cloudfront'], delay: 1500 },
-                { from: 'node-cloudfront', to: 'node-api', exp: 'exp-2', activeNodes: ['node-cloudfront', 'node-api'], delay: 1500 },
-                { from: 'node-api', to: 'node-cognito', exp: 'exp-3', activeNodes: ['node-api', 'node-cognito'], delay: 2000 },
-                { from: 'node-api', to: 'node-logic-main', exp: 'exp-4', activeNodes: ['node-api', 'node-logic-main', 'node-lambda', 'node-step'], delay: 2000 },
-                { from: 'node-logic-main', to: 'node-rekognition', exp: 'exp-5', activeNodes: ['node-logic-main', 'node-rekognition', 'node-bedrock', 'node-event'], delay: 2500 },
-                { from: 'node-logic-main', to: 'node-external', exp: 'exp-6', activeNodes: ['node-logic-main', 'node-external', 'node-sns'], delay: 2500 },
-                { from: 'node-logic-main', to: 'node-db', exp: 'exp-7', activeNodes: ['node-logic-main', 'node-db'], delay: 2000 },
+                { from: 'user', to: 'cloudfront', exp: 'exp-1', activeNodes: ['user', 'cloudfront', 's3-hosting'], delay: 2000 },
+                { from: 'cloudfront', to: 'api', exp: 'exp-2', activeNodes: ['cloudfront', 'api'], delay: 1500 },
+                { from: 'api', to: 'cognito', exp: 'exp-3', activeNodes: ['api', 'cognito'], delay: 2000 },
+                { from: 'api', to: 'logic-main', exp: 'exp-4', activeNodes: ['api', 'logic-main', 'lambda', 'step'], delay: 2000 },
+                { from: 'logic-main', to: 'rekognition', exp: 'exp-5', activeNodes: ['logic-main', 'rekognition', 'bedrock', 'event'], delay: 2500 },
+                { from: 'logic-main', to: 'external', exp: 'exp-6', activeNodes: ['logic-main', 'external', 'sns'], delay: 2500 },
+                { from: 'logic-main', to: 'db', exp: 'exp-7', activeNodes: ['logic-main', 'db'], delay: 2000 },
             ];
             
             const techDescriptions = {
-                'node-user': { title: 'Utilizador', text: 'O ponto de partida de toda a interação. É o voluntário ou a instituição a aceder à plataforma através de um browser ou aplicação móvel.' },
-                'node-cloudfront': { title: 'Amazon CloudFront', text: 'É a nossa Rede de Distribuição de Conteúdo (CDN). Entrega a interface da aplicação (o site estático) ao utilizador de forma extremamente rápida e segura, a partir de uma localização geograficamente próxima dele.' },
-                'node-api': { title: 'Amazon API Gateway', text: 'A porta de entrada segura e escalável para o nosso backend. Gere todas as requisições, direcionando-as para os serviços corretos e aplicando políticas de segurança.' },
-                'node-cognito': { title: 'AWS Cognito', text: 'Serviço de identidade que gere a autenticação dos utilizadores. Ele trata do login, registo e garante que apenas utilizadores verificados acedam à plataforma.' },
-                'node-lambda': { title: 'AWS Lambda', text: 'Executa o nosso código em resposta a eventos, sem necessidade de gerir servidores. Cada função Lambda realiza uma tarefa específica, como processar um registo ou uma doação.'},
-                'node-step': { title: 'AWS Step Functions', text: 'O orquestrador dos nossos fluxos de trabalho. Atua como um "Agente de IA" que coordena sequências complexas de tarefas, como o processo de onboarding de um novo voluntário, chamando várias funções Lambda e serviços de IA na ordem correta.' },
-                'node-event': { title: 'Amazon EventBridge', text: 'Serviço de barramento de eventos que usamos para acionar fluxos de trabalho de forma agendada. Por exemplo, executa o "Agente de Matching" todas as noites para encontrar novas conexões.' },
-                'node-sns': { title: 'Amazon SNS', text: 'Serviço de notificação que nos permite enviar mensagens (email, SMS, push) para os nossos utilizadores, como um alerta de nova missão ou uma mensagem de agradecimento.'},
-                'node-rekognition': { title: 'AWS Rekognition', text: 'O nosso serviço de Visão Computacional. É usado para comparar a selfie do utilizador com a foto do seu documento de identidade, automatizando e garantindo a veracidade da verificação de identidade.' },
-                'node-bedrock': { title: 'Amazon Bedrock', text: 'O nosso acesso a Modelos de Linguagem Grandes (LLMs). Utilizamo-lo como o cérebro analítico para interpretar texto, como analisar o sentimento de um feedback, fazer o "match" inteligente entre habilidades e necessidades, e gerar conteúdo personalizado.' },
-                'node-external': { title: 'APIs Externas', text: 'Para funcionalidades que requerem dados ou serviços de terceiros, como gateways de pagamento para doações via PIX ou serviços de verificação de antecedentes criminais.' },
-                'node-db': { title: 'Amazon DynamoDB & S3', text: 'A nossa solução de persistência de dados. O DynamoDB, uma base de dados NoSQL, armazena os dados da aplicação (perfis, missões), enquanto o Amazon S3 guarda de forma segura os ficheiros enviados pelos utilizadores (fotos, documentos).' },
-                'node-logic-main': { title: 'Orquestração (Agentes de IA)', text: 'Esta é a nossa camada de lógica central, onde os fluxos do Step Functions coordenam as funções Lambda e outros serviços para executar as regras de negócio da plataforma de forma automatizada e inteligente.' },
+                'user': { title: 'Utilizador', text: 'O ponto de partida de toda a interação. É o voluntário ou a instituição a aceder à plataforma através de um browser ou aplicação móvel.' },
+                's3-hosting': { title: 'Amazon S3 (Hospedagem)', text: 'O Amazon S3 armazena todos os ficheiros estáticos da nossa aplicação (HTML, CSS, JavaScript). Funciona como o disco rígido do nosso site na nuvem, garantindo durabilidade e disponibilidade.'},
+                'cloudfront': { title: 'Amazon CloudFront', text: 'É a nossa Rede de Distribuição de Conteúdo (CDN). Ele busca o site no S3 e entrega-o ao utilizador a partir de uma localização geograficamente próxima, garantindo velocidade máxima de carregamento.' },
+                'api': { title: 'Amazon API Gateway', text: 'A porta de entrada segura e escalável para o nosso backend. Gere todas as requisições, direcionando-as para os serviços corretos e aplicando políticas de segurança.' },
+                'cognito': { title: 'AWS Cognito', text: 'Serviço de identidade que gere a autenticação dos utilizadores. Ele trata do login, registo e garante que apenas utilizadores verificados acedam à plataforma.' },
+                'lambda': { title: 'AWS Lambda', text: 'Executa o nosso código em resposta a eventos, sem necessidade de gerir servidores. Cada função Lambda realiza uma tarefa específica, como processar um registo ou uma doação.'},
+                'step': { title: 'AWS Step Functions', text: 'O orquestrador dos nossos fluxos de trabalho. Atua como um "Agente de IA" que coordena sequências complexas de tarefas, como o processo de onboarding de um novo voluntário, chamando várias funções Lambda e serviços de IA na ordem correta.' },
+                'event': { title: 'Amazon EventBridge', text: 'Serviço de barramento de eventos que usamos para acionar fluxos de trabalho de forma agendada. Por exemplo, executa o "Agente de Matching" todas as noites para encontrar novas conexões.' },
+                'sns': { title: 'Amazon SNS', text: 'Serviço de notificação que nos permite enviar mensagens (email, SMS, push) para os nossos utilizadores, como um alerta de nova missão ou uma mensagem de agradecimento.'},
+                'rekognition': { title: 'AWS Rekognition', text: 'O nosso serviço de Visão Computacional. É usado para comparar a selfie do utilizador com a foto do seu documento de identidade, automatizando e garantindo a veracidade da verificação de identidade.' },
+                'bedrock': { title: 'Amazon Bedrock', text: 'O nosso acesso a Modelos de Linguagem Grandes (LLMs). Utilizamo-lo como o cérebro analítico para interpretar texto, como analisar o sentimento de um feedback, fazer o "match" inteligente entre habilidades e necessidades, e gerar conteúdo personalizado.' },
+                'external': { title: 'APIs Externas', text: 'Para funcionalidades que requerem dados ou serviços de terceiros, como gateways de pagamento para doações via PIX ou serviços de verificação de antecedentes criminais.' },
+                'db': { title: 'Amazon DynamoDB & S3', text: 'A nossa solução de persistência de dados. O DynamoDB, uma base de dados NoSQL, armazena os dados da aplicação (perfis, missões), enquanto o Amazon S3 guarda de forma segura os ficheiros enviados pelos utilizadores (fotos, documentos).' },
+                'logic-main': { title: 'Orquestração (Agentes de IA)', text: 'Esta é a nossa camada de lógica central, onde os fluxos do Step Functions coordenam as funções Lambda e outros serviços para executar as regras de negócio da plataforma de forma automatizada e inteligente.' },
             };
             
             function resetAnimation() {
@@ -337,12 +340,17 @@
                     
                     cumulativeDelay += step.delay;
                     animationTimeout = setTimeout(() => {
-                        nodes.forEach(n => n.classList.remove('active'));
-                        step.activeNodes.forEach(id => document.getElementById(id)?.classList.add('active'));
+                        document.querySelectorAll('.diagram-node').forEach(n => n.classList.remove('active'));
+                        step.activeNodes.forEach(id => {
+                            document.querySelectorAll(`[data-tech-id="${id}"]`).forEach(n => n.classList.add('active'));
+                        });
 
                         if (step.from && step.to) {
-                            const fromNode = document.getElementById(step.from);
-                            const toNode = document.getElementById(step.to);
+                            const fromNode = document.querySelector(`[data-tech-id="${step.from}"]`);
+                            const toNode = document.querySelector(`[data-tech-id="${step.to}"]`);
+                            
+                            if(!fromNode || !toNode) return;
+
                             const containerRect = diagramContainer.getBoundingClientRect();
                             const fromRect = fromNode.getBoundingClientRect();
                             const toRect = toNode.getBoundingClientRect();
@@ -353,9 +361,9 @@
                             
                             if (startX < endX) { // Moving right
                                 startX += fromRect.width;
-                                endX -= 8; // Offset for pulse size
+                                endX -= 8;
                             } else { // Moving left
-                                 startX -= 8; // Offset for pulse size
+                                 startX -= 8;
                                  endX += toRect.width;
                             }
                             
@@ -397,10 +405,11 @@
             const modalTitle = document.getElementById('modal-title');
             const modalText = document.getElementById('modal-text');
 
-            nodes.forEach(node => {
+            document.querySelectorAll('.diagram-node').forEach(node => {
                 node.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const description = techDescriptions[node.id];
+                    const techId = node.dataset.techId;
+                    const description = techDescriptions[techId];
                     if (description) {
                         modalTitle.innerText = description.title;
                         modalText.innerText = description.text;
