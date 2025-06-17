@@ -36,6 +36,7 @@
             background-color: white;
             transition: all 0.5s ease-in-out;
             opacity: 0.5;
+            cursor: pointer;
         }
         .diagram-node.active {
             border-color: #55B3F2;
@@ -43,28 +44,37 @@
             box-shadow: 0 0 15px rgba(85, 179, 242, 0.5);
             opacity: 1;
         }
-        .diagram-line {
+
+        #data-pulse {
             position: absolute;
+            width: 16px;
+            height: 16px;
             background-color: #55B3F2;
-            transform-origin: left;
-            transition: transform 0.8s ease-in-out;
-            transform: scaleX(0);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #55B3F2, 0 0 20px #55B3F2;
+            z-index: 10;
+            opacity: 0;
+            transition: top 1s ease-in-out, left 1s ease-in-out, opacity 0.3s;
         }
-        .diagram-line.active { transform: scaleX(1); }
+
         .explanation-box {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            visibility: hidden;
+            display: none;
         }
         .explanation-box.active {
+            display: block;
             opacity: 1;
             transform: translateY(0);
-            visibility: visible;
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in-section { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideInModal { from { transform: translateY(-30px); } to { transform: translateY(0); } }
+        .modal-fade-in { animation: fadeInModal 0.3s ease-out; }
+        .modal-slide-in { animation: slideInModal 0.3s ease-out; }
 
         .tab-button.active { background-color: #55B3F2; color: white; }
         .tab-content { display: none; }
@@ -81,6 +91,7 @@
     <nav id="navbar" class="sticky-nav tech-bg-dark bg-opacity-90 backdrop-blur-sm shadow-lg">
         <div class="container mx-auto flex justify-center py-3 px-6 space-x-6 md:space-x-8 text-white">
             <a href="#solucao" class="nav-link transition-colors duration-300 hover:text-tech-accent">A Solução</a>
+            <a href="#jornada" class="nav-link transition-colors duration-300 hover:text-tech-accent">A Jornada</a>
             <a href="#arquitetura" class="nav-link transition-colors duration-300 hover:text-tech-accent">Arquitetura</a>
             <a href="#ia" class="nav-link transition-colors duration-300 hover:text-tech-accent">Nossa IA</a>
             <a href="#impacto" class="nav-link transition-colors duration-300 hover:text-tech-accent">Impacto</a>
@@ -108,49 +119,78 @@
             </div>
         </section>
 
+        <section id="jornada" class="scroll-mt-24 mb-24 text-center">
+            <h2 class="text-4xl font-bold tech-text-medium mb-4">A Nossa Jornada: A Evolução do Solidarize</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">O Solidarize não nasceu como é hoje. A nossa tecnologia evoluiu para superar desafios e maximizar o nosso impacto. Esta é a nossa história.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
+                <div class="journey-card bg-white p-8 rounded-xl shadow-lg flex flex-col">
+                    <div class="flex-grow">
+                        <p class="font-bold tech-accent">FASE 1</p>
+                        <h3 class="text-2xl font-bold tech-text-dark mb-3">O Começo Idealista</h3>
+                        <p class="text-gray-600">Começámos com uma grande ideia, mas com uma arquitetura tradicional. Usávamos servidores que ficavam ligados 24/7, o que gerava custos fixos altos, mesmo com poucos utilizadores. Escalar para campanhas era um processo manual e complexo, e o nosso orçamento era consumido pela infraestrutura, não pela inovação.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="font-semibold text-red-600">❌ Desafio: Custos elevados e baixa escalabilidade.</p>
+                    </div>
+                </div>
+                <div class="journey-card bg-white p-8 rounded-xl shadow-lg flex flex-col">
+                    <div class="flex-grow">
+                        <p class="font-bold tech-accent">FASE 2</p>
+                        <h3 class="text-2xl font-bold tech-text-dark mb-3">A Virada Tecnológica</h3>
+                        <p class="text-gray-600">A grande mudança foi a adoção de uma arquitetura <strong>Serverless</strong>. Migrámos para serviços como AWS Lambda e DynamoDB. O resultado foi imediato: os nossos custos caíram drasticamente, pois passámos a pagar apenas pelo que usávamos. A plataforma começou a escalar automaticamente e a nossa equipa pôde focar-se em criar funcionalidades em vez de gerir servidores.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="font-semibold text-green-600">✅ Ganho: Eficiência de custos e escalabilidade automática.</p>
+                    </div>
+                </div>
+                <div class="journey-card bg-white p-8 rounded-xl shadow-lg flex flex-col">
+                    <div class="flex-grow">
+                        <p class="font-bold tech-accent">FASE 3</p>
+                        <h3 class="text-2xl font-bold tech-text-dark mb-3">A Era da Inteligência</h3>
+                        <p class="text-gray-600">Com uma base sólida e económica, demos o passo seguinte: integrámos a <strong>Inteligência Artificial</strong>. Com AWS Rekognition, automatizámos a verificação de identidade. Com AWS Bedrock (LLMs), tornámos as conexões mais inteligentes e o feedback mais acionável. O Solidarize transformou-se numa plataforma não apenas eficiente, mas verdadeiramente inteligente.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="font-semibold text-blue-600">✨ Resultado: Segurança, inteligência e impacto maximizados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="arquitetura" class="scroll-mt-24 mb-24">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold tech-text-medium mb-4">Arquitetura Interativa</h2>
-                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">Em vez de um diagrama estático, explore o fluxo de uma requisição na nossa plataforma. Clique no botão abaixo para iniciar a animação e veja como os nossos serviços AWS se conectam.</p>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">Agora que conhece a nossa jornada, explore em detalhe a nossa arquitetura atual. Clique no botão para iniciar a animação automática e clique em cada tecnologia para saber mais.</p>
                 <button id="start-animation-btn" class="tech-accent-bg text-white font-bold py-3 px-8 rounded-lg text-xl shadow-md hover:bg-tech-bg-light transition-colors duration-300">▶ Iniciar Animação</button>
             </div>
 
-            <div class="relative bg-white p-8 rounded-xl shadow-2xl min-h-[600px] overflow-x-auto">
-                <div id="diagram-container" class="relative w-[1100px] h-[700px]">
-                    <!-- Nodes -->
-                    <div id="node-user" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 20px; top: 310px;">👤<br>Utilizador</div>
-                    <div id="node-cloudfront" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 180px; top: 310px;">☁️<br>CloudFront</div>
-                    <div id="node-api" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 340px; top: 310px;">🔗<br>API Gateway</div>
-                    <div id="node-cognito" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 340px; top: 150px;">🔐<br>Cognito</div>
-                    <div id="node-logic" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 530px; top: 310px;">⚙️<br>Step Functions / Lambda</div>
-                    <div id="node-rekognition" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 150px;">👁️<br>Rekognition</div>
-                    <div id="node-bedrock" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 310px;">🧠<br>Bedrock (LLM)</div>
-                    <div id="node-external" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 470px;">🌍<br>APIs Externas</div>
-                    <div id="node-db" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 910px; top: 310px;">🗃️<br>DynamoDB / S3</div>
-
-                    <!-- Lines -->
-                    <div id="line-1" class="diagram-line h-1" style="left: 148px; top: 345px; width: 32px;"></div>
-                    <div id="line-2" class="diagram-line h-1" style="left: 308px; top: 345px; width: 32px;"></div>
-                    <div id="line-3" class="diagram-line w-1" style="left: 405px; top: 215px; height: 95px;"></div>
-                    <div id="line-4" class="diagram-line h-1" style="left: 472px; top: 345px; width: 58px;"></div>
-                    <div id="line-5" class="diagram-line w-1" style="left: 595px; top: 215px; height: 95px;"></div>
-                    <div id="line-6" class="diagram-line h-1" style="left: 658px; top: 185px; width: 62px;"></div>
-                    <div id="line-7" class="diagram-line h-1" style="left: 658px; top: 345px; width: 62px;"></div>
-                    <div id="line-8" class="diagram-line w-1" style="left: 595px; top: 375px; height: 95px;"></div>
-                    <div id="line-9" class="diagram-line h-1" style="left: 658px; top: 505px; width: 62px;"></div>
-                    <div id="line-10" class="diagram-line h-1" style="left: 848px; top: 345px; width: 62px;"></div>
+            <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl flex flex-col lg:flex-row gap-8 items-center">
+                 <div id="explanation-container" class="w-full lg:w-1/3 p-4 bg-gray-50 rounded-lg border h-64 lg:h-auto">
+                    <div id="exp-0" class="explanation-box active"><p class="font-bold tech-text-medium text-lg">Bem-vindo à nossa arquitetura!</p><p>Clique em "Iniciar Animação" para ver a magia acontecer. Acompanhe a jornada de uma requisição e entenda o papel de cada serviço.</p></div>
+                    <div id="exp-1" class="explanation-box"><p class="font-bold tech-text-medium">Passo 1: O Ponto de Partida</p><p>Tudo começa com o <strong>Utilizador</strong>. A requisição é enviada para o <strong>CloudFront</strong>, que entrega a interface da aplicação de forma rápida e segura.</p></div>
+                    <div id="exp-2" class="explanation-box"><p class="font-bold tech-text-medium">Passo 2: A Porta de Entrada</p><p>As chamadas dinâmicas são direcionadas para o <strong>API Gateway</strong>, a porta de entrada segura e escalável para o nosso backend.</p></div>
+                    <div id="exp-3" class="explanation-box"><p class="font-bold tech-text-medium">Passo 3: Verificação de Identidade</p><p>O API Gateway comunica com o <strong>Cognito</strong> para autenticar o utilizador, garantindo que apenas utilizadores autorizados prossigam.</p></div>
+                    <div id="exp-4" class="explanation-box"><p class="font-bold tech-text-medium">Passo 4: Orquestração da Lógica</p><p>A requisição invoca os "Agentes de IA", orquestrados pelo <strong>AWS Step Functions</strong>, que gere os fluxos de trabalho complexos.</p></div>
+                    <div id="exp-5" class="explanation-box"><p class="font-bold tech-text-medium">Passo 5: Análise com IA</p><p>O Step Functions aciona as IAs: <strong>Rekognition</strong> para validar documentos e <strong>AWS Bedrock</strong> para usar LLMs em análises e decisões.</p></div>
+                    <div id="exp-6" class="explanation-box"><p class="font-bold tech-text-medium">Passo 6: Interação Externa</p><p>O sistema pode comunicar com <strong>APIs Externas</strong> para verificações de antecedentes ou para processar pagamentos via PIX.</p></div>
+                    <div id="exp-7" class="explanation-box"><p class="font-bold tech-text-medium">Passo 7: Persistência dos Dados</p><p>Finalmente, as informações são guardadas de forma segura no <strong>DynamoDB</strong> (dados) e no <strong>Amazon S3</strong> (ficheiros).</p></div>
                 </div>
 
-                <!-- Explanations -->
-                 <div id="explanation-container" class="absolute bottom-4 left-4 right-4 md:left-auto md:w-2/5 p-4 bg-gray-50 rounded-lg border">
-                    <div id="exp-0" class="explanation-box active"><p class="font-bold tech-text-medium">Clique em "Iniciar Animação" para ver a magia acontecer.</p><p>Acompanhe a jornada de uma requisição, desde o clique do utilizador até a resposta final, e entenda o papel de cada serviço.</p></div>
-                    <div id="exp-1" class="explanation-box"><p class="font-bold tech-text-medium">Passo 1: O Ponto de Partida</p><p>Tudo começa com o <strong>Utilizador</strong> a interagir com a nossa aplicação. A sua requisição é enviada para a rede de distribuição global da AWS, o <strong>CloudFront</strong>, que entrega o conteúdo estático (a interface) de forma rápida e segura.</p></div>
-                    <div id="exp-2" class="explanation-box"><p class="font-bold tech-text-medium">Passo 2: A Porta de Entrada</p><p>Do CloudFront, as chamadas dinâmicas (como um login ou cadastro) são direcionadas para o <strong>API Gateway</strong>, a porta de entrada segura para o nosso backend.</p></div>
-                    <div id="exp-3" class="explanation-box"><p class="font-bold tech-text-medium">Passo 3: Verificação de Identidade</p><p>O API Gateway primeiro comunica com o <strong>Cognito</strong> para autenticar o utilizador, garantindo que apenas utilizadores autorizados possam prosseguir. A segurança começa aqui.</p></div>
-                    <div id="exp-4" class="explanation-box"><p class="font-bold tech-text-medium">Passo 4: Orquestração da Lógica</p><p>Uma vez autenticada, a requisição invoca os nossos "Agentes de IA", orquestrados pelo <strong>AWS Step Functions</strong>. Ele gere fluxos complexos, como um novo cadastro, chamando funções <strong>Lambda</strong> para cada tarefa específica.</p></div>
-                    <div id="exp-5" class="explanation-box"><p class="font-bold tech-text-medium">Passo 5: Análise com Inteligência Artificial</p><p>O Step Functions aciona as IAs: <strong>Rekognition</strong> para validar a selfie com o documento (Visão Computacional) e o <strong>AWS Bedrock</strong> para usar LLMs na análise de risco, matching de habilidades ou análise de feedback.</p></div>
-                     <div id="exp-6" class="explanation-box"><p class="font-bold tech-text-medium">Passo 6: Interação com o Mundo Exterior</p><p>Se necessário, o nosso sistema comunica com <strong>APIs Externas</strong> de forma segura, seja para uma verificação de antecedentes ou para processar um pagamento via PIX.</p></div>
-                    <div id="exp-7" class="explanation-box"><p class="font-bold tech-text-medium">Passo 7: Persistência dos Dados</p><p>Finalmente, todas as informações são guardadas de forma segura e escalável no nosso banco de dados <strong>DynamoDB</strong>, e os ficheiros (como documentos) são armazenados no <strong>Amazon S3</strong>.</p></div>
+                <div class="w-full lg:w-2/3 min-h-[500px] overflow-x-auto">
+                    <div id="diagram-container" class="relative w-[1000px] h-[600px] scale-90 md:scale-100">
+                        <!-- Nodes -->
+                        <div id="node-user" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 20px; top: 260px;">👤<br>Utilizador</div>
+                        <div id="node-cloudfront" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 180px; top: 260px;">☁️<br>CloudFront</div>
+                        <div id="node-api" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 340px; top: 260px;">🔗<br>API Gateway</div>
+                        <div id="node-cognito" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 340px; top: 100px;">🔐<br>Cognito</div>
+                        <div id="node-logic" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 530px; top: 260px;">⚙️<br>Step Functions</div>
+                        <div id="node-rekognition" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 100px;">👁️<br>Rekognition</div>
+                        <div id="node-bedrock" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 260px;">🧠<br>Bedrock (LLM)</div>
+                        <div id="node-external" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 420px;">🌍<br>APIs Externas</div>
+                        <div id="node-db" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 910px; top: 260px;">🗃️<br>DynamoDB / S3</div>
+
+                        <!-- Data Pulse Element -->
+                        <div id="data-pulse"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -215,9 +255,19 @@
                 </div>
             </div>
         </section>
-
     </main>
     
+    <!-- Modal for tech explanations -->
+    <div id="tech-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 modal-fade-in">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full modal-slide-in">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold tech-text-dark"></h3>
+                <button id="close-modal-btn" class="text-3xl text-gray-500 hover:text-gray-800">&times;</button>
+            </div>
+            <p id="modal-text" class="text-gray-700"></p>
+        </div>
+    </div>
+
     <footer class="tech-bg-dark text-white text-center mt-24 py-10">
         <p class="text-lg font-bold">Solidarize</p>
         <p class="opacity-80">Tecnologia para um mundo melhor.</p>
@@ -225,97 +275,153 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Animação da Arquitetura
             const startBtn = document.getElementById('start-animation-btn');
             const nodes = document.querySelectorAll('.diagram-node');
-            const lines = document.querySelectorAll('.diagram-line');
             const explanations = document.querySelectorAll('.explanation-box');
+            const pulse = document.getElementById('data-pulse');
+            const diagramContainer = document.getElementById('diagram-container');
             let animationTimeout;
 
+            const animationSteps = [
+                { exp: 'exp-0', activeNodes: [] },
+                { from: 'node-user', to: 'node-cloudfront', exp: 'exp-1', activeNodes: ['node-user', 'node-cloudfront'], delay: 1500 },
+                { from: 'node-cloudfront', to: 'node-api', exp: 'exp-2', activeNodes: ['node-cloudfront', 'node-api'], delay: 1500 },
+                { from: 'node-api', to: 'node-cognito', exp: 'exp-3', activeNodes: ['node-api', 'node-cognito'], delay: 2000 },
+                { from: 'node-api', to: 'node-logic', exp: 'exp-4', activeNodes: ['node-api', 'node-logic'], delay: 2000 },
+                { from: 'node-logic', to: 'node-rekognition', exp: 'exp-5', activeNodes: ['node-logic', 'node-rekognition'], delay: 1500 },
+                { from: 'node-logic', to: 'node-bedrock', exp: 'exp-5', activeNodes: ['node-logic', 'node-bedrock'], delay: 1500 },
+                { from: 'node-logic', to: 'node-external', exp: 'exp-6', activeNodes: ['node-logic', 'node-external'], delay: 1500 },
+                { from: 'node-logic', to: 'node-db', exp: 'exp-7', activeNodes: ['node-logic', 'node-db'], delay: 2000 },
+            ];
+            
+            const techDescriptions = {
+                'node-user': { title: 'Utilizador', text: 'O ponto de partida de toda a interação. É o voluntário ou a instituição a aceder à plataforma através de um browser ou aplicação móvel.' },
+                'node-cloudfront': { title: 'Amazon CloudFront', text: 'É a nossa Rede de Distribuição de Conteúdo (CDN). Entrega a interface da aplicação (o site estático) ao utilizador de forma extremamente rápida e segura, a partir de uma localização geograficamente próxima dele.' },
+                'node-api': { title: 'Amazon API Gateway', text: 'A porta de entrada segura e escalável para o nosso backend. Gere todas as requisições, direcionando-as para os serviços corretos e aplicando políticas de segurança.' },
+                'node-cognito': { title: 'AWS Cognito', text: 'Serviço de identidade que gere a autenticação dos utilizadores. Ele trata do login, registo e garante que apenas utilizadores verificados acedam à plataforma.' },
+                'node-logic': { title: 'AWS Step Functions', text: 'O orquestrador dos nossos fluxos de trabalho. Atua como um "Agente de IA" que coordena sequências complexas de tarefas, como o processo de onboarding de um novo voluntário, chamando várias funções Lambda e serviços de IA na ordem correta.' },
+                'node-rekognition': { title: 'AWS Rekognition', text: 'O nosso serviço de Visão Computacional. É usado para comparar a selfie do utilizador com a foto do seu documento de identidade, automatizando e garantindo a veracidade da verificação de identidade.' },
+                'node-bedrock': { title: 'Amazon Bedrock', text: 'O nosso acesso a Modelos de Linguagem Grandes (LLMs). Utilizamo-lo como o cérebro analítico para interpretar texto, como analisar o sentimento de um feedback, fazer o "match" inteligente entre habilidades e necessidades, e gerar conteúdo personalizado.' },
+                'node-external': { title: 'APIs Externas', text: 'Para funcionalidades que requerem dados ou serviços de terceiros, como gateways de pagamento para doações via PIX ou serviços de verificação de antecedentes criminais.' },
+                'node-db': { title: 'Amazon DynamoDB & S3', text: 'A nossa solução de persistência de dados. O DynamoDB, uma base de dados NoSQL, armazena os dados da aplicação (perfis, missões), enquanto o Amazon S3 guarda de forma segura os ficheiros enviados pelos utilizadores (fotos, documentos).' },
+            };
+            
             function resetAnimation() {
-                clearTimeout(animationTimeout);
+                if(animationTimeout) clearTimeout(animationTimeout);
                 nodes.forEach(n => n.classList.remove('active'));
-                lines.forEach(l => l.classList.remove('active'));
+                pulse.style.opacity = '0';
                 explanations.forEach(e => e.classList.remove('active'));
                 document.getElementById('exp-0').classList.add('active');
                 startBtn.disabled = false;
-                startBtn.innerText = '▶ Reiniciar Animação';
+                startBtn.innerText = '▶ Iniciar Animação';
             }
-
+            
             function runAnimation() {
+                resetAnimation();
                 startBtn.disabled = true;
                 startBtn.innerText = 'Animando...';
-                resetAnimation();
-                document.getElementById('exp-0').classList.remove('active');
 
-                const steps = [
-                    { node: 'node-user', line: 'line-1', exp: 'exp-1', delay: 500 },
-                    { node: 'node-cloudfront', line: 'line-2', exp: 'exp-2', delay: 1500 },
-                    { node: 'node-api', line: 'line-3', exp: 'exp-3', delay: 1500 },
-                    { node: 'node-cognito', line: null, exp: 'exp-3', delay: 1500 },
-                    { node: 'node-api', line: 'line-4', exp: 'exp-4', delay: 2000 },
-                    { node: 'node-logic', line: 'line-5', exp: 'exp-5', delay: 1500 },
-                    { node: 'node-logic', line: 'line-7', exp: 'exp-5', delay: 0 },
-                    { node: 'node-rekognition', line: 'line-6', exp: 'exp-5', delay: 1500 },
-                    { node: 'node-bedrock', line: null, exp: 'exp-5', delay: 0 },
-                    { node: 'node-logic', line: 'line-8', exp: 'exp-6', delay: 2000 },
-                    { node: 'node-external', line: 'line-9', exp: 'exp-6', delay: 1500 },
-                    { node: 'node-logic', line: 'line-10', exp: 'exp-7', delay: 2000 },
-                    { node: 'node-db', line: null, exp: 'exp-7', delay: 1500 },
-                ];
-                
                 let cumulativeDelay = 0;
-                steps.forEach((step, index) => {
+                animationSteps.forEach((step, index) => {
+                    if (index === 0) {
+                        explanations.forEach(e => e.classList.remove('active'));
+                        document.getElementById(step.exp)?.classList.add('active');
+                        return;
+                    };
+                    
                     cumulativeDelay += step.delay;
                     animationTimeout = setTimeout(() => {
                         nodes.forEach(n => n.classList.remove('active'));
-                        if (step.node) document.getElementById(step.node).classList.add('active');
-                        if (step.line) document.getElementById(step.line).classList.add('active');
+                        step.activeNodes.forEach(id => document.getElementById(id)?.classList.add('active'));
 
+                        if (step.from && step.to) {
+                            const fromNode = document.getElementById(step.from);
+                            const toNode = document.getElementById(step.to);
+                            const containerRect = diagramContainer.getBoundingClientRect();
+                            const fromRect = fromNode.getBoundingClientRect();
+                            const toRect = toNode.getBoundingClientRect();
+
+                            const startY = (fromRect.top - containerRect.top) + (fromRect.height / 2) - 8;
+                            let startX = (fromRect.left - containerRect.left);
+                            let endX = (toRect.left - containerRect.left);
+                            
+                            if (startX < endX) { // Moving right
+                                startX += fromRect.width;
+                                endX -= 8; // Offset for pulse size
+                            } else { // Moving left
+                                 startX -= 8; // Offset for pulse size
+                                 endX += toRect.width;
+                            }
+                            
+                            const endY = (toRect.top - containerRect.top) + (toRect.height / 2) - 8;
+                           
+                            pulse.style.transition = 'none';
+                            pulse.style.left = `${startX}px`;
+                            pulse.style.top = `${startY}px`;
+                            pulse.style.opacity = '1';
+
+                            setTimeout(() => {
+                                pulse.style.transition = 'top 1s ease-in-out, left 1s ease-in-out';
+                                pulse.style.left = `${endX}px`;
+                                pulse.style.top = `${endY}px`;
+                            }, 50);
+
+                            setTimeout(() => {
+                                pulse.style.opacity = '0';
+                            }, 1050);
+                        }
+                        
                         explanations.forEach(e => e.classList.remove('active'));
-                        if (step.exp) document.getElementById(step.exp).classList.add('active');
+                        document.getElementById(step.exp)?.classList.add('active');
 
-                        if(index === steps.length - 1) {
-                            startBtn.disabled = false;
-                            startBtn.innerText = '▶ Reiniciar Animação';
+                        if (index === animationSteps.length - 1) {
+                           animationTimeout = setTimeout(() => {
+                                startBtn.disabled = false;
+                                startBtn.innerText = '▶ Reiniciar Animação';
+                           }, 2000);
                         }
                     }, cumulativeDelay);
                 });
             }
+
             startBtn.addEventListener('click', runAnimation);
+            
+            const modal = document.getElementById('tech-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalTitle = document.getElementById('modal-title');
+            const modalText = document.getElementById('modal-text');
 
-
-            // Animação de Scroll (Fade in)
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-section');
+            nodes.forEach(node => {
+                node.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const description = techDescriptions[node.id];
+                    if (description) {
+                        modalTitle.innerText = description.title;
+                        modalText.innerText = description.text;
+                        modal.classList.remove('hidden');
                     }
                 });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('section > div').forEach(section => {
-                observer.observe(section);
             });
+            function closeModal() { modal.classList.add('hidden'); }
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('fade-in-section'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('section > div').forEach(section => observer.observe(section));
 
-            // Navegação e Tabs
             const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('main > section');
-
+            const sections = document.querySelectorAll('main > section, header');
             window.addEventListener('scroll', () => {
-                let current = '';
+                let current = 'inicio';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 120) {
-                        current = section.getAttribute('id');
-                    }
+                    if (pageYOffset >= sectionTop - 100) current = section.getAttribute('id');
                 });
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
+                    if (link.getAttribute('href').substring(1) === current) link.classList.add('active');
                 });
             });
 
@@ -326,21 +432,21 @@
                 tabButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         const tabId = button.dataset.tab;
-                        
-                        tabButtons.forEach(btn => btn.classList.remove('active', 'tech-border-accent'));
+                        tabButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                            btn.classList.remove('tech-border-accent');
+                            btn.classList.add('text-gray-500');
+                        });
                         button.classList.add('active', 'tech-border-accent');
-                        
+                        button.classList.remove('text-gray-500');
                         tabContents.forEach(content => {
                             content.classList.remove('active');
-                            if (content.id === tabId) {
-                                content.classList.add('active');
-                            }
+                            if (content.id === tabId) content.classList.add('active');
                         });
                     });
                 });
             }
         });
     </script>
-
 </body>
 </html>
