@@ -3,354 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infográfico: Projeto Solidarize - Arquitetura Serverless e IA</title>
+    <title>Projeto Solidarize: Uma Exploração Interativa</title>
+    <!-- Chosen Palette: Tech & Trust -->
+    <!-- Application Structure Plan: A aplicação foi desenhada como uma narrativa vertical guiada por "scrollytelling". O objetivo é transformar a arquitetura técnica, que é complexa, numa história visual e fácil de entender. A estrutura começa com o "porquê" (o problema e a solução), avança para o "como" com uma exploração interativa e animada da arquitetura (a peça central da página), aprofunda os detalhes da IA com separadores interativos e conclui com o impacto. Esta abordagem foi escolhida para envolver ativamente o utilizador, tornando os conceitos abstratos em algo tangível e memorável, em vez de apresentar um diagrama estático. -->
+    <!-- Visualization & Content Choices: 
+        - Arquitetura Interativa: (Meta: Organizar/Explicar Processo) -> Viz: Diagrama de Fluxo com Animação (HTML/CSS/JS). Justificativa: É a forma mais eficaz de explicar um fluxo complexo passo a passo, mostrando as conexões e o papel de cada serviço dinamicamente, sem usar SVG/Mermaid.js.
+        - Detalhes da IA: (Meta: Organizar/Informar) -> Viz: Abas (Tabs) Interativas (HTML/CSS/JS). Justificativa: Permite ao utilizador explorar detalhadamente cada componente de IA (LLMs, Agentes, Visão) ao seu próprio ritmo, sem sobrecarregar a página com informação.
+        - Pilares do Projeto: (Meta: Informar) -> Viz: Cards com animação de entrada (HTML/Tailwind/JS). Justificativa: Apresenta os conceitos chave de forma visualmente apelativa e segmentada, com um toque dinâmico.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!--
-    METADATA DE PLANEJAMENTO DO INFOGRÁFICO
-    
-    1. PLANO DE NARRATIVA E ESTRUTURA
-    - Título: Apresentar o Solidarize como uma fusão de tecnologia e impacto social.
-    - Seção 1: Visão Geral. O que é o Solidarize? Apresentar as funcionalidades principais de forma visual.
-    - Seção 2: Arquitetura Serverless. Explicar a base tecnológica e a vantagem de custo usando um gráfico de barras comparativo.
-    - Seção 3: Fluxos de Trabalho Automatizados. Detalhar os processos chave (Cadastro, Match, Doação) com fluxogramas em HTML/CSS.
-    - Seção 4: O Poder da IA. Isolar e destacar o papel da Inteligência Artificial com um gráfico de rosca.
-    - Seção 5: Estratégia de Custo. Resumir os pontos de economia da arquitetura escolhida.
-    - Conclusão: Reforçar a mensagem de sustentabilidade e escalabilidade.
-
-    2. SELEÇÃO DE VISUALIZAÇÕES E JUSTIFICATIVA (SEM SVG, SEM MERMAID JS)
-    - Funcionalidades Principais: (Meta: Organizar) -> Layout de cards com ícones Unicode. Justificativa: Simples, visualmente atraente e não requer bibliotecas ou gráficos complexos.
-    - Comparativo de Custo (Serverless vs. Tradicional): (Meta: Comparar) -> Gráfico de Barras (Chart.js). Justificativa: Ideal para uma comparação direta e impactante de valores. Renderizado em Canvas.
-    - Fluxos de Trabalho: (Meta: Organizar) -> Fluxogramas com HTML/CSS (divs, bordas, flexbox). Justificativa: Representa processos sequenciais de forma clara, cumprindo a restrição de não usar Mermaid JS ou SVG.
-    - Divisão de Uso da IA: (Meta: Comparar/Composição) -> Gráfico de Rosca (Chart.js). Justificativa: Perfeito para mostrar a proporção de cada tarefa de IA dentro do ecossistema. Renderizado em Canvas.
-    - Estratégia de Custos: (Meta: Organizar) -> Lista estilizada com HTML/CSS. Justificativa: Apresenta múltiplos pontos de forma clara e concisa sem necessidade de visualização complexa.
-
-    3. PALETA DE CORES SELECIONADA
-    - Nome da Paleta: Energetic & Playful
-    - Cores (HEX): #FF6F61 (Coral), #6B5B95 (Roxo), #88B04B (Verde), #F7CAC9 (Rosa Claro), #92A8D1 (Azul Acinzentado).
-
-    4. CONFIRMAÇÃO DE RESTRIÇÕES
-    - Confirmo que NEM MERMAID JS NEM SVG foram utilizados na geração deste artefato. Toda a renderização de gráficos é feita via tag Canvas (Chart.js) e todos os diagramas de fluxo são construídos com elementos HTML e estilização Tailwind CSS.
-    -->
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+        body { font-family: 'Inter', sans-serif; background-color: #F8F9FA; }
+        .tech-bg-dark { background-color: #0B2D48; }
+        .tech-bg-medium { background-color: #124B73; }
+        .tech-bg-light { background-color: #2283C3; }
+        .tech-accent { color: #55B3F2; }
+        .tech-accent-bg { background-color: #55B3F2; }
+        .tech-text-dark { color: #0B2D48; }
+        .tech-text-medium { color: #124B73; }
+        .tech-text-light { color: #2283C3; }
+        .tech-border-accent { border-color: #55B3F2; }
+        
+        .sticky-nav { position: sticky; top: 0; z-index: 50; }
+        .nav-link.active { color: #55B3F2; font-weight: 700; }
+
+        .diagram-node {
+            border: 2px solid #A2D6F9;
+            background-color: white;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.5;
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
+        .diagram-node.active {
+            border-color: #55B3F2;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(85, 179, 242, 0.5);
+            opacity: 1;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
+        .diagram-line {
+            position: absolute;
+            background-color: #55B3F2;
+            transform-origin: left;
+            transition: transform 0.8s ease-in-out;
+            transform: scaleX(0);
         }
-        .flow-arrow {
-            font-size: 2rem;
-            color: #6B5B95;
-            line-height: 1;
+        .diagram-line.active { transform: scaleX(1); }
+        .explanation-box {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            visibility: hidden;
         }
-        .flow-box {
-            border: 2px solid #6B5B95;
-            background-color: #ffffff;
-            color: #333;
+        .explanation-box.active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
         }
-        .text-coral { color: #FF6F61; }
-        .text-purple { color: #6B5B95; }
-        .text-green { color: #88B04B; }
-        .bg-coral { background-color: #FF6F61; }
-        .bg-purple { background-color: #6B5B95; }
-        .bg-green { background-color: #88B04B; }
-        .bg-light-pink { background-color: #F7CAC9; }
-        .bg-blue-gray { background-color: #92A8D1; }
-        .border-purple { border-color: #6B5B95; }
-        .shadow-purple { box-shadow: 0 10px 15px -3px rgba(107, 91, 149, 0.2), 0 4px 6px -2px rgba(107, 91, 149, 0.1); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-section { animation: fadeIn 0.8s ease-out forwards; }
+
+        .tab-button.active { background-color: #55B3F2; color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
     </style>
 </head>
-<body class="text-gray-700">
+<body class="text-tech-text-dark">
 
-    <header class="bg-purple text-white text-center py-12 px-4">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-2">Projeto Solidarize V2</h1>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto">Uma análise visual da arquitetura Serverless e IA que impulsiona o impacto social com custo mínimo.</p>
+    <header id="inicio" class="tech-bg-dark text-white text-center py-24 px-6">
+        <h1 class="text-5xl md:text-6xl font-black mb-4">Projeto Solidarize</h1>
+        <p class="text-xl max-w-3xl mx-auto text-gray-300">Uma Exploração Interativa da Nossa Arquitetura de Impacto Social</p>
     </header>
 
-    <main class="container mx-auto px-4 py-12">
+    <nav id="navbar" class="sticky-nav tech-bg-dark bg-opacity-90 backdrop-blur-sm shadow-lg">
+        <div class="container mx-auto flex justify-center py-3 px-6 space-x-6 md:space-x-8 text-white">
+            <a href="#solucao" class="nav-link transition-colors duration-300 hover:text-tech-accent">A Solução</a>
+            <a href="#arquitetura" class="nav-link transition-colors duration-300 hover:text-tech-accent">Arquitetura</a>
+            <a href="#ia" class="nav-link transition-colors duration-300 hover:text-tech-accent">Nossa IA</a>
+            <a href="#impacto" class="nav-link transition-colors duration-300 hover:text-tech-accent">Impacto</a>
+        </div>
+    </nav>
 
-        <section id="features" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-purple mb-2">O Que é o Solidarize?</h2>
-                <p class="max-w-2xl mx-auto">Solidarize é uma plataforma que conecta voluntários a quem precisa. Para garantir segurança, eficiência e escalabilidade, criamos uma base tecnológica robusta e econômica.</p>
-            </div>
+    <main class="container mx-auto px-6 py-16">
+
+        <section id="solucao" class="scroll-mt-24 mb-24 text-center">
+            <h2 class="text-4xl font-bold tech-text-medium mb-4">O Problema e a Nossa Solução</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">A solidariedade precisa de tecnologia para ser eficaz. Construímos uma plataforma que transforma boa vontade em ação organizada, segura e escalável através de pilares fundamentais.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-bold mb-2 text-purple">Cadastro Seguro</h3>
-                    <p>Verificação de identidade e antecedentes para garantir um ambiente seguro para todos.</p>
+                <div class="solution-card bg-white p-8 rounded-xl shadow-lg border-t-4 tech-border-accent">
+                    <h3 class="text-2xl font-bold tech-text-dark mb-3">Segurança Primeiro</h3>
+                    <p>Verificação de identidade com IA e processos robustos para garantir a segurança de voluntários e instituições.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-2 text-purple">Sistema de Missões</h3>
-                    <p>Conexão inteligente entre as habilidades dos voluntários e as necessidades das instituições.</p>
+                <div class="solution-card bg-white p-8 rounded-xl shadow-lg border-t-4 tech-border-accent">
+                    <h3 class="text-2xl font-bold tech-text-dark mb-3">Conexões Inteligentes</h3>
+                    <p>Utilizamos LLMs para entender o contexto e fazer o "match" perfeito entre as habilidades do voluntário e as necessidades da missão.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-4xl mb-4">❤️</div>
-                    <h3 class="text-xl font-bold mb-2 text-purple">Segurança em Tempo Real</h3>
-                    <p>Funcionalidades como botão de pânico e avaliação mútua para proteção contínua.</p>
+                <div class="solution-card bg-white p-8 rounded-xl shadow-lg border-t-4 tech-border-accent">
+                    <h3 class="text-2xl font-bold tech-text-dark mb-3">Sustentabilidade</h3>
+                    <p>Uma arquitetura 100% Serverless que minimiza custos e permite que a plataforma cresça de forma orgânica e financeiramente saudável.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-4xl mb-4">🏆</div>
-                    <h3 class="text-xl font-bold mb-2 text-purple">Gamificação</h3>
-                    <p>Sistema de pontos e rankings para incentivar e reconhecer o engajamento dos voluntários.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-4xl mb-4">💸</div>
-                    <h3 class="text-xl font-bold mb-2 text-purple">Doações Integradas</h3>
-                    <p>Processamento simplificado de doações via PIX, conectando doadores a necessidades específicas.</p>
-                </div>
-                 <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h3 class="text-xl font-bold mb-2 text-purple">Escalabilidade Serverless</h3>
-                    <p>Arquitetura que cresce sob demanda, garantindo performance com o menor custo possível.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="architecture" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-green mb-2">Arquitetura Serverless: O Motor Econômico</h2>
-                <p class="max-w-2xl mx-auto">A escolha por uma arquitetura "Serverless-First" não é apenas técnica, é estratégica. Pagamos apenas pelo que usamos, permitindo que a plataforma cresça de forma sustentável.</p>
-            </div>
-            <div class="bg-white p-6 md:p-8 rounded-lg shadow-purple">
-                 <h3 class="text-xl font-bold text-center mb-6 text-purple">Comparativo de Custo Mensal: Serverless vs. Tradicional</h3>
-                <div class="chart-container">
-                    <canvas id="costComparisonChart"></canvas>
-                </div>
-                <p class="text-center mt-4 text-sm text-gray-600">Este gráfico ilustra a vantagem de custo da abordagem Serverless, que escala de zero, em comparação com os custos fixos de uma infraestrutura tradicional baseada em servidores sempre ativos.</p>
             </div>
         </section>
 
-        <section id="workflows" class="mb-20">
+        <section id="arquitetura" class="scroll-mt-24 mb-24">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-coral mb-2">Fluxos de Trabalho Automatizados</h2>
-                <p class="max-w-2xl mx-auto">Nossos processos-chave são orquestrados de forma inteligente pelo AWS Step Functions, garantindo resiliência e eficiência sem custo de computação ociosa.</p>
+                <h2 class="text-4xl font-bold tech-text-medium mb-4">Arquitetura Interativa</h2>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">Em vez de um diagrama estático, explore o fluxo de uma requisição na nossa plataforma. Clique no botão abaixo para iniciar a animação e veja como os nossos serviços AWS se conectam.</p>
+                <button id="start-animation-btn" class="tech-accent-bg text-white font-bold py-3 px-8 rounded-lg text-xl shadow-md hover:bg-tech-bg-light transition-colors duration-300">▶ Iniciar Animação</button>
             </div>
-            <div class="space-y-16">
-                
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6 text-center text-purple">Workflow 1: Cadastro e Verificação de Voluntário</h3>
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-                        <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">1. Envio de Dados</p>
-                            <p class="text-sm">Usuário envia dados via App</p>
-                        </div>
-                        <div class="flow-arrow transform md:-rotate-0">➔</div>
-                        <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">2. Orquestração</p>
-                            <p class="text-sm">Step Functions inicia o fluxo</p>
-                        </div>
-                        <div class="flow-arrow transform md:-rotate-0">➔</div>
-                         <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">3. Análise IA</p>
-                            <p class="text-sm">Rekognition & Bedrock analisam</p>
-                        </div>
-                         <div class="flow-arrow transform md:-rotate-0">➔</div>
-                         <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">4. Registro</p>
-                            <p class="text-sm">Status salvo no DynamoDB</p>
-                        </div>
+
+            <div class="relative bg-white p-8 rounded-xl shadow-2xl min-h-[600px] overflow-x-auto">
+                <div id="diagram-container" class="relative w-[1100px] h-[700px]">
+                    <!-- Nodes -->
+                    <div id="node-user" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 20px; top: 310px;">👤<br>Utilizador</div>
+                    <div id="node-cloudfront" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 180px; top: 310px;">☁️<br>CloudFront</div>
+                    <div id="node-api" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 340px; top: 310px;">🔗<br>API Gateway</div>
+                    <div id="node-cognito" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 340px; top: 150px;">🔐<br>Cognito</div>
+                    <div id="node-logic" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 530px; top: 310px;">⚙️<br>Step Functions / Lambda</div>
+                    <div id="node-rekognition" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 150px;">👁️<br>Rekognition</div>
+                    <div id="node-bedrock" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 310px;">🧠<br>Bedrock (LLM)</div>
+                    <div id="node-external" class="diagram-node absolute w-32 text-center p-4 rounded-lg" style="left: 720px; top: 470px;">🌍<br>APIs Externas</div>
+                    <div id="node-db" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 910px; top: 310px;">🗃️<br>DynamoDB / S3</div>
+
+                    <!-- Lines -->
+                    <div id="line-1" class="diagram-line h-1" style="left: 148px; top: 345px; width: 32px;"></div>
+                    <div id="line-2" class="diagram-line h-1" style="left: 308px; top: 345px; width: 32px;"></div>
+                    <div id="line-3" class="diagram-line w-1" style="left: 405px; top: 215px; height: 95px;"></div>
+                    <div id="line-4" class="diagram-line h-1" style="left: 472px; top: 345px; width: 58px;"></div>
+                    <div id="line-5" class="diagram-line w-1" style="left: 595px; top: 215px; height: 95px;"></div>
+                    <div id="line-6" class="diagram-line h-1" style="left: 658px; top: 185px; width: 62px;"></div>
+                    <div id="line-7" class="diagram-line h-1" style="left: 658px; top: 345px; width: 62px;"></div>
+                    <div id="line-8" class="diagram-line w-1" style="left: 595px; top: 375px; height: 95px;"></div>
+                    <div id="line-9" class="diagram-line h-1" style="left: 658px; top: 505px; width: 62px;"></div>
+                    <div id="line-10" class="diagram-line h-1" style="left: 848px; top: 345px; width: 62px;"></div>
+                </div>
+
+                <!-- Explanations -->
+                 <div id="explanation-container" class="absolute bottom-4 left-4 right-4 md:left-auto md:w-2/5 p-4 bg-gray-50 rounded-lg border">
+                    <div id="exp-0" class="explanation-box active"><p class="font-bold tech-text-medium">Clique em "Iniciar Animação" para ver a magia acontecer.</p><p>Acompanhe a jornada de uma requisição, desde o clique do utilizador até a resposta final, e entenda o papel de cada serviço.</p></div>
+                    <div id="exp-1" class="explanation-box"><p class="font-bold tech-text-medium">Passo 1: O Ponto de Partida</p><p>Tudo começa com o <strong>Utilizador</strong> a interagir com a nossa aplicação. A sua requisição é enviada para a rede de distribuição global da AWS, o <strong>CloudFront</strong>, que entrega o conteúdo estático (a interface) de forma rápida e segura.</p></div>
+                    <div id="exp-2" class="explanation-box"><p class="font-bold tech-text-medium">Passo 2: A Porta de Entrada</p><p>Do CloudFront, as chamadas dinâmicas (como um login ou cadastro) são direcionadas para o <strong>API Gateway</strong>, a porta de entrada segura para o nosso backend.</p></div>
+                    <div id="exp-3" class="explanation-box"><p class="font-bold tech-text-medium">Passo 3: Verificação de Identidade</p><p>O API Gateway primeiro comunica com o <strong>Cognito</strong> para autenticar o utilizador, garantindo que apenas utilizadores autorizados possam prosseguir. A segurança começa aqui.</p></div>
+                    <div id="exp-4" class="explanation-box"><p class="font-bold tech-text-medium">Passo 4: Orquestração da Lógica</p><p>Uma vez autenticada, a requisição invoca os nossos "Agentes de IA", orquestrados pelo <strong>AWS Step Functions</strong>. Ele gere fluxos complexos, como um novo cadastro, chamando funções <strong>Lambda</strong> para cada tarefa específica.</p></div>
+                    <div id="exp-5" class="explanation-box"><p class="font-bold tech-text-medium">Passo 5: Análise com Inteligência Artificial</p><p>O Step Functions aciona as IAs: <strong>Rekognition</strong> para validar a selfie com o documento (Visão Computacional) e o <strong>AWS Bedrock</strong> para usar LLMs na análise de risco, matching de habilidades ou análise de feedback.</p></div>
+                     <div id="exp-6" class="explanation-box"><p class="font-bold tech-text-medium">Passo 6: Interação com o Mundo Exterior</p><p>Se necessário, o nosso sistema comunica com <strong>APIs Externas</strong> de forma segura, seja para uma verificação de antecedentes ou para processar um pagamento via PIX.</p></div>
+                    <div id="exp-7" class="explanation-box"><p class="font-bold tech-text-medium">Passo 7: Persistência dos Dados</p><p>Finalmente, todas as informações são guardadas de forma segura e escalável no nosso banco de dados <strong>DynamoDB</strong>, e os ficheiros (como documentos) são armazenados no <strong>Amazon S3</strong>.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ia" class="scroll-mt-24 mb-24 text-center">
+            <h2 class="text-4xl font-bold tech-text-medium mb-4">O Cérebro do Solidarize: A Nossa IA</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">Não usamos IA como um recurso isolado, mas como o motor da nossa plataforma. Explore os diferentes tipos de IA que empregamos.</p>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="-mb-px flex justify-center space-x-6">
+                        <button class="tab-button active py-4 px-6 font-bold tech-text-medium border-b-2 tech-border-accent" data-tab="llms">🧠 LLMs (Bedrock)</button>
+                        <button class="tab-button py-4 px-6 font-bold text-gray-500" data-tab="agents">⚙️ Agentes (Step Functions)</button>
+                        <button class="tab-button py-4 px-6 font-bold text-gray-500" data-tab="vision">👁️ Visão (Rekognition)</button>
+                    </nav>
+                </div>
+                <div>
+                    <div id="llms" class="tab-content active text-left">
+                        <h3 class="text-2xl font-bold tech-text-dark mb-3">Modelos de Linguagem Grandes (LLMs)</h3>
+                        <p class="text-gray-700">São o nosso cérebro analítico. Nós usamo-los para ir além das palavras-chave e entender o contexto. Isto permite-nos:</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2">
+                            <li><strong>Qualificar conexões:</strong> Fazer o "match" entre a habilidade de um voluntário ("sou bom a ouvir") e a necessidade de uma instituição ("companhia para idosos").</li>
+                            <li><strong>Transformar feedback em ação:</strong> Analisar o sentimento de uma avaliação e detetar padrões de problemas de forma proativa.</li>
+                            <li><strong>Aumentar o engajamento:</strong> Gerar mensagens de reconhecimento personalizadas para motivar os voluntários.</li>
+                        </ul>
                     </div>
-                     <p class="text-center mt-6 text-sm text-gray-600">Este fluxo automatizado garante que cada novo voluntário seja verificado de forma segura e eficiente antes de ser aprovado na plataforma.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6 text-center text-purple">Workflow 2: Match de Missão Inteligente</h3>
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-                        <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">1. Gatilho Diário</p>
-                            <p class="text-sm">EventBridge aciona Lambda</p>
-                        </div>
-                        <div class="flow-arrow transform md:-rotate-0">➔</div>
-                        <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">2. Análise Semântica</p>
-                            <p class="text-sm">Bedrock compara perfis e missões</p>
-                        </div>
-                         <div class="flow-arrow transform md:-rotate-0">➔</div>
-                         <div class="flow-box p-4 rounded-lg text-center">
-                            <p class="font-bold">3. Notificação</p>
-                            <p class="text-sm">Matches são enviados via SNS</p>
-                        </div>
+                    <div id="agents" class="tab-content text-left">
+                         <h3 class="text-2xl font-bold tech-text-dark mb-3">Agentes de IA (Orquestração)</h3>
+                        <p class="text-gray-700">São os nossos "gerentes" autónomos. Programamo-los para orquestrar tarefas complexas e garantir que a lógica de negócio seja executada de forma proativa.</p>
+                         <ul class="list-disc list-inside mt-4 space-y-2">
+                            <li><strong>Automatizar a confiança:</strong> O nosso "agente" de onboarding executa todo o processo de verificação de identidade e antecedentes.</li>
+                            <li><strong>Centralizar a execução:</strong> Cada agente (Onboarding, Matching, Segurança) tem uma função específica, tornando o sistema organizado e fácil de manter.</li>
+                            <li><strong>Garantir a proatividade:</strong> Os agentes agem com base em gatilhos (ex: após uma missão, o agente de avaliação entra em ação), não esperando pela ação do utilizador.</li>
+                        </ul>
                     </div>
-                     <p class="text-center mt-6 text-sm text-gray-600">Diariamente, a IA busca as melhores conexões possíveis, enviando proativamente sugestões de voluntariado relevantes para os usuários.</p>
+                    <div id="vision" class="tab-content text-left">
+                         <h3 class="text-2xl font-bold tech-text-dark mb-3">Visão Computacional</h3>
+                        <p class="text-gray-700">É a nossa primeira e mais importante barreira contra fraudes, estabelecendo a confiança desde o primeiro segundo.</p>
+                         <ul class="list-disc list-inside mt-4 space-y-2">
+                            <li><strong>Estabelecer a prova de identidade:</strong> Ao usar o AWS Rekognition para comparar a selfie do voluntário com o seu documento, garantimos que a pessoa é quem diz ser.</li>
+                            <li><strong>Impacto direto na segurança:</strong> Esta tecnologia tem um impacto direto na segurança das instituições e na confiança de toda a comunidade, eliminando um processo que seria manual, lento e inseguro.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="ai" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-green mb-2">O Poder da Inteligência Artificial</h2>
-                <p class="max-w-2xl mx-auto">A IA não é um complemento, é o núcleo da nossa inteligência de negócio. Usamos modelos econômicos como o Claude 3 Haiku para tomar decisões mais inteligentes.</p>
-            </div>
-            <div class="bg-white p-6 md:p-8 rounded-lg shadow-purple">
-                 <h3 class="text-xl font-bold text-center mb-6 text-purple">Distribuição do Uso de IA nas Funcionalidades</h3>
-                <div class="chart-container">
-                    <canvas id="aiUsageChart"></canvas>
+        <section id="impacto" class="scroll-mt-24 text-center">
+            <h2 class="text-4xl font-bold tech-text-medium mb-4">Impacto Real e Visão de Futuro</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">A nossa tecnologia foi construída com um propósito: fortalecer a comunidade. O nosso plano é expandir, cidade a cidade, tornando a solidariedade mais acessível, segura e eficaz para todos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold tech-accent mb-2">Para o Voluntário</h3>
+                    <p>Uma experiência gratificante, segura e fácil para encontrar formas de ajudar e ser reconhecido pelo seu impacto.</p>
                 </div>
-                <p class="text-center mt-4 text-sm text-gray-600">O gráfico mostra como a IA é aplicada em diferentes frentes: desde a verificação inicial de identidade até a análise de risco e a conexão inteligente entre voluntários e missões.</p>
-            </div>
-        </section>
-        
-        <section id="cost" class="mb-20">
-             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-coral mb-2">Estratégia de Custo-Benefício</h2>
-                <p class="max-w-2xl mx-auto">Cada serviço foi escolhido com um objetivo claro: máxima eficiência, custo mínimo. Isso garante a sustentabilidade do Solidarize a longo prazo.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                     <h3 class="font-bold text-lg text-purple">✅ Serverless-First</h3>
-                     <p>Zero custo com servidores ociosos.</p>
-                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                     <h3 class="font-bold text-lg text-purple">✅ Banco de Dados Sob Demanda</h3>
-                     <p>DynamoDB evita os custos fixos de um BD tradicional.</p>
-                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                     <h3 class="font-bold text-lg text-purple">✅ API Econômica</h3>
-                     <p>API Gateway HTTP API, até 70% mais barata.</p>
-                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                     <h3 class="font-bold text-lg text-purple">✅ Computação Eficiente</h3>
-                     <p>AWS Lambda com ARM/Graviton2 para melhor performance/custo.</p>
-                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                     <h3 class="font-bold text-lg text-purple">✅ IA de Baixo Custo</h3>
-                     <p>Uso do modelo Claude 3 Haiku, focado em eficiência.</p>
-                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
-                     <h3 class="font-bold text-lg text-purple">✅ Orquestração Inteligente</h3>
-                     <p>Step Functions para evitar tempo de espera custoso em Lambdas.</p>
-                 </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold tech-accent mb-2">Para a Instituição</h3>
+                    <p>Acesso fiável a uma rede de voluntários qualificados e verificados, simplificando a gestão da ajuda recebida.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold tech-accent mb-2">Para a Comunidade</h3>
+                    <p>Uma sociedade mais forte e conectada, onde a tecnologia serve como um catalisador para a ação solidária.</p>
+                </div>
             </div>
         </section>
 
     </main>
-
-    <footer class="bg-purple text-white text-center py-6 px-4">
-        <p>&copy; 2025 Projeto Solidarize. Tecnologia para um mundo mais solidário.</p>
+    
+    <footer class="tech-bg-dark text-white text-center mt-24 py-10">
+        <p class="text-lg font-bold">Solidarize</p>
+        <p class="opacity-80">Tecnologia para um mundo melhor.</p>
     </footer>
 
     <script>
-        const chartColors = {
-            purple: '#6B5B95',
-            coral: '#FF6F61',
-            green: '#88B04B',
-            blueGray: '#92A8D1',
-            lightPink: '#F7CAC9'
-        };
-
-        const tooltipConfig = {
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            const item = tooltipItems[0];
-                            let label = item.chart.data.labels[item.dataIndex];
-                            if (Array.isArray(label)) {
-                                return label.join(' ');
-                            }
-                            return label;
-                        }
-                    }
-                }
-            }
-        };
-        
-        function wrapLabel(str, maxWidth = 16) {
-            if (str.length <= maxWidth) {
-                return str;
-            }
-            const words = str.split(' ');
-            const lines = [];
-            let currentLine = '';
-            words.forEach(word => {
-                if ((currentLine + word).length > maxWidth) {
-                    lines.push(currentLine.trim());
-                    currentLine = '';
-                }
-                currentLine += word + ' ';
-            });
-            lines.push(currentLine.trim());
-            return lines.filter(line => line.length > 0);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            const costCtx = document.getElementById('costComparisonChart').getContext('2d');
-            new Chart(costCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Infraestrutura Tradicional', 'Infraestrutura Serverless'],
-                    datasets: [{
-                        label: 'Custo Mensal Estimado (Conceitual)',
-                        data: [100, 5],
-                        backgroundColor: [chartColors.coral, chartColors.green],
-                        borderColor: [chartColors.coral, chartColors.green],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    ...tooltipConfig,
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Unidade de Custo Relativa'
-                            }
+            // Animação da Arquitetura
+            const startBtn = document.getElementById('start-animation-btn');
+            const nodes = document.querySelectorAll('.diagram-node');
+            const lines = document.querySelectorAll('.diagram-line');
+            const explanations = document.querySelectorAll('.explanation-box');
+            let animationTimeout;
+
+            function resetAnimation() {
+                clearTimeout(animationTimeout);
+                nodes.forEach(n => n.classList.remove('active'));
+                lines.forEach(l => l.classList.remove('active'));
+                explanations.forEach(e => e.classList.remove('active'));
+                document.getElementById('exp-0').classList.add('active');
+                startBtn.disabled = false;
+                startBtn.innerText = '▶ Reiniciar Animação';
+            }
+
+            function runAnimation() {
+                startBtn.disabled = true;
+                startBtn.innerText = 'Animando...';
+                resetAnimation();
+                document.getElementById('exp-0').classList.remove('active');
+
+                const steps = [
+                    { node: 'node-user', line: 'line-1', exp: 'exp-1', delay: 500 },
+                    { node: 'node-cloudfront', line: 'line-2', exp: 'exp-2', delay: 1500 },
+                    { node: 'node-api', line: 'line-3', exp: 'exp-3', delay: 1500 },
+                    { node: 'node-cognito', line: null, exp: 'exp-3', delay: 1500 },
+                    { node: 'node-api', line: 'line-4', exp: 'exp-4', delay: 2000 },
+                    { node: 'node-logic', line: 'line-5', exp: 'exp-5', delay: 1500 },
+                    { node: 'node-logic', line: 'line-7', exp: 'exp-5', delay: 0 },
+                    { node: 'node-rekognition', line: 'line-6', exp: 'exp-5', delay: 1500 },
+                    { node: 'node-bedrock', line: null, exp: 'exp-5', delay: 0 },
+                    { node: 'node-logic', line: 'line-8', exp: 'exp-6', delay: 2000 },
+                    { node: 'node-external', line: 'line-9', exp: 'exp-6', delay: 1500 },
+                    { node: 'node-logic', line: 'line-10', exp: 'exp-7', delay: 2000 },
+                    { node: 'node-db', line: null, exp: 'exp-7', delay: 1500 },
+                ];
+                
+                let cumulativeDelay = 0;
+                steps.forEach((step, index) => {
+                    cumulativeDelay += step.delay;
+                    animationTimeout = setTimeout(() => {
+                        nodes.forEach(n => n.classList.remove('active'));
+                        if (step.node) document.getElementById(step.node).classList.add('active');
+                        if (step.line) document.getElementById(step.line).classList.add('active');
+
+                        explanations.forEach(e => e.classList.remove('active'));
+                        if (step.exp) document.getElementById(step.exp).classList.add('active');
+
+                        if(index === steps.length - 1) {
+                            startBtn.disabled = false;
+                            startBtn.innerText = '▶ Reiniciar Animação';
                         }
+                    }, cumulativeDelay);
+                });
+            }
+            startBtn.addEventListener('click', runAnimation);
+
+
+            // Animação de Scroll (Fade in)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-section');
                     }
-                }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section > div').forEach(section => {
+                observer.observe(section);
             });
 
-            const aiCtx = document.getElementById('aiUsageChart').getContext('2d');
-            const aiLabels = [
-                'Verificação de Identidade (Rekognition)',
-                'Análise de Risco (Bedrock)',
-                'Matching Inteligente de Missões (Bedrock)',
-                'Análise de Feedback (Bedrock)'
-            ];
-            new Chart(aiCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: aiLabels.map(label => wrapLabel(label)),
-                    datasets: [{
-                        label: 'Uso de IA',
-                        data: [40, 20, 30, 10],
-                        backgroundColor: [
-                            chartColors.purple,
-                            chartColors.coral,
-                            chartColors.green,
-                            chartColors.blueGray
-                        ],
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                     ...tooltipConfig,
-                    responsive: true,
-                    maintainAspectRatio: false,
-                }
+
+            // Navegação e Tabs
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main > section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 120) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
             });
+
+            const tabsContainer = document.querySelector('#ia');
+            if (tabsContainer) {
+                const tabButtons = tabsContainer.querySelectorAll('.tab-button');
+                const tabContents = tabsContainer.querySelectorAll('.tab-content');
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.dataset.tab;
+                        
+                        tabButtons.forEach(btn => btn.classList.remove('active', 'tech-border-accent'));
+                        button.classList.add('active', 'tech-border-accent');
+                        
+                        tabContents.forEach(content => {
+                            content.classList.remove('active');
+                            if (content.id === tabId) {
+                                content.classList.add('active');
+                            }
+                        });
+                    });
+                });
+            }
         });
     </script>
 

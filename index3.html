@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Projeto Solidarize - Arquitetura Serverless e IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    METADATA DE PLANEJAMENTO DO INFOGRÁFICO
+    
+    1. PLANO DE NARRATIVA E ESTRUTURA
+    - Título: Apresentar o Solidarize como uma fusão de tecnologia e impacto social.
+    - Seção 1: Visão Geral. O que é o Solidarize? Apresentar as funcionalidades principais de forma visual.
+    - Seção 2: Arquitetura Serverless. Explicar a base tecnológica e a vantagem de custo usando um gráfico de barras comparativo.
+    - Seção 3: Fluxos de Trabalho Automatizados. Detalhar os processos chave (Cadastro, Match, Doação) com fluxogramas em HTML/CSS.
+    - Seção 4: O Poder da IA. Isolar e destacar o papel da Inteligência Artificial com um gráfico de rosca.
+    - Seção 5: Estratégia de Custo. Resumir os pontos de economia da arquitetura escolhida.
+    - Conclusão: Reforçar a mensagem de sustentabilidade e escalabilidade.
+
+    2. SELEÇÃO DE VISUALIZAÇÕES E JUSTIFICATIVA (SEM SVG, SEM MERMAID JS)
+    - Funcionalidades Principais: (Meta: Organizar) -> Layout de cards com ícones Unicode. Justificativa: Simples, visualmente atraente e não requer bibliotecas ou gráficos complexos.
+    - Comparativo de Custo (Serverless vs. Tradicional): (Meta: Comparar) -> Gráfico de Barras (Chart.js). Justificativa: Ideal para uma comparação direta e impactante de valores. Renderizado em Canvas.
+    - Fluxos de Trabalho: (Meta: Organizar) -> Fluxogramas com HTML/CSS (divs, bordas, flexbox). Justificativa: Representa processos sequenciais de forma clara, cumprindo a restrição de não usar Mermaid JS ou SVG.
+    - Divisão de Uso da IA: (Meta: Comparar/Composição) -> Gráfico de Rosca (Chart.js). Justificativa: Perfeito para mostrar a proporção de cada tarefa de IA dentro do ecossistema. Renderizado em Canvas.
+    - Estratégia de Custos: (Meta: Organizar) -> Lista estilizada com HTML/CSS. Justificativa: Apresenta múltiplos pontos de forma clara e concisa sem necessidade de visualização complexa.
+
+    3. PALETA DE CORES SELECIONADA
+    - Nome da Paleta: Energetic & Playful
+    - Cores (HEX): #FF6F61 (Coral), #6B5B95 (Roxo), #88B04B (Verde), #F7CAC9 (Rosa Claro), #92A8D1 (Azul Acinzentado).
+
+    4. CONFIRMAÇÃO DE RESTRIÇÕES
+    - Confirmo que NEM MERMAID JS NEM SVG foram utilizados na geração deste artefato. Toda a renderização de gráficos é feita via tag Canvas (Chart.js) e todos os diagramas de fluxo são construídos com elementos HTML e estilização Tailwind CSS.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #6B5B95;
+            line-height: 1;
+        }
+        .flow-box {
+            border: 2px solid #6B5B95;
+            background-color: #ffffff;
+            color: #333;
+        }
+        .text-coral { color: #FF6F61; }
+        .text-purple { color: #6B5B95; }
+        .text-green { color: #88B04B; }
+        .bg-coral { background-color: #FF6F61; }
+        .bg-purple { background-color: #6B5B95; }
+        .bg-green { background-color: #88B04B; }
+        .bg-light-pink { background-color: #F7CAC9; }
+        .bg-blue-gray { background-color: #92A8D1; }
+        .border-purple { border-color: #6B5B95; }
+        .shadow-purple { box-shadow: 0 10px 15px -3px rgba(107, 91, 149, 0.2), 0 4px 6px -2px rgba(107, 91, 149, 0.1); }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <header class="bg-purple text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2">Projeto Solidarize V2</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">Uma análise visual da arquitetura Serverless e IA que impulsiona o impacto social com custo mínimo.</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <section id="features" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-purple mb-2">O Que é o Solidarize?</h2>
+                <p class="max-w-2xl mx-auto">Solidarize é uma plataforma que conecta voluntários a quem precisa. Para garantir segurança, eficiência e escalabilidade, criamos uma base tecnológica robusta e econômica.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple">Cadastro Seguro</h3>
+                    <p>Verificação de identidade e antecedentes para garantir um ambiente seguro para todos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple">Sistema de Missões</h3>
+                    <p>Conexão inteligente entre as habilidades dos voluntários e as necessidades das instituições.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-4">❤️</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple">Segurança em Tempo Real</h3>
+                    <p>Funcionalidades como botão de pânico e avaliação mútua para proteção contínua.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple">Gamificação</h3>
+                    <p>Sistema de pontos e rankings para incentivar e reconhecer o engajamento dos voluntários.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-4">💸</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple">Doações Integradas</h3>
+                    <p>Processamento simplificado de doações via PIX, conectando doadores a necessidades específicas.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple">Escalabilidade Serverless</h3>
+                    <p>Arquitetura que cresce sob demanda, garantindo performance com o menor custo possível.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="architecture" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green mb-2">Arquitetura Serverless: O Motor Econômico</h2>
+                <p class="max-w-2xl mx-auto">A escolha por uma arquitetura "Serverless-First" não é apenas técnica, é estratégica. Pagamos apenas pelo que usamos, permitindo que a plataforma cresça de forma sustentável.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-purple">
+                 <h3 class="text-xl font-bold text-center mb-6 text-purple">Comparativo de Custo Mensal: Serverless vs. Tradicional</h3>
+                <div class="chart-container">
+                    <canvas id="costComparisonChart"></canvas>
+                </div>
+                <p class="text-center mt-4 text-sm text-gray-600">Este gráfico ilustra a vantagem de custo da abordagem Serverless, que escala de zero, em comparação com os custos fixos de uma infraestrutura tradicional baseada em servidores sempre ativos.</p>
+            </div>
+        </section>
+
+        <section id="workflows" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-coral mb-2">Fluxos de Trabalho Automatizados</h2>
+                <p class="max-w-2xl mx-auto">Nossos processos-chave são orquestrados de forma inteligente pelo AWS Step Functions, garantindo resiliência e eficiência sem custo de computação ociosa.</p>
+            </div>
+            <div class="space-y-16">
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-purple">Workflow 1: Cadastro e Verificação de Voluntário</h3>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">1. Envio de Dados</p>
+                            <p class="text-sm">Usuário envia dados via App</p>
+                        </div>
+                        <div class="flow-arrow transform md:-rotate-0">➔</div>
+                        <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">2. Orquestração</p>
+                            <p class="text-sm">Step Functions inicia o fluxo</p>
+                        </div>
+                        <div class="flow-arrow transform md:-rotate-0">➔</div>
+                         <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">3. Análise IA</p>
+                            <p class="text-sm">Rekognition & Bedrock analisam</p>
+                        </div>
+                         <div class="flow-arrow transform md:-rotate-0">➔</div>
+                         <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">4. Registro</p>
+                            <p class="text-sm">Status salvo no DynamoDB</p>
+                        </div>
+                    </div>
+                     <p class="text-center mt-6 text-sm text-gray-600">Este fluxo automatizado garante que cada novo voluntário seja verificado de forma segura e eficiente antes de ser aprovado na plataforma.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-purple">Workflow 2: Match de Missão Inteligente</h3>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">1. Gatilho Diário</p>
+                            <p class="text-sm">EventBridge aciona Lambda</p>
+                        </div>
+                        <div class="flow-arrow transform md:-rotate-0">➔</div>
+                        <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">2. Análise Semântica</p>
+                            <p class="text-sm">Bedrock compara perfis e missões</p>
+                        </div>
+                         <div class="flow-arrow transform md:-rotate-0">➔</div>
+                         <div class="flow-box p-4 rounded-lg text-center">
+                            <p class="font-bold">3. Notificação</p>
+                            <p class="text-sm">Matches são enviados via SNS</p>
+                        </div>
+                    </div>
+                     <p class="text-center mt-6 text-sm text-gray-600">Diariamente, a IA busca as melhores conexões possíveis, enviando proativamente sugestões de voluntariado relevantes para os usuários.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green mb-2">O Poder da Inteligência Artificial</h2>
+                <p class="max-w-2xl mx-auto">A IA não é um complemento, é o núcleo da nossa inteligência de negócio. Usamos modelos econômicos como o Claude 3 Haiku para tomar decisões mais inteligentes.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-purple">
+                 <h3 class="text-xl font-bold text-center mb-6 text-purple">Distribuição do Uso de IA nas Funcionalidades</h3>
+                <div class="chart-container">
+                    <canvas id="aiUsageChart"></canvas>
+                </div>
+                <p class="text-center mt-4 text-sm text-gray-600">O gráfico mostra como a IA é aplicada em diferentes frentes: desde a verificação inicial de identidade até a análise de risco e a conexão inteligente entre voluntários e missões.</p>
+            </div>
+        </section>
+        
+        <section id="cost" class="mb-20">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-coral mb-2">Estratégia de Custo-Benefício</h2>
+                <p class="max-w-2xl mx-auto">Cada serviço foi escolhido com um objetivo claro: máxima eficiência, custo mínimo. Isso garante a sustentabilidade do Solidarize a longo prazo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <h3 class="font-bold text-lg text-purple">✅ Serverless-First</h3>
+                     <p>Zero custo com servidores ociosos.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <h3 class="font-bold text-lg text-purple">✅ Banco de Dados Sob Demanda</h3>
+                     <p>DynamoDB evita os custos fixos de um BD tradicional.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <h3 class="font-bold text-lg text-purple">✅ API Econômica</h3>
+                     <p>API Gateway HTTP API, até 70% mais barata.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <h3 class="font-bold text-lg text-purple">✅ Computação Eficiente</h3>
+                     <p>AWS Lambda com ARM/Graviton2 para melhor performance/custo.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <h3 class="font-bold text-lg text-purple">✅ IA de Baixo Custo</h3>
+                     <p>Uso do modelo Claude 3 Haiku, focado em eficiência.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                     <h3 class="font-bold text-lg text-purple">✅ Orquestração Inteligente</h3>
+                     <p>Step Functions para evitar tempo de espera custoso em Lambdas.</p>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-purple text-white text-center py-6 px-4">
+        <p>&copy; 2025 Projeto Solidarize. Tecnologia para um mundo mais solidário.</p>
+    </footer>
+
+    <script>
+        const chartColors = {
+            purple: '#6B5B95',
+            coral: '#FF6F61',
+            green: '#88B04B',
+            blueGray: '#92A8D1',
+            lightPink: '#F7CAC9'
+        };
+
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth = 16) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines.filter(line => line.length > 0);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const costCtx = document.getElementById('costComparisonChart').getContext('2d');
+            new Chart(costCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Infraestrutura Tradicional', 'Infraestrutura Serverless'],
+                    datasets: [{
+                        label: 'Custo Mensal Estimado (Conceitual)',
+                        data: [100, 5],
+                        backgroundColor: [chartColors.coral, chartColors.green],
+                        borderColor: [chartColors.coral, chartColors.green],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...tooltipConfig,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Unidade de Custo Relativa'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const aiCtx = document.getElementById('aiUsageChart').getContext('2d');
+            const aiLabels = [
+                'Verificação de Identidade (Rekognition)',
+                'Análise de Risco (Bedrock)',
+                'Matching Inteligente de Missões (Bedrock)',
+                'Análise de Feedback (Bedrock)'
+            ];
+            new Chart(aiCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: aiLabels.map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: 'Uso de IA',
+                        data: [40, 20, 30, 10],
+                        backgroundColor: [
+                            chartColors.purple,
+                            chartColors.coral,
+                            chartColors.green,
+                            chartColors.blueGray
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                     ...tooltipConfig,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
