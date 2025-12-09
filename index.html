@@ -1,468 +1,152 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Solidarize: Uma Exploração Interativa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8F9FA; }
-        .tech-bg-dark { background-color: #0B2D48; }
-        .tech-bg-medium { background-color: #124B73; }
-        .tech-bg-light { background-color: #2283C3; }
-        .tech-accent { color: #55B3F2; }
-        .tech-accent-bg { background-color: #55B3F2; }
-        .tech-text-dark { color: #0B2D48; }
-        .tech-text-medium { color: #124B73; }
-        .tech-text-light { color: #2283C3; }
-        .tech-border-accent { border-color: #55B3F2; }
-        
-        .sticky-nav { position: sticky; top: 0; z-index: 50; }
-        .nav-link.active { color: #55B3F2; font-weight: 700; }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bíblia Kids</title>
+    <meta name="theme-color" content="#667eea">
 
-        .diagram-node {
-            border: 2px solid #A2D6F9;
-            background-color: white;
-            transition: all 0.5s ease-in-out;
-            opacity: 0.5;
-            cursor: pointer;
-        }
-        .diagram-node.active {
-            border-color: #55B3F2;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(85, 179, 242, 0.5);
-            opacity: 1;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        #data-pulse {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background-color: #55B3F2;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #55B3F2, 0 0 20px #55B3F2;
-            z-index: 10;
-            opacity: 0;
-            transition: top 1s ease-in-out, left 1s ease-in-out, opacity 0.3s;
-        }
-
-        .explanation-box {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            display: none;
-        }
-        .explanation-box.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in-section { animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideInModal { from { transform: translateY(-30px); } to { transform: translateY(0); } }
-        .modal-fade-in { animation: fadeInModal 0.3s ease-out; }
-        .modal-slide-in { animation: slideInModal 0.3s ease-out; }
-
-        .tab-button.active { background-color: #55B3F2; color: white; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="text-tech-text-dark">
 
-    <header id="inicio" class="tech-bg-dark text-white text-center py-24 px-6">
-        <h1 class="text-5xl md:text-6xl font-black mb-4">Projeto Solidarize</h1>
-        <p class="text-xl max-w-3xl mx-auto text-gray-300">Uma Exploração Interativa da Nossa Arquitetura de Impacto Social</p>
-    </header>
+<body>
 
-    <nav id="navbar" class="sticky-nav tech-bg-dark bg-opacity-90 backdrop-blur-sm shadow-lg">
-        <div class="container mx-auto flex justify-center py-3 px-6 space-x-6 md:space-x-8 text-white">
-            <a href="#solucao" class="nav-link transition-colors duration-300 hover:text-tech-accent">A Solução</a>
-            <a href="#jornada" class="nav-link transition-colors duration-300 hover:text-tech-accent">A Jornada</a>
-            <a href="#arquitetura" class="nav-link transition-colors duration-300 hover:text-tech-accent">Arquitetura</a>
-            <a href="#ia" class="nav-link transition-colors duration-300 hover:text-tech-accent">Nossa IA</a>
-            <a href="#impacto" class="nav-link transition-colors duration-300 hover:text-tech-accent">Impacto</a>
+    <div class="container">
+        <header class="header">
+            <h1>Bíblia Kids</h1>
+            <p class="subtitle">Histórias, quizzes e muita diversão!</p>
+        </header>
+
+        <section id="stories-section" class="section active">
+            <div class="stories-grid" id="stories-grid"></div>
+        </section>
+
+        <section id="quizzes-section" class="section">
+            <h2 style="color:white; text-align:center; margin-bottom:20px; text-shadow:0 2px 4px rgba(0,0,0,0.2);">
+                <i class="fa-solid fa-puzzle-piece"></i> Desafios
+            </h2>
+            <div class="stories-grid" id="quizzes-grid"></div>
+        </section>
+
+        <section id="favorites-section" class="section">
+            <h2 style="color:white; text-align:center; margin-bottom:20px;">Suas Favoritas</h2>
+            <div class="stories-grid" id="favorites-grid"></div>
+        </section>
+
+        <section id="coloring-section" class="section">
+            <h2 style="color:white; text-align:center; margin-bottom:20px;">Galeria de Arte</h2>
+            <div class="coloring-gallery" id="coloring-gallery"></div>
+        </section>
+
+        <section id="progress-section" class="section">
+            <div class="card">
+                <h2>Suas Conquistas</h2>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-number" id="stories-read">0</span>
+                        <span>Histórias</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="quiz-correct">0</span>
+                        <span>Quizzes</span>
+                    </div>
+                </div>
+
+                <h3 style="margin:20px 0 10px; color:#777;">Sua Coleção de Medalhas</h3>
+                <div class="badges">
+                    <div class="badge" id="badge-1" title="Primeira história"><i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div class="badge" id="badge-2" title="5 histórias"><i class="fa-solid fa-star"></i></div>
+                    <div class="badge" id="badge-3" title="10 histórias"><i class="fa-solid fa-crown"></i></div>
+                    <div class="badge" id="badge-4" title="Quiz Master"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="badge" id="badge-5" title="30 min lendo"><i class="fa-solid fa-clock"></i></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="showSection('stories')">
+            <i class="fa-solid fa-book-bible"></i>
+            <span class="nav-label">Histórias</span>
+        </div>
+
+        <div class="nav-item" onclick="showSection('quizzes')">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span class="nav-label">Quiz</span>
+        </div>
+
+        <div class="nav-item" onclick="showSection('favorites')">
+            <i class="fa-solid fa-heart"></i>
+            <span class="nav-label">Favoritas</span>
+        </div>
+        <div class="nav-item" onclick="showSection('coloring')">
+            <i class="fa-solid fa-paintbrush"></i>
+            <span class="nav-label">Colorir</span>
+        </div>
+        <div class="nav-item" onclick="showSection('progress')">
+            <i class="fa-solid fa-trophy"></i>
+            <span class="nav-label">Troféus</span>
         </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-16">
+    <div id="story-reader" class="modal">
+        <div class="modal-header">
+            <button class="btn-back" onclick="closeReader()">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+            </button>
+            <button class="btn-audio" id="audio-btn" onclick="toggleAudio()">
+                <i class="fa-solid fa-play"></i> Ouvir
+            </button>
+        </div>
+        <div id="story-reader-content" class="modal-content"></div>
+    </div>
 
-        <section id="solucao" class="scroll-mt-24 mb-24 text-center">
-            <h2 class="text-4xl font-bold tech-text-medium mb-4">O Problema e a Nossa Solução</h2>
-            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">A solidariedade precisa de tecnologia para ser eficaz. Construímos uma plataforma que transforma boa vontade em ação organizada, segura e escalável através de pilares fundamentais.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="solution-card bg-white p-8 rounded-xl shadow-lg border-t-4 tech-border-accent">
-                    <h3 class="text-2xl font-bold tech-text-dark mb-3">Segurança Primeiro</h3>
-                    <p>Verificação de identidade com IA e processos robustos para garantir a segurança de voluntários e instituições.</p>
-                </div>
-                <div class="solution-card bg-white p-8 rounded-xl shadow-lg border-t-4 tech-border-accent">
-                    <h3 class="text-2xl font-bold tech-text-dark mb-3">Conexões Inteligentes</h3>
-                    <p>Utilizamos LLMs para entender o contexto e fazer o "match" perfeito entre as habilidades do voluntário e as necessidades da missão.</p>
-                </div>
-                <div class="solution-card bg-white p-8 rounded-xl shadow-lg border-t-4 tech-border-accent">
-                    <h3 class="text-2xl font-bold tech-text-dark mb-3">Sustentabilidade</h3>
-                    <p>Uma arquitetura 100% Serverless que minimiza custos e permite que a plataforma cresça de forma orgânica e financeiramente saudável.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="jornada" class="scroll-mt-24 mb-24 text-center">
-            <h2 class="text-4xl font-bold tech-text-medium mb-4">A Nossa Jornada: A Evolução do Solidarize</h2>
-            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">O Solidarize não nasceu como é hoje. A nossa tecnologia evoluiu para superar desafios e maximizar o nosso impacto. Esta é a nossa história.</p>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
-                <div class="journey-card bg-white p-8 rounded-xl shadow-lg flex flex-col">
-                    <div class="flex-grow">
-                        <p class="font-bold tech-accent">FASE 1</p>
-                        <h3 class="text-2xl font-bold tech-text-dark mb-3">O Começo Idealista</h3>
-                        <p class="text-gray-600">Começámos com uma grande ideia, mas com uma arquitetura tradicional. Usávamos servidores que ficavam ligados 24/7, o que gerava custos fixos altos, mesmo com poucos utilizadores. Escalar para campanhas era um processo manual e complexo, e o nosso orçamento era consumido pela infraestrutura, não pela inovação.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="font-semibold text-red-600">❌ Desafio: Custos elevados e baixa escalabilidade.</p>
-                    </div>
-                </div>
-                <div class="journey-card bg-white p-8 rounded-xl shadow-lg flex flex-col">
-                    <div class="flex-grow">
-                        <p class="font-bold tech-accent">FASE 2</p>
-                        <h3 class="text-2xl font-bold tech-text-dark mb-3">A Virada Tecnológica</h3>
-                        <p class="text-gray-600">A grande mudança foi a adoção de uma arquitetura <strong>Serverless</strong>. Migrámos para serviços como AWS Lambda e DynamoDB. O resultado foi imediato: os nossos custos caíram drasticamente, pois passámos a pagar apenas pelo que usávamos. A plataforma começou a escalar automaticamente e a nossa equipa pôde focar-se em criar funcionalidades em vez de gerir servidores.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="font-semibold text-green-600">✅ Ganho: Eficiência de custos e escalabilidade automática.</p>
-                    </div>
-                </div>
-                <div class="journey-card bg-white p-8 rounded-xl shadow-lg flex flex-col">
-                    <div class="flex-grow">
-                        <p class="font-bold tech-accent">FASE 3</p>
-                        <h3 class="text-2xl font-bold tech-text-dark mb-3">A Era da Inteligência</h3>
-                        <p class="text-gray-600">Com uma base sólida e económica, demos o passo seguinte: integrámos a <strong>Inteligência Artificial</strong>. Com AWS Rekognition, automatizámos a verificação de identidade. Com AWS Bedrock (LLMs), tornámos as conexões mais inteligentes e o feedback mais acionável. O Solidarize transformou-se numa plataforma não apenas eficiente, mas verdadeiramente inteligente.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="font-semibold text-blue-600">✨ Resultado: Segurança, inteligência e impacto maximizados.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="arquitetura" class="scroll-mt-24 mb-24">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold tech-text-medium mb-4">Arquitetura Interativa</h2>
-                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">Agora que conhece a nossa jornada, explore em detalhe a nossa arquitetura atual. Clique no botão para iniciar a animação automática e clique em cada tecnologia para saber mais.</p>
-                <button id="start-animation-btn" class="tech-accent-bg text-white font-bold py-3 px-8 rounded-lg text-xl shadow-md hover:bg-tech-bg-light transition-colors duration-300">▶ Iniciar Animação</button>
-            </div>
-
-            <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl flex flex-col gap-8 items-center">
-                <div class="w-full min-h-[650px] overflow-x-auto">
-                    <div id="diagram-container" class="relative w-[1200px] h-[800px] scale-90 md:scale-100 mx-auto">
-                        <!-- Nodes -->
-                        <div data-tech-id="user" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 20px; top: 380px;">👤<br>Utilizador</div>
-                        <div data-tech-id="route53" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 220px; top: 380px;">🌐<br>Route 53</div>
-                        <div data-tech-id="s3-hosting" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 420px; top: 210px;">📦<br>S3 (Hospedagem)</div>
-                        <div data-tech-id="cloudfront" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 420px; top: 380px;">☁️<br>CloudFront</div>
-                        <div data-tech-id="api" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 620px; top: 380px;">🔗<br>API Gateway</div>
-                        <div data-tech-id="cognito" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 620px; top: 100px;">🔐<br>Cognito</div>
-                        <div data-tech-id="logic-main" class="diagram-node absolute w-52 text-center p-4 rounded-lg bg-gray-100 border-gray-400" style="left: 820px; top: 240px; height: 380px; opacity: 1;">Orquestração<br>(Agentes de IA)</div>
-                            <div data-tech-id="lambda" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 850px; top: 270px;">λ<br>Lambda</div>
-                            <div data-tech-id="step" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 850px; top: 340px;">⚙️<br>Step Functions</div>
-                            <div data-tech-id="event" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 850px; top: 410px;">🗓️<br>EventBridge</div>
-                            <div data-tech-id="sns" class="diagram-node absolute w-40 text-center p-2 rounded-lg" style="left: 850px; top: 480px;">🔔<br>SNS</div>
-                        <div data-tech-id="rekognition" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 1080px; top: 100px;">👁️<br>Rekognition</div>
-                        <div data-tech-id="bedrock" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 1080px; top: 240px;">🧠<br>Bedrock (LLM)</div>
-                        <div data-tech-id="external" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 1080px; top: 380px;">🌍<br>APIs Externas</div>
-                        <div data-tech-id="db" class="diagram-node absolute w-40 text-center p-4 rounded-lg" style="left: 1080px; top: 520px;">🗃️<br>DynamoDB / S3</div>
-                        <div data-tech-id="monitoring" class="diagram-node absolute w-52 text-center p-4 rounded-lg bg-gray-100 border-gray-400 active" style="left: 820px; top: 650px; height: 140px; width: 400px; opacity: 1;">Monitorização e Segurança</div>
-                        
-                            <div data-tech-id="cloudwatch" class="diagram-node absolute w-40 text-center p-2 rounded-lg active" style="left: 830px; top: 700px;">📊<br>CloudWatch</div>
-                            <div data-tech-id="cloudtrail" class="diagram-node absolute w-40 text-center p-2 rounded-lg active" style="left: 1050px; top: 700px;">📜<br>CloudTrail</div>
-                        
-                        <div id="data-pulse"></div>
-                    </div>
-                </div>
-                 <div id="explanation-container" class="w-full p-4 bg-gray-50 rounded-lg border min-h-[140px]">
-                    <div id="exp-0" class="explanation-box active"><p class="font-bold tech-text-medium text-lg">Bem-vindo à nossa arquitetura completa!</p><p>Clique em "Iniciar Animação" para ver o fluxo de dados em ação e entenda o papel de cada serviço AWS no nosso ecossistema.</p></div>
-                    <div id="exp-1" class="explanation-box"><p class="font-bold tech-text-medium">Passo 1: Resolução de DNS</p><p>O <strong>Utilizador</strong> digita o nosso endereço. O <strong>Amazon Route 53</strong> traduz o domínio para um endereço IP, direcionando o tráfego para o <strong>CloudFront</strong>.</p></div>
-                    <div id="exp-2" class="explanation-box"><p class="font-bold tech-text-medium">Passo 2: Entrega de Conteúdo</p><p>O <strong>CloudFront</strong>, a nossa CDN, busca os ficheiros do site (HTML, CSS, JS) que estão hospedados de forma segura no **Amazon S3** e entrega-os rapidamente ao utilizador.</p></div>
-                    <div id="exp-3" class="explanation-box"><p class="font-bold tech-text-medium">Passo 3: A Porta de Entrada da API</p><p>Ações dinâmicas, como um login, são enviadas ao <strong>API Gateway</strong>, que gere todas as requisições ao nosso backend de forma segura.</p></div>
-                    <div id="exp-4" class="explanation-box"><p class="font-bold tech-text-medium">Passo 4: Autenticação</p><p>A primeira verificação do API Gateway é com o <strong>Cognito</strong>, que valida a identidade do utilizador e as suas permissões de acesso.</p></div>
-                    <div id="exp-5" class="explanation-box"><p class="font-bold tech-text-medium">Passo 5: Orquestração Inteligente</p><p>A requisição é então passada para a nossa camada de **Orquestração**, onde "Agentes de IA" (fluxos do **Step Functions**) coordenam as **Funções Lambda** para executar a lógica necessária.</p></div>
-                    <div id="exp-6" class="explanation-box"><p class="font-bold tech-text-medium">Passo 6: Análise com IA</p><p>O nosso agente invoca os serviços de IA: **Rekognition** para análise de imagem e **Bedrock** (LLM) para análise de texto, risco ou "matching".</p></div>
-                    <div id="exp-7" class="explanation-box"><p class="font-bold tech-text-medium">Passo 7: Persistência e Notificação</p><p>As informações são salvas no **DynamoDB** ou **S3**, e o **SNS** é usado para enviar notificações. APIs externas também podem ser chamadas aqui.</p></div>
-                     <div id="exp-8" class="explanation-box"><p class="font-bold tech-text-medium">Passo Final: Monitorização Contínua</p><p>Enquanto tudo isto acontece, o **CloudWatch** monitoriza a performance e os logs, e o **CloudTrail** regista todas as chamadas de API para auditoria, garantindo a saúde e segurança contínua do sistema.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="ia" class="scroll-mt-24 mb-24 text-center">
-            <h2 class="text-4xl font-bold tech-text-medium mb-4">O Cérebro do Solidarize: A Nossa IA</h2>
-            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">Não usamos IA como um recurso isolado, mas como o motor da nossa plataforma. Explore os diferentes tipos de IA que empregamos.</p>
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <div class="border-b border-gray-200 mb-6">
-                    <nav class="-mb-px flex justify-center space-x-6">
-                        <button class="tab-button active py-4 px-6 font-bold tech-text-medium border-b-2 tech-border-accent" data-tab="llms">🧠 LLMs (Bedrock)</button>
-                        <button class="tab-button py-4 px-6 font-bold text-gray-500" data-tab="agents">⚙️ Agentes (Step Functions)</button>
-                        <button class="tab-button py-4 px-6 font-bold text-gray-500" data-tab="vision">👁️ Visão (Rekognition)</button>
-                    </nav>
-                </div>
-                <div>
-                    <div id="llms" class="tab-content active text-left">
-                        <h3 class="text-2xl font-bold tech-text-dark mb-3">Modelos de Linguagem Grandes (LLMs)</h3>
-                        <p class="text-gray-700">São o nosso cérebro analítico. Nós usamo-los para ir além das palavras-chave e entender o contexto. Isto permite-nos:</p>
-                        <ul class="list-disc list-inside mt-4 space-y-2">
-                            <li><strong>Qualificar conexões:</strong> Fazer o "match" entre a habilidade de um voluntário ("sou bom a ouvir") e a necessidade de uma instituição ("companhia para idosos").</li>
-                            <li><strong>Transformar feedback em ação:</strong> Analisar o sentimento de uma avaliação e detetar padrões de problemas de forma proativa.</li>
-                            <li><strong>Aumentar o engajamento:</strong> Gerar mensagens de reconhecimento personalizadas para motivar os voluntários.</li>
-                        </ul>
-                    </div>
-                    <div id="agents" class="tab-content text-left">
-                         <h3 class="text-2xl font-bold tech-text-dark mb-3">Agentes de IA (Orquestração)</h3>
-                        <p class="text-gray-700">São os nossos "gerentes" autónomos. Programamo-los para orquestrar tarefas complexas e garantir que a lógica de negócio seja executada de forma proativa.</p>
-                         <ul class="list-disc list-inside mt-4 space-y-2">
-                            <li><strong>Automatizar a confiança:</strong> O nosso "agente" de onboarding executa todo o processo de verificação de identidade e antecedentes.</li>
-                            <li><strong>Centralizar a execução:</strong> Cada agente (Onboarding, Matching, Segurança) tem uma função específica, tornando o sistema organizado e fácil de manter.</li>
-                            <li><strong>Garantir a proatividade:</strong> Os agentes agem com base em gatilhos (ex: após uma missão, o agente de avaliação entra em ação), não esperando pela ação do utilizador.</li>
-                        </ul>
-                    </div>
-                    <div id="vision" class="tab-content text-left">
-                         <h3 class="text-2xl font-bold tech-text-dark mb-3">Visão Computacional</h3>
-                        <p class="text-gray-700">É a nossa primeira e mais importante barreira contra fraudes, estabelecendo a confiança desde o primeiro segundo.</p>
-                         <ul class="list-disc list-inside mt-4 space-y-2">
-                            <li><strong>Estabelecer a prova de identidade:</strong> Ao usar o AWS Rekognition para comparar a selfie do voluntário com o seu documento, garantimos que a pessoa é quem diz ser.</li>
-                            <li><strong>Impacto direto na segurança:</strong> Esta tecnologia tem um impacto direto na segurança das instituições e na confiança de toda a comunidade, eliminando um processo que seria manual, lento e inseguro.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="impacto" class="scroll-mt-24 text-center">
-            <h2 class="text-4xl font-bold tech-text-medium mb-4">Impacto Real e Visão de Futuro</h2>
-            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">A nossa tecnologia foi construída com um propósito: fortalecer a comunidade. O nosso plano é expandir, cidade a cidade, tornando a solidariedade mais acessível, segura e eficaz para todos.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold tech-accent mb-2">Para o Voluntário</h3>
-                    <p>Uma experiência gratificante, segura e fácil para encontrar formas de ajudar e ser reconhecido pelo seu impacto.</p>
-                </div>
-                 <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold tech-accent mb-2">Para a Instituição</h3>
-                    <p>Acesso fiável a uma rede de voluntários qualificados e verificados, simplificando a gestão da ajuda recebida.</p>
-                </div>
-                 <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold tech-accent mb-2">Para a Comunidade</h3>
-                    <p>Uma sociedade mais forte e conectada, onde a tecnologia serve como um catalisador para a ação solidária.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <div id="tech-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 modal-fade-in">
-        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full modal-slide-in">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="modal-title" class="text-2xl font-bold tech-text-dark"></h3>
-                <button id="close-modal-btn" class="text-3xl text-gray-500 hover:text-gray-800">×</button>
-            </div>
-            <p id="modal-text" class="text-gray-700"></p>
+    <div id="quiz-modal" class="modal" style="background: #f8f9fa;">
+        <div class="modal-header">
+            <button class="btn-back" onclick="closeQuiz()">
+                <i class="fa-solid fa-arrow-left"></i> Sair
+            </button>
+            <span style="font-weight:bold; color:#667eea; font-size:1.2em;">Hora do Quiz!</span>
+            <div style="width:80px;"></div>
+        </div>
+        <div id="quiz-content" class="modal-content"
+            style="max-width: 500px; margin: 0 auto; text-align: center; padding-top:40px;">
         </div>
     </div>
 
-    <footer class="tech-bg-dark text-white text-center mt-24 py-10">
-        <p class="text-lg font-bold">Solidarize</p>
-        <p class="opacity-80">Tecnologia para um mundo melhor.</p>
-    </footer>
+    <div id="coloring-screen">
+        <canvas id="coloring-canvas"></canvas>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const startBtn = document.getElementById('start-animation-btn');
-            const nodes = document.querySelectorAll('.diagram-node');
-            const explanations = document.querySelectorAll('.explanation-box');
-            const diagramContainer = document.getElementById('diagram-container');
-            const pulse = document.getElementById('data-pulse');
-            let animationTimeout;
+        <div class="coloring-actions">
+            <button class="action-btn" onclick="clearCanvas()" title="Reiniciar Desenho">
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button class="action-btn" onclick="closeColoring()" title="Salvar e Sair"
+                style="background:var(--success); color:white;">
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </div>
 
-            const animationSteps = [
-                { exp: 'exp-0', activeNodes: [] },
-                { from: 'user', to: 'route53', exp: 'exp-1', activeNodes: ['user', 'route53'], delay: 1500 },
-                { from: 'route53', to: 'cloudfront', exp: 'exp-2', activeNodes: ['route53', 'cloudfront', 's3-hosting'], delay: 2000 },
-                { from: 'cloudfront', to: 'api', exp: 'exp-3', activeNodes: ['cloudfront', 'api'], delay: 1500 },
-                { from: 'api', to: 'cognito', exp: 'exp-4', activeNodes: ['api', 'cognito'], delay: 2000 },
-                { from: 'api', to: 'logic-main', exp: 'exp-5', activeNodes: ['api', 'logic-main', 'lambda', 'step'], delay: 2000 },
-                { from: 'logic-main', to: 'rekognition', exp: 'exp-6', activeNodes: ['logic-main', 'rekognition', 'bedrock', 'event'], delay: 2500 },
-                { from: 'logic-main', to: 'external', exp: 'exp-7', activeNodes: ['logic-main', 'external', 'sns'], delay: 2500 },
-                { from: 'logic-main', to: 'db', exp: 'exp-7', activeNodes: ['logic-main', 'db'], delay: 2000 },
-                { exp: 'exp-8', activeNodes: ['monitoring', 'cloudwatch', 'cloudtrail'], delay: 2000, noPulse: true },
-            ];
-            
-            const techDescriptions = {
-                'user': { title: 'Utilizador', text: 'O ponto de partida de toda a interação. É o voluntário ou a instituição a aceder à plataforma através de um browser ou aplicação móvel.' },
-                'route53': { title: 'Amazon Route 53', text: 'O serviço de DNS da AWS. É o primeiro ponto de contacto. Traduz o nome do nosso domínio (ex: solidarize.org) para o endereço IP do CloudFront, direcionando o tráfego corretamente.'},
-                's3-hosting': { title: 'Amazon S3 (Hospedagem)', text: 'O Amazon S3 armazena todos os ficheiros estáticos da nossa aplicação (HTML, CSS, JavaScript). Funciona como o disco rígido do nosso site na nuvem, garantindo durabilidade e disponibilidade.'},
-                'cloudfront': { title: 'Amazon CloudFront', text: 'É a nossa Rede de Distribuição de Conteúdo (CDN). Ele busca o site no S3 e entrega-o ao utilizador a partir de uma localização geograficamente próxima, garantindo velocidade máxima de carregamento.' },
-                'api': { title: 'Amazon API Gateway', text: 'A porta de entrada segura e escalável para o nosso backend. Gere todas as requisições, direcionando-as para os serviços corretos e aplicando políticas de segurança.' },
-                'cognito': { title: 'AWS Cognito', text: 'Serviço de identidade que gere a autenticação dos utilizadores. Ele trata do login, registo e garante que apenas utilizadores verificados acedam à plataforma.' },
-                'lambda': { title: 'AWS Lambda', text: 'Executa o nosso código em resposta a eventos, sem necessidade de gerir servidores. Cada função Lambda realiza uma tarefa específica, como processar um registo ou uma doação.'},
-                'step': { title: 'AWS Step Functions', text: 'O orquestrador dos nossos fluxos de trabalho. Atua como um "Agente de IA" que coordena sequências complexas de tarefas, como o processo de onboarding de um novo voluntário, chamando várias funções Lambda e serviços de IA na ordem correta.' },
-                'event': { title: 'Amazon EventBridge', text: 'Serviço de barramento de eventos que usamos para acionar fluxos de trabalho de forma agendada. Por exemplo, executa o "Agente de Matching" todas as noites para encontrar novas conexões.' },
-                'sns': { title: 'Amazon SNS', text: 'Serviço de notificação que nos permite enviar mensagens (email, SMS, push) para os nossos utilizadores, como um alerta de nova missão ou uma mensagem de agradecimento.'},
-                'rekognition': { title: 'AWS Rekognition', text: 'O nosso serviço de Visão Computacional. É usado para comparar a selfie do utilizador com a foto do seu documento de identidade, automatizando e garantindo a veracidade da verificação de identidade.' },
-                'bedrock': { title: 'Amazon Bedrock', text: 'O nosso acesso a Modelos de Linguagem Grandes (LLMs). Utilizamo-lo como o cérebro analítico para interpretar texto, como analisar o sentimento de um feedback, fazer o "match" inteligente entre habilidades e necessidades, e gerar conteúdo personalizado.' },
-                'external': { title: 'APIs Externas', text: 'Para funcionalidades que requerem dados ou serviços de terceiros, como gateways de pagamento para doações via PIX ou serviços de verificação de antecedentes criminais.' },
-                'db': { title: 'Amazon DynamoDB & S3 (Utilizador)', text: 'A nossa solução de persistência de dados. O DynamoDB, uma base de dados NoSQL, armazena os dados da aplicação (perfis, missões), enquanto um segundo bucket S3 guarda de forma segura os ficheiros enviados pelos utilizadores (fotos, documentos).' },
-                'logic-main': { title: 'Orquestração (Agentes de IA)', text: 'Esta é a nossa camada de lógica central, onde os fluxos do Step Functions coordenam as funções Lambda e outros serviços para executar as regras de negócio da plataforma de forma automatizada e inteligente.' },
-                'monitoring': { title: 'Monitorização e Segurança', text: 'Estes serviços atuam em toda a arquitetura para garantir a saúde e a segurança do sistema.'},
-                'cloudwatch': { title: 'Amazon CloudWatch', text: 'Monitoriza os logs e as métricas de todos os nossos serviços em tempo real. Permite-nos criar alarmes para sermos notificados proativamente sobre qualquer problema de performance ou erro.'},
-                'cloudtrail': { title: 'AWS CloudTrail', text: 'Regista todas as chamadas de API feitas na nossa conta AWS. Funciona como uma "caixa negra", fornecendo uma trilha de auditoria completa para fins de segurança e conformidade.'}
-            };
-            
-            function resetAnimation() {
-                if(animationTimeout) clearTimeout(animationTimeout);
-                nodes.forEach(n => n.classList.remove('active'));
-                pulse.style.opacity = '0';
-                explanations.forEach(e => e.classList.remove('active'));
-                document.getElementById('exp-0').classList.add('active');
-                startBtn.disabled = false;
-                startBtn.innerText = '▶ Iniciar Animação';
-            }
-            
-            function runAnimation() {
-                resetAnimation();
-                startBtn.disabled = true;
-                startBtn.innerText = 'Animando...';
+        <div class="color-palette">
+            <div class="color-btn active" data-color="#e74c3c"></div>
+            <div class="color-btn" data-color="#e67e22"></div>
+            <div class="color-btn" data-color="#f1c40f"></div>
+            <div class="color-btn" data-color="#2ecc71"></div>
+            <div class="color-btn" data-color="#3498db"></div>
+            <div class="color-btn" data-color="#9b59b6"></div>
+            <div class="color-btn" data-color="#8e44ad"></div>
+            <div class="color-btn" data-color="#ffadcb"></div>
+            <div class="color-btn" data-color="#603813"></div>
+            <div class="color-btn" data-color="#7f8c8d"></div>
+            <div class="color-btn" data-color="#000000"></div>
+        </div>
+    </div>
 
-                let cumulativeDelay = 0;
-                animationSteps.forEach((step, index) => {
-                    if (index === 0) {
-                        explanations.forEach(e => e.classList.remove('active'));
-                        document.getElementById(step.exp)?.classList.add('active');
-                        return;
-                    };
-                    
-                    cumulativeDelay += step.delay;
-                    animationTimeout = setTimeout(() => {
-                        document.querySelectorAll('.diagram-node').forEach(n => n.classList.remove('active'));
-                        step.activeNodes.forEach(id => {
-                            document.querySelectorAll(`[data-tech-id="${id}"]`).forEach(n => n.classList.add('active'));
-                        });
-
-                        if (step.from && step.to && !step.noPulse) {
-                            const fromNode = document.querySelector(`[data-tech-id="${step.from}"]`);
-                            const toNode = document.querySelector(`[data-tech-id="${step.to}"]`);
-                            
-                            if(!fromNode || !toNode) return;
-
-                            const containerRect = diagramContainer.getBoundingClientRect();
-                            const fromRect = fromNode.getBoundingClientRect();
-                            const toRect = toNode.getBoundingClientRect();
-
-                            const startY = (fromRect.top - containerRect.top) + (fromRect.height / 2) - 8;
-                            let startX = (fromRect.left - containerRect.left);
-                            let endX = (toRect.left - containerRect.left);
-                            
-                            if (startX < endX) { // Moving right
-                                startX += fromRect.width;
-                                endX -= 8;
-                            } else { // Moving left
-                                 startX -= 8;
-                                 endX += toRect.width;
-                            }
-                            
-                            const endY = (toRect.top - containerRect.top) + (toRect.height / 2) - 8;
-                           
-                            pulse.style.transition = 'none';
-                            pulse.style.left = `${startX}px`;
-                            pulse.style.top = `${startY}px`;
-                            pulse.style.opacity = '1';
-
-                            setTimeout(() => {
-                                pulse.style.transition = 'top 1s ease-in-out, left 1s ease-in-out';
-                                pulse.style.left = `${endX}px`;
-                                pulse.style.top = `${endY}px`;
-                            }, 50);
-
-                            setTimeout(() => {
-                                pulse.style.opacity = '0';
-                            }, 1050);
-                        }
-                        
-                        explanations.forEach(e => e.classList.remove('active'));
-                        document.getElementById(step.exp)?.classList.add('active');
-
-                        if (index === animationSteps.length - 1) {
-                           animationTimeout = setTimeout(() => {
-                                startBtn.disabled = false;
-                                startBtn.innerText = '▶ Reiniciar Animação';
-                           }, 2000);
-                        }
-                    }, cumulativeDelay);
-                });
-            }
-
-            startBtn.addEventListener('click', runAnimation);
-            
-            const modal = document.getElementById('tech-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const modalTitle = document.getElementById('modal-title');
-            const modalText = document.getElementById('modal-text');
-
-            document.querySelectorAll('.diagram-node').forEach(node => {
-                node.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const techId = node.dataset.techId;
-                    const description = techDescriptions[techId];
-                    if (description) {
-                        modalTitle.innerText = description.title;
-                        modalText.innerText = description.text;
-                        modal.classList.remove('hidden');
-                    }
-                });
-            });
-            function closeModal() { modal.classList.add('hidden'); }
-            closeModalBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('fade-in-section'); });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('section > div').forEach(section => observer.observe(section));
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('main > section, header');
-            window.addEventListener('scroll', () => {
-                let current = 'inicio';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 100) current = section.getAttribute('id');
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === current) link.classList.add('active');
-                });
-            });
-
-            const tabsContainer = document.querySelector('#ia');
-            if (tabsContainer) {
-                const tabButtons = tabsContainer.querySelectorAll('.tab-button');
-                const tabContents = tabsContainer.querySelectorAll('.tab-content');
-                tabButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const tabId = button.dataset.tab;
-                        tabButtons.forEach(btn => {
-                            btn.classList.remove('active');
-                            btn.classList.remove('tech-border-accent');
-                            btn.classList.add('text-gray-500');
-                        });
-                        button.classList.add('active', 'tech-border-accent');
-                        button.classList.remove('text-gray-500');
-                        tabContents.forEach(content => {
-                            content.classList.remove('active');
-                            if (content.id === tabId) content.classList.add('active');
-                        });
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

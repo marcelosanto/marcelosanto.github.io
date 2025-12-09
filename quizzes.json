@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "storyId": 1,
+        "title": "Quiz da Criação",
+        "question": "Quantos dias Deus levou para criar tudo?",
+        "options": ["5 dias", "7 dias", "10 dias", "3 dias"],
+        "correct": 1
+    },
+    {
+        "id": 2,
+        "storyId": 2,
+        "title": "Quiz de Noé",
+        "question": "Quantos dias choveu?",
+        "options": ["30 dias", "40 dias", "50 dias", "20 dias"],
+        "correct": 1
+    },
+    {
+        "id": 3,
+        "storyId": 3,
+        "title": "Quiz de Davi",
+        "question": "O que Davi usou?",
+        "options": ["Uma espada", "Uma lança", "Uma pedra", "Uma flecha"],
+        "correct": 2
+    },
+    {
+        "id": 4,
+        "storyId": 4,
+        "title": "Quiz de Jonas",
+        "question": "Quem engoliu Jonas?",
+        "options": ["Um tubarão", "Uma baleia", "Um peixe pequeno", "Um polvo"],
+        "correct": 1
+    },
+    {
+        "id": 5,
+        "storyId": 5,
+        "title": "Quiz do Natal",
+        "question": "Onde Jesus dormiu?",
+        "options": ["Em uma cama", "Em um berço de ouro", "Na manjedoura", "No sofá"],
+        "correct": 2
+    },
+    {
+        "id": 6,
+        "storyId": 6,
+        "title": "Quiz da Tempestade",
+        "question": "Quem acalmou o mar?",
+        "options": ["Pedro", "Jesus", "João", "Paulo"],
+        "correct": 1
+    }
+]
