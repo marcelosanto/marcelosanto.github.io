@@ -1,50 +1,172 @@
 [
-    {
-        "id": 1,
-        "storyId": 1,
-        "title": "Quiz da Criação",
-        "question": "Quantos dias Deus levou para criar tudo?",
-        "options": ["5 dias", "7 dias", "10 dias", "3 dias"],
-        "correct": 1
-    },
-    {
-        "id": 2,
-        "storyId": 2,
-        "title": "Quiz de Noé",
-        "question": "Quantos dias choveu?",
-        "options": ["30 dias", "40 dias", "50 dias", "20 dias"],
-        "correct": 1
-    },
-    {
-        "id": 3,
-        "storyId": 3,
-        "title": "Quiz de Davi",
-        "question": "O que Davi usou?",
-        "options": ["Uma espada", "Uma lança", "Uma pedra", "Uma flecha"],
-        "correct": 2
-    },
-    {
-        "id": 4,
-        "storyId": 4,
-        "title": "Quiz de Jonas",
-        "question": "Quem engoliu Jonas?",
-        "options": ["Um tubarão", "Uma baleia", "Um peixe pequeno", "Um polvo"],
-        "correct": 1
-    },
-    {
-        "id": 5,
-        "storyId": 5,
-        "title": "Quiz do Natal",
-        "question": "Onde Jesus dormiu?",
-        "options": ["Em uma cama", "Em um berço de ouro", "Na manjedoura", "No sofá"],
-        "correct": 2
-    },
-    {
-        "id": 6,
-        "storyId": 6,
-        "title": "Quiz da Tempestade",
-        "question": "Quem acalmou o mar?",
-        "options": ["Pedro", "Jesus", "João", "Paulo"],
-        "correct": 1
-    }
+  {
+    "id": "quiz-001",
+    "storyId": "1baae3b2-4047-4d4d-a33f-e46e1e9cfe71",
+    "title": "Quiz: Davi e o Gigante Golias",
+    "questions": [
+      {"q":"Qual era o trabalho de Davi antes de enfrentar Golias?","options":["Soldado","Pastor de ovelhas","Rei","Ferreiro"],"correct":1},
+      {"q":"O que Davi tocava para louvar a Deus?","options":["Flauta","Tambor","Harpa","Guitarra"],"correct":2},
+      {"q":"Quantos metros de altura tinha Golias aproximadamente?","options":["1,5 m","2 m","Quase 3 metros","4 m"],"correct":2},
+      {"q":"O que Jessé mandou Davi levar para os irmãos?","options":["Espadas","Pão e queijo","Dinheiro","Roupas"],"correct":1},
+      {"q":"Por que Davi recusou a armadura do rei Saul?","options":["Estava quebrada","Era muito pesada e grande","Não gostou da cor","O rei mudou de ideia"],"correct":1},
+      {"q":"Quantas pedrinhas Davi pegou no riacho?","options":["1","3","5","10"],"correct":2},
+      {"q":"Qual arma Davi usou contra Golias?","options":["Espada","Arco","Funda","Lança"],"correct":2},
+      {"q":"Onde a pedra acertou Golias?","options":["No peito","Na perna","Na testa","No braço"],"correct":2},
+      {"q":"O que Davi gritou antes de lançar a pedra?","options":["Eu sou o mais forte!","Eu vou em nome do Senhor dos Exércitos!","Tu és muito grande!","Tenha medo!"],"correct":1},
+      {"q":"O que essa história nos ensina?","options":["Tamanho é documento","Deus dá vitória aos que confiam nEle","Sempre precisamos de armadura","Gigantes não existem"],"correct":1}
+    ]
+  },
+  {
+    "id":"quiz-002",
+    "storyId": "1611f8e1-eb42-4f57-9be3-50e0da6475cd",
+    "title": "Quiz: A Arca de Noé e o Dilúvio",
+    "questions": [
+      {"q":"Por que Deus decidiu mandar o dilúvio?","options":["Para limpar o mar","Porque as pessoas faziam muitas coisas ruins","Para criar um lago","Porque estava quente"],"correct":1},
+      {"q":"Quem era o único homem justo na terra?","options":["Adão","Noé","Abraão","Moisés"],"correct":1},
+      {"q":"Quantos anos Noé levou construindo a arca?","options":["10 anos","Mais de 100 anos","40 dias","1 mês"],"correct":1},
+      {"q":"Quantos filhos Noé tinha?","options":["2","3","4","5"],"correct":1},
+      {"q":"Quantos andares tinha a arca?","options":["1","2","3","4"],"correct":2},
+      {"q":"Quantos animais de cada espécie impura entraram?","options":["7 pares","1 casal","10 casais","100"],"correct":1},
+      {"q":"Quantos dias e noites choveu sem parar?","options":["7","40","100","365"],"correct":1},
+      {"q":"Qual foi o primeiro pássaro que Noé soltou?","options":["Pomba","Corvo","Águia","Papagaio"],"correct":1},
+      {"q":"O que a pomba trouxe na terceira vez?","options":["Flor","Raminho verde de oliveira","Pedra","Nada"],"correct":1},
+      {"q":"Qual sinal Deus colocou no céu como promessa?","options":["Sol","Lua","Arco-íris","Estrelas"],"correct":2}
+    ]
+  },
+  {
+    "id": "quiz-003",
+    "storyId": "ab16a9be-fab1-4b90-ace0-9b956ac36296",
+    "title": "Quiz: Daniel na Cova dos Leões",
+    "questions": [
+      {"q":"Quantas vezes Daniel orava por dia?","options":["1","2","3","4"],"correct":2},
+      {"q":"Para onde Daniel abria a janela ao orar?","options":["Para o rei","Para Jerusalém","Para o céu","Para o norte"],"correct":1},
+      {"q":"Quem fez a lei proibindo orar por 30 dias?","options":["Daniel","O rei Dario (influenciado por invejosos)","Os leões","Anjos"],"correct":1},
+      {"q":"O que aconteceu com os leões quando Daniel foi jogado na cova?","options":["Comeram Daniel","Rugiram","Deus fechou a boca deles","Fugiram"],"correct":2},
+      {"q":"Quanto tempo Daniel ficou na cova?","options":["1 hora","1 noite inteira","3 dias","1 semana"],"correct":1},
+      {"q":"Quem Deus enviou para proteger Daniel?","options":["Um soldado","Seu anjo","Noé","Davi"],"correct":1},
+      {"q":"O que o rei fez de manhã cedo?","options":["Dormiu mais","Correu para a cova chamar Daniel","Tomou café","Foi caçar"],"correct":1},
+      {"q":"O que aconteceu com os homens invejosos?","options":["Viraram amigos","Foram perdoados","Foram jogados aos leões e devorados","Viraram reis"],"correct":2},
+      {"q":"O que o rei mandou todo o reino fazer depois?","options":["Construir estátua","Temer o Deus de Daniel","Proibir oração","Fazer festa"],"correct":1},
+      {"q":"Qual lição aprendemos com Daniel?","options":["Orar só quando dá","Deus protege quem é fiel a Ele","Leões são mansos","Reis são ruins"],"correct":1}
+    ]
+  },
+  {
+    "id": "quiz-004",
+    "storyId": "4b2bdcbc-36b5-4f06-90e3-278f6e9fa08b",
+    "title": "Quiz: Jonas e o Grande Peixe",
+    "questions": [
+      {"q":"Para onde Deus mandou Jonas pregar?","options":["Belém","Nínive","Jerusalém","Egito"],"correct":1},
+      {"q":"Para onde Jonas tentou fugir?","options":["Nínive","Társis","Belém","Casa"],"correct":1},
+      {"q":"O que Deus mandou acontecer no mar?","options":["Sol forte","Tempestade terrível","Calmaria","Neve"],"correct":1},
+      {"q":"Como descobriram que a culpa era de Jonas?","options":["Sorteio","O capitão gritou","Jonas confessou","Deus falou"],"correct":0},
+      {"q":"O que fizeram com Jonas?","options":["Deram comida","Jogaram no mar","Amarraram","Esconderam"],"correct":1},
+      {"q":"Quem engoliu Jonas?","options":["Baleia comum","Peixe grande preparado por Deus","Tubarão","Polvo"],"correct":1},
+      {"q":"Quantos dias Jonas ficou dentro do peixe?","options":["1","2","3 dias e 3 noites","40"],"correct":2},
+      {"q":"O que Jonas fez lá dentro?","options":["Dormiu","Cantou","Orou pedindo perdão","Brigou"],"correct":2},
+      {"q":"O que o povo de Nínive fez depois da pregação?","options":["Riram","Se arrependeram e jejuaram","Atiraram pedras","Ignoraram"],"correct":1},
+      {"q":"Qual lição aprendemos?","options":["Podemos fugir de Deus","Deus dá segunda chance ao arrependido","Peixes falam","Nínive era boa"],"correct":1}
+    ]
+  },
+  {
+    "id": "quiz-005",
+    "storyId": "cfc4fd90-81c7-4247-bd19-011d5cd1edc5",
+    "title": "Quiz: A Criação do Mundo",
+    "questions": [
+      {"q":"No começo tudo era...","options":["Claro","Escuro e vazio","Cheio de água","Com estrelas"],"correct":1},
+      {"q":"O que Deus criou no 1º dia?","options":["Animais","Luz","Sol","Plantas"],"correct":1},
+      {"q":"No 3º dia Deus criou...","options":["Peixes","Mares, terra seca e plantas","Aves","Estrelas"],"correct":1},
+      {"q":"No 4º dia Deus colocou no céu...","options":["Nuvens","Sol, lua e estrelas","Pássaros","Arco-íris"],"correct":1},
+      {"q":"No 5º dia foram criados...","options":["Animais terrestres","Peixes e aves","Homem","Estrelas"],"correct":1},
+      {"q":"No 6º dia Deus criou...","options":["Peixes","Aves","Animais terrestres e o ser humano","Anjos"],"correct":2},
+      {"q":"No 7º dia Deus...","options":["Criou mais coisas","Descansou e abençoou o dia","Destruiu tudo","Dormiu"],"correct":1},
+      {"q":"Como Deus viu tudo que fez?","options":["Bom","Mais ou menos","Muito bom!","Ruim"],"correct":2},
+      {"q":"Qual era o nome do jardim perfeito?","options":["Belém","Éden","Jerusalém","Nazaré"],"correct":1},
+      {"q":"O que essa história nos ensina?","options":["O mundo surgiu por acaso","Deus criou tudo com amor e é muito bom","Não precisamos cuidar da natureza","Deus errou"],"correct":1}
+    ]
+  },
+  {
+    "id": "quiz-006",
+    "storyId": "e76f98d8-a448-4ad1-a527-02e842a1ec15",
+    "title": "Quiz: Os Cinco Pães e Dois Peixes",
+    "questions": [
+      {"q":"Quantas pessoas aproximadamente Jesus alimentou?","options":["500","5.000","50.000","Só 12"],"correct":1},
+      {"q":"Quem trouxe o lanche?","options":["Um menino","Pedro","Judas","Jesus"],"correct":0},
+      {"q":"O que Jesus fez antes de partir os pães?","options":["Lavou as mãos","Agradeceu a Deus","Contou os pães","Mandou embora"],"correct":1},
+      {"q":"O que aconteceu com os pães e peixes?","options":["Acabaram","Ficaram iguais","Multiplicaram","Sumiram"],"correct":2},
+      {"q":"Quantos cestos de sobras foram recolhidos?","options":["5","2","12","7"],"correct":2},
+      {"q":"Onde o povo se sentou?","options":["Na areia","Na grama verde","Em bancos","Em árvores"],"correct":1},
+      {"q":"Por que o menino compartilhou seu lanche?","options":["Não queria mais","Jesus pediu","Porque quis abençoar os outros","Era obrigado"],"correct":2},
+      {"q":"O que Jesus mostrou com esse milagre?","options":["Que pão é mágico","Que quando colocamos nas mãos de Jesus o pouco vira muito","Que devemos guardar tudo","Que não devemos dividir"],"correct":1},
+      {"q":"Qual lição para nós hoje?","options":["Nunca dividir","Deus multiplica o que entregamos a Ele","Só dar quando sobrar","Guardar tudo"],"correct":1},
+      {"q":"O que você pode entregar nas mãos de Jesus hoje?","options":["Só dinheiro","Seu tempo, talento, lanche, coração","Nada","Só brinquedos velhos"],"correct":1}
+    ]
+  },
+  {
+    "id": "quiz-007",
+    "storyId": "454d6526-9c1b-419b-8f19-e0cb9b9ea222",
+    "title": "Quiz: Jesus Acalma a Tempestade",
+    "questions": [
+      {"q":"Onde Jesus e os discípulos estavam?","options":["Num barquinho no mar","Na montanha","No deserto","Na cidade"],"correct":0},
+      {"q":"O que Jesus estava fazendo Jesus quando veio a tempestade?","options":["Oração","Ensinando","Dormindo","Pescando"],"correct":2},
+      {"q":"O que os discípulos gritaram apavorados?","options":["Vamos morrer!","Vamos nadar!","Vamos remar mais forte!","Jesus acorda!"],"correct":0},
+      {"q":"O que Jesus disse ao mar e ao vento?","options":["Vão embora!","Silêncio! Acalme-se!","Pare agora!","Fiquem calmos!"],"correct":1},
+      {"q":"O que aconteceu depois que Jesus falou?","options":["A tempestade aumentou","O mar ficou calmo imediatamente","O barco afundou","Choveu mais"],"correct":1},
+      {"q":"O que os discípulos ficaram admirados?","options":["Até o vento e o mar obedecem a Ele!","Jesus dormiu de novo","O barco não afundou","Eles sabiam nadar"],"correct":0},
+      {"q":"O que Jesus perguntou aos discípulos?","options":["Por que tanto medo? Ainda não têm fé?","Por que gritaram?","Por que não remaram?","Por que não oraram?"],"correct":0},
+      {"q":"Onde Jesus estava no barco?","options":["No comando","Dormindo na popa","Remando","Pescando"],"correct":1},
+      {"q":"Qual lição aprendemos?","options":["Tempestades são normais","Jesus tem poder sobre tudo","Não devemos viajar de barco","Sempre temos que remar"],"correct":1},
+      {"q":"Quando você estiver com medo, o que pode fazer?","options":["Gritar sozinho","Correr","Chamar por Jesus","Esconder"],"correct":2}
+    ]
+  },
+  {
+    "id": "quiz-008",
+    "storyId": "5f652db0-2469-4069-84f2-fd76fc5f1dde",
+    "title": "Quiz: O Bom Samaritano",
+    "questions": [
+      {"q":"Quem foi assaltado na estrada?","options":["Um sacerdote","Um levita","Um homem qualquer","Um rei"],"correct":2},
+      {"q":"Quem passou primeiro e não ajudou?","options":["Samaritano","Sacerdote","Levita","Ladrão"],"correct":1},
+      {"q":"Quem passou depois e também não ajudou?","options":["Sacerdote","Levita","Samaritano","Rei"],"correct":1},
+      {"q":"Quem parou para ajudar o ferido?","options":["Sacerdote","Levita","Um samaritano","O rei"],"correct":2},
+      {"q":"O que o samaritano usou para cuidar do ferido?","options":["Água e sal","Óleo e vinho","Apenas oração","Nada"],"correct":1},
+      {"q":"Onde o samaritano levou o homem?","options":["Para casa dele","Para uma hospedaria","Para o templo","Para o rei"],"correct":1},
+      {"q":"Quem pagou tudo na hospedaria?","options":["O ferido","O sacerdote","O samaritano","O rei"],"correct":2},
+      {"q":"O que Jesus perguntou no final?","options":["Quem foi o próximo do ferido?","Quem foi roubado?","Quem foi mais rico?","Quem foi mais rápido?"],"correct":0},
+      {"q":"O que Jesus mandou fazer?","options":["Vá e faça o mesmo","Ignore os feridos","Só ajude amigos","Ajude só quem merece"],"correct":0},
+      {"q":"Qual lição aprendemos?","options":["Só ajudar quem é igual a nós","Nosso próximo é todo mundo que precisa","Não ajudar ninguém","Ajudar só por dinheiro"],"correct":1}
+    ]
+  },
+  {
+    "id": "quiz-009",
+    "storyId": "c1a39028-ffb7-4548-b928-d370472190df",
+    "title": "Quiz: O Filho Pródigo",
+    "questions": [
+      {"q":"O que o filho mais novo pediu ao pai?","options":["Um cavalo","A parte da herança","Um emprego","Uma casa"],"correct":1},
+      {"q":"O que o filho fez com o dinheiro?","options":["Investiu","Gastou tudo em festas","Construiu uma casa","Deu aos pobres"],"correct":1},
+      {"q":"Onde ele acabou trabalhando?","options":["Num palácio","Numa fazenda de porcos","Num templo","Na casa do pai"],"correct":1},
+      {"q":"O que o filho decidiu fazer quando passou fome?","options":["Roubar","Voltar para o pai arrependido","Ficar com os porcos","Pedir esmola"],"correct":1},
+      {"q":"O que o pai fez quando viu o filho voltando?","options":["Ficou bravo","Correu, abraçou e beijou","Mandou embora","Escondeu"],"correct":1},
+      {"q":"O que o pai mandou trazer para o filho?","options":["Roupa velha","A melhor roupa, anel e sandálias","Nada","Correntes"],"correct":1},
+      {"q":"O que o pai mandou matar para a festa?","options":["Um frango","O novilho gordo","Um porco","Nada"],"correct":1},
+      {"q":"Por que o irmão mais velho ficou bravo?","options":["Queria a festa pra ele","Tinha ciúmes do irmão","Não gostava de festa","Estava cansado"],"correct":1},
+      {"q":"O que o pai disse ao irmão mais velho?","options":["Teu irmão estava perdido e foi achado","Tu és o pior","Vai embora também","Não tem festa pra ti"],"correct":0},
+      {"q":"O que essa história nos ensina sobre Deus?","options":["Ele fica bravo pra sempre","Ele corre ao nosso encontro quando nos arrependemos","Ele só ama os bons","Ele esquece quem erra"],"correct":1}
+    ]
+  },
+  {
+    "id": "quiz-010",
+    "storyId": "7d75a81a-340f-4eab-adec-e9e573104654",
+    "title": "Quiz: O Nascimento de Jesus",
+    "questions": [
+      {"q":"Para onde José e Maria tiveram que viajar?","options":["Jerusalém","Nazaré","Belém","Egito"],"correct":2},
+      {"q":"Por que viajaram?","options":["Férias","Casamento","Porque o imperador mandou recenseamento","Fugir do rei"],"correct":2},
+      {"q":"Onde Jesus nasceu?","options":["Num palácio","Numa hospedaria cheia","Num estábulo / manjedoura","Numa casa grande"],"correct":2},
+      {"q":"Em que Maria envolveu o bebê Jesus?","options":["Manta de lã","Faixas de pano","Roupa de rei","Nada"],"correct":1},
+      {"q":"Quem foram os primeiros a visitar Jesus?","options":["Reis magos","Sacerdotes","Pastores","Soldados"],"correct":2},
+      {"q":"Como os pastores souberam do nascimento?","options":["Pelo rádio","Por um anjo e um coral celestial","Por uma carta","Por José"],"correct":1},
+      {"q":"O que apareceu no céu guiando os magos?","options":["Lua cheia","Uma estrela brilhante","Arco-íris","Nuvem"],"correct":1},
+      {"q":"Quais presentes os magos trouxeram?","options":["Brinquedos","Ouro, incenso e mirra","Comida","Roupas"],"correct":1},
+      {"q":"O que os anjos cantaram?","options":["Parabéns pra você","Glória a Deus nas alturas!","Noite Feliz","Aleluias"],"correct":1},
+      {"q":"Qual lição do Natal?","options":["Ganhar presentes","Jesus é o maior presente que Deus deu ao mundo","Fazer festa","Comer muito"],"correct":1}
+    ]
+  }
 ]

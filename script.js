@@ -1,22 +1,37 @@
 // ==========================================
-// 1. CARREGAMENTO DE DADOS
+// 1. CARREGAMENTO E PREPARAÇÃO DE DADOS
 // ==========================================
 
 let stories = [];
 let drawings = [];
 let quizzes = [];
 
+// Carrega os arquivos
 Promise.all([
-    fetch('stories.json').then(r => r.json()),
-    fetch('drawings.json').then(r => r.json()),
+    fetch('historias_app.json').then(r => r.json()), // JSON gerado pelo Python
+    fetch('drawings.json?v=' + new Date().getTime()).then(r => r.json()),
     fetch('quizzes.json').then(r => r.json())
 ]).then(([storiesData, drawingsData, quizzesData]) => {
-    stories = storiesData;
-    drawings = drawingsData;
-    quizzes = quizzesData;
-    initApp();
-}).catch(err => console.error('Erro ao carregar dados:', err));
+    
+    // --- ADAPTAÇÃO DE DADOS (A PONTE) ---
+    // Transforma o JSON do Python no formato que o App usa
+    stories = storiesData.map(s => ({
+        id: s.id,                           // UUID
+        title: s.titulo,                    // Mapeia 'titulo' para 'title'
+        cover: s.url_imagem_capa,           // Mapeia 'url_imagem_capa' para 'cover'
+        duration: s.duracao_estimada,       // Duração texto
+        audioSrc: s.caminho_audio,          // Caminho do arquivo de áudio real
+        // Transforma o texto corrido em lista de parágrafos
+        content: s.texto.split('\n').filter(p => p.trim() !== '') 
+    }));
 
+    drawings = drawingsData;
+    quizzes = quizzesData; 
+    
+    initApp();
+}).catch(err => console.error('Erro ao carregar dados. Verifique os arquivos JSON:', err));
+
+// --- ESTADOS (Favoritos e Progresso) ---
 let favorites = [];
 try { favorites = JSON.parse(localStorage.getItem('biblia_favorites')) || []; } catch (e) { favorites = []; }
 
@@ -26,20 +41,23 @@ try {
     if (saved && Array.isArray(saved.storiesRead)) progress = saved;
 } catch (e) {}
 
+// Variáveis de Controle
 let currentStory = null;
 let currentQuiz = null;
+let currentQuestionIndex = 0;
+let currentQuizScore = 0;
 let readingStartTime = null;
-let audio = null;
+let audioPlayer = null; // Player de áudio real
 
 // ==========================================
-// 2. INICIALIZAÇÃO
+// 2. INICIALIZAÇÃO E NAVEGAÇÃO
 // ==========================================
 
 function initApp() {
     renderStories();
     renderFavorites();
     renderColoringGallery();
-    renderQuizzes();
+    renderQuizzes(); // Renderiza a aba de desafios
     updateProgress();
     checkBadges();
     initColorButtons();
@@ -52,35 +70,39 @@ function initColorButtons() {
 }
 
 function showSection(section) {
+    // Esconde tudo
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     
+    // Mostra a seção desejada
     document.getElementById(`${section}-section`).classList.add('active');
     const navItem = document.querySelector(`.nav-item[onclick="showSection('${section}')"]`);
     if(navItem) navItem.classList.add('active');
     
+    // Se sair da tela de histórias, para o áudio
+    if (section !== 'stories') stopAudio();
+    
+    // Atualizações específicas
     if (section === 'quizzes') renderQuizzes();
     if (section === 'progress') { updateProgress(); checkBadges(); }
 }
 
 // ==========================================
-// 3. RENDERIZAÇÃO (ATUALIZADA PARA IMAGENS)
+// 3. RENDERIZAÇÃO (Histórias, Favoritos e Quizzes)
 // ==========================================
 
 function renderStories() {
     const grid = document.getElementById('stories-grid');
     grid.innerHTML = stories.map(story => `
-        <div class="story-card" onclick="openStory(${story.id})">
+        <div class="story-card" onclick="openStory('${story.id}')">
             <img src="${story.cover}" alt="${story.title}" class="story-card-image" loading="lazy">
-            
-            <span class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite(${story.id})">
+            <span class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite('${story.id}')">
                 ${favorites.includes(story.id) ? '<i class="fa-solid fa-star" style="color:gold"></i>' : '<i class="fa-regular fa-star"></i>'}
             </span>
-
             <div class="story-card-content">
                 <div class="story-title">${story.title}</div>
                 <div class="story-meta">
-                    <span class="story-ref">${story.bibleRef || 'Bíblia'}</span>
+                    <span class="story-ref">História</span>
                     <span><i class="fa-regular fa-clock"></i> ${story.duration}</span>
                 </div>
             </div>
@@ -96,17 +118,13 @@ function renderFavorites() {
         grid.innerHTML = '<p style="color:white; grid-column:1/-1; text-align:center;">Sem favoritos ainda!</p>';
     } else {
         grid.innerHTML = favoriteStories.map(story => `
-            <div class="story-card" onclick="openStory(${story.id})">
+            <div class="story-card" onclick="openStory('${story.id}')">
                 <img src="${story.cover}" alt="${story.title}" class="story-card-image" loading="lazy">
-                <span class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite(${story.id})">
+                <span class="favorite-btn" onclick="event.stopPropagation(); toggleFavorite('${story.id}')">
                     <i class="fa-solid fa-star" style="color:gold"></i>
                 </span>
                 <div class="story-card-content">
                     <div class="story-title">${story.title}</div>
-                    <div class="story-meta">
-                        <span class="story-ref">${story.bibleRef || 'Bíblia'}</span>
-                        <span><i class="fa-regular fa-clock"></i> ${story.duration}</span>
-                    </div>
                 </div>
             </div>
         `).join('');
@@ -115,15 +133,27 @@ function renderFavorites() {
 
 function renderQuizzes() {
     const grid = document.getElementById('quizzes-grid');
+    
+    if (!quizzes || quizzes.length === 0) {
+        grid.innerHTML = '<p style="color:white; grid-column:1/-1; text-align:center;">Carregando desafios...</p>';
+        return;
+    }
+
     grid.innerHTML = quizzes.map(quiz => {
-        const isDone = progress.storiesRead.includes(quiz.id + '-quiz');
+        // Verifica se completou (Chave única ID + sufixo)
+        const quizKey = quiz.id + '-quiz-completed';
+        const isDone = progress.storiesRead.includes(quizKey);
+        
+        const statusIcon = isDone 
+            ? '<i class="fa-solid fa-medal" style="color:gold; font-size:1.5em;"></i>' 
+            : '<i class="fa-regular fa-circle-play" style="color:#667eea; font-size:1.5em;"></i>';
+        const borderStyle = isDone ? '5px solid #2ecc71' : '1px solid #eee';
+
         return `
-        <div class="story-card" onclick="openQuiz(${quiz.id})" style="border-bottom: 5px solid ${isDone ? '#2ecc71' : '#ccc'}; padding:15px; text-align:center;">
-            <div style="font-size: 3em;">🧩</div>
-            <div class="story-title" style="text-align:center; margin-top:10px;">${quiz.title}</div>
-            <div style="margin-top:10px; font-size:1.5em;">
-                ${isDone ? '<i class="fa-solid fa-circle-check" style="color:#2ecc71"></i>' : '<i class="fa-regular fa-circle-question" style="color:#ccc"></i>'}
-            </div>
+        <div class="story-card" onclick="openQuiz('${quiz.id}')" style="border-bottom: ${borderStyle}; padding:15px; text-align:center; display:block;">
+            <div style="font-size: 3em; margin-bottom:10px;">🧩</div>
+            <div class="story-title" style="text-align:center; margin-bottom:10px;">${quiz.title}</div>
+            <div style="margin-top:auto;">${statusIcon}</div>
         </div>
     `}).join('');
 }
@@ -137,7 +167,7 @@ function toggleFavorite(id) {
 }
 
 // ==========================================
-// 4. LEITOR E QUIZ
+// 4. LEITOR DE HISTÓRIA E ÁUDIO PLAYER
 // ==========================================
 
 function openStory(id) {
@@ -151,6 +181,7 @@ function openStory(id) {
     }
 
     readingStartTime = Date.now();
+    
     let paragraphs = currentStory.content.map(p => `<p>${p}</p>`).join('');
     
     document.getElementById('story-reader-content').innerHTML = `
@@ -158,15 +189,16 @@ function openStory(id) {
             <img src="${currentStory.cover}" alt="${currentStory.title}">
         </div>
         
-        <h2 style="text-align:center; color:#667eea; margin-bottom:5px;">${currentStory.title}</h2>
-        <p style="text-align:center; color:#888; margin-bottom:20px; font-size:0.9em;">
-            <i class="fa-solid fa-book-bible"></i> ${currentStory.bibleRef || 'História Bíblica'}
-        </p>
+        <h2 style="text-align:center; color:#667eea; margin-bottom:10px;">${currentStory.title}</h2>
+        
+        <div style="text-align:center; margin-bottom:20px; color:#2ecc71; font-weight:bold; font-size:0.9em;">
+            <i class="fa-solid fa-headphones"></i> Narração disponível!
+        </div>
 
         <div class="story-content">${paragraphs}</div>
         
         <div style="text-align:center; margin-top:40px;">
-            <button onclick="goToQuizFromStory(${currentStory.id})" style="background:var(--accent); border:none; padding:15px 30px; border-radius:30px; font-weight:bold; cursor:pointer; font-size:1.1em; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+            <button onclick="tryGoToQuiz('${currentStory.id}')" style="background:var(--accent); border:none; padding:15px 30px; border-radius:30px; font-weight:bold; cursor:pointer; font-size:1.1em; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
                 <i class="fa-solid fa-puzzle-piece"></i> Ir para o Quiz
             </button>
         </div>
@@ -178,7 +210,7 @@ function openStory(id) {
 
 function closeReader() {
     document.getElementById('story-reader').style.display = 'none';
-    if (audio) { speechSynthesis.cancel(); audio = null; document.getElementById('audio-btn').innerHTML = '<i class="fa-solid fa-play"></i> Ouvir'; }
+    stopAudio();
     
     if (readingStartTime) {
         const timeSpent = Math.round((Date.now() - readingStartTime) / 60000);
@@ -192,27 +224,169 @@ function closeReader() {
     showSection('stories');
 }
 
-function goToQuizFromStory(storyId) {
-    closeReader();
+function tryGoToQuiz(storyId) {
+    // Tenta encontrar um quiz que tenha o storyId igual ao ID da história
     const quiz = quizzes.find(q => q.storyId === storyId);
-    if(quiz) openQuiz(quiz.id);
-    else showSection('quizzes');
+    
+    closeReader();
+    if (quiz) {
+        openQuiz(quiz.id);
+    } else {
+        // Se não achar direto, leva para a lista
+        alert("Quiz não encontrado para esta história específica. Veja a lista completa!");
+        showSection('quizzes');
+    }
 }
+
+// --- PLAYER DE ÁUDIO REAL ---
+function toggleAudio() {
+    const btn = document.getElementById('audio-btn');
+
+    // 1. Pausa
+    if (audioPlayer && !audioPlayer.paused) {
+        audioPlayer.pause();
+        btn.innerHTML = '<i class="fa-solid fa-play"></i> Ouvir';
+        return;
+    }
+
+    // 2. Retoma
+    if (audioPlayer && audioPlayer.paused) {
+        audioPlayer.play();
+        btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar';
+        return;
+    }
+
+    // 3. Novo Player
+    if (currentStory.audioSrc) {
+        audioPlayer = new Audio(currentStory.audioSrc);
+        
+        audioPlayer.play()
+            .then(() => {
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar';
+            })
+            .catch(e => {
+                console.error("Erro áudio:", e);
+                alert("Não foi possível tocar o áudio. Verifique a pasta 'audios'.");
+            });
+
+        audioPlayer.onended = () => {
+            btn.innerHTML = '<i class="fa-solid fa-play"></i> Ouvir';
+            audioPlayer = null;
+        };
+    } else {
+        alert("Áudio não disponível.");
+    }
+}
+
+function stopAudio() {
+    if (audioPlayer) {
+        audioPlayer.pause();
+        audioPlayer = null;
+        const btn = document.getElementById('audio-btn');
+        if(btn) btn.innerHTML = '<i class="fa-solid fa-play"></i> Ouvir';
+    }
+}
+
+// ==========================================
+// 5. SISTEMA DE QUIZ (10 Perguntas)
+// ==========================================
 
 function openQuiz(id) {
     currentQuiz = quizzes.find(q => q.id === id);
     if (!currentQuiz) return;
 
+    // Reseta estado
+    currentQuestionIndex = 0;
+    currentQuizScore = 0;
+
+    renderQuestion();
+    document.getElementById('quiz-modal').style.display = 'block';
+}
+
+function renderQuestion() {
+    const questionObj = currentQuiz.questions[currentQuestionIndex];
+    const total = currentQuiz.questions.length;
+    const current = currentQuestionIndex + 1;
+    const progressPct = ((current - 1) / total) * 100;
+    
     document.getElementById('quiz-content').innerHTML = `
-        <div style="font-size: 4em; margin-bottom: 10px;">🧩</div>
-        <h2 style="color:#667eea; margin-bottom: 20px;">${currentQuiz.title}</h2>
-        <div class="quiz-question">${currentQuiz.question}</div>
+        <div style="width:100%; height:10px; background:#eee; border-radius:5px; margin-bottom:20px; overflow:hidden;">
+            <div style="width:${progressPct}%; height:100%; background:#2ecc71; transition:0.3s;"></div>
+        </div>
+        <div style="font-size: 0.9em; color:#888; margin-bottom:5px;">Pergunta ${current} de ${total}</div>
+        <h3 style="color:#667eea; margin-bottom: 20px;">${questionObj.q}</h3>
         <div class="quiz-options">
-            ${currentQuiz.options.map((opt, i) => `<div class="quiz-option" onclick="checkAnswer(${i})">${opt}</div>`).join('')}
+            ${questionObj.options.map((opt, i) => `
+                <div class="quiz-option" onclick="checkAnswer(${i})">${opt}</div>
+            `).join('')}
         </div>
         <div class="quiz-feedback" id="quiz-feedback"></div>
+        <div id="next-btn-container" style="margin-top:20px; display:none;">
+            <button onclick="nextQuestion()" style="background:var(--primary); color:white; border:none; padding:12px 30px; border-radius:25px; font-weight:bold; cursor:pointer;">
+                Próxima <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
     `;
-    document.getElementById('quiz-modal').style.display = 'block';
+}
+
+function checkAnswer(selectedIndex) {
+    const questionObj = currentQuiz.questions[currentQuestionIndex];
+    const feedback = document.getElementById('quiz-feedback');
+    const options = document.querySelectorAll('.quiz-option');
+
+    options.forEach((opt, i) => {
+        opt.onclick = null;
+        opt.style.cursor = 'default';
+        if (i === questionObj.correct) opt.classList.add('correct');
+        else if (i === selectedIndex) opt.classList.add('incorrect');
+    });
+
+    if (selectedIndex === questionObj.correct) {
+        currentQuizScore++;
+        feedback.innerHTML = '<span style="color:#2ecc71; font-weight:bold;">Acertou! 🎉</span>';
+        progress.quizCorrect++;
+        updateProgress();
+    } else {
+        feedback.innerHTML = `<span style="color:#c0392b;">A certa era: <b>${questionObj.options[questionObj.correct]}</b></span>`;
+    }
+    
+    document.getElementById('next-btn-container').style.display = 'block';
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < currentQuiz.questions.length) {
+        renderQuestion();
+    } else {
+        finishQuiz();
+    }
+}
+
+function finishQuiz() {
+    const total = currentQuiz.questions.length;
+    let message = "", icon = "", color = "";
+    
+    if (currentQuizScore === total) { message = "Perfeito!"; icon = "🏆"; color = "#f1c40f"; }
+    else if (currentQuizScore >= 7) { message = "Muito bem!"; icon = "🌟"; color = "#2ecc71"; }
+    else { message = "Continue treinando!"; icon = "📚"; color = "#e67e22"; }
+
+    const quizKey = currentQuiz.id + '-quiz-completed';
+    if (!progress.storiesRead.includes(quizKey)) {
+        progress.storiesRead.push(quizKey);
+        saveProgress();
+        checkBadges();
+    }
+
+    document.getElementById('quiz-content').innerHTML = `
+        <div style="font-size: 5em; margin-bottom: 20px; animation: pop 0.5s;">${icon}</div>
+        <h2 style="color:${color};">Quiz Finalizado!</h2>
+        <div style="font-size:1.5em; margin:20px 0; padding:20px; background:#f8f9fa; border-radius:15px;">
+            Nota: <strong style="color:${color}">${currentQuizScore}</strong> / ${total}
+        </div>
+        <p>${message}</p>
+        <button onclick="closeQuiz()" style="background:var(--secondary); color:white; border:none; padding:15px 40px; border-radius:30px; margin-top:20px; cursor:pointer; font-weight:bold;">Voltar</button>
+    `;
+    renderQuizzes(); // Atualiza a lista para mostrar medalha
 }
 
 function closeQuiz() {
@@ -220,53 +394,24 @@ function closeQuiz() {
     showSection('quizzes');
 }
 
-function checkAnswer(selectedIndex) {
-    const feedback = document.getElementById('quiz-feedback');
-    const options = document.querySelectorAll('.quiz-option');
-    options.forEach((opt, i) => {
-        opt.onclick = null; opt.style.cursor = 'default';
-        if (i === currentQuiz.correct) opt.classList.add('correct');
-        else if (i === selectedIndex) opt.classList.add('incorrect');
-    });
-    if (selectedIndex === currentQuiz.correct) {
-        feedback.textContent = 'Parabéns! Você acertou! 🎉'; feedback.style.color = '#27ae60';
-        const qid = currentQuiz.id + '-quiz';
-        if (!progress.storiesRead.includes(qid)) {
-            progress.quizCorrect++; progress.storiesRead.push(qid);
-            saveProgress(); checkBadges(); updateProgress();
-        }
-    } else {
-        feedback.textContent = 'Ops! Tente novamente.'; feedback.style.color = '#c0392b';
-    }
-}
-
-function toggleAudio() {
-    const btn = document.getElementById('audio-btn');
-    if (audio) { speechSynthesis.cancel(); audio = null; btn.innerHTML = '<i class="fa-solid fa-play"></i> Ouvir'; return; }
-    const text = currentStory.content.join(' ');
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'pt-BR';
-    utterance.onend = () => { audio = null; btn.innerHTML = '<i class="fa-solid fa-play"></i> Ouvir'; };
-    speechSynthesis.speak(utterance); audio = utterance; btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar';
-}
-
 // ==========================================
-// 5. PROGRESSO E PINTURA
+// 6. PROGRESSO E BADGES
 // ==========================================
 
 function updateProgress() {
-    const storiesCount = progress.storiesRead.filter(id => typeof id === 'number').length;
+    // Conta IDs únicos que não terminam com '-quiz-completed' (histórias)
+    const storiesCount = progress.storiesRead.filter(id => !id.includes('-quiz-completed')).length;
     document.getElementById('stories-read').textContent = storiesCount;
     document.getElementById('quiz-correct').textContent = progress.quizCorrect;
 }
 
 function checkBadges() {
-    const readCount = progress.storiesRead.filter(id => typeof id === 'number').length;
+    const readCount = progress.storiesRead.filter(id => !id.includes('-quiz-completed')).length;
     const badges = [
         { id: 'badge-1', condition: readCount >= 1 },
         { id: 'badge-2', condition: readCount >= 5 },
         { id: 'badge-3', condition: readCount >= 10 },
-        { id: 'badge-4', condition: progress.quizCorrect >= 5 },
+        { id: 'badge-4', condition: progress.quizCorrect >= 50 }, // Exemplo: 50 acertos totais
         { id: 'badge-5', condition: progress.totalTime >= 30 }
     ];
     badges.forEach(b => {
@@ -277,13 +422,17 @@ function checkBadges() {
 
 function saveProgress() { localStorage.setItem('biblia_progress', JSON.stringify(progress)); }
 
+// ==========================================
+// 7. PINTURA (Flood Fill)
+// ==========================================
+
 let currentDrawingIndex = null;
 let ctx = null;
 let currentColor = [231, 76, 60];
 
 function renderColoringGallery() {
     const gallery = document.getElementById('coloring-gallery');
-    if(!drawings.length) return;
+    if (!drawings.length) return;
     gallery.innerHTML = drawings.map((d, i) => `
         <div class="drawing-card" onclick="openColoring(${i})">
             <img src="${d.url}" alt="${d.title}" loading="lazy">
